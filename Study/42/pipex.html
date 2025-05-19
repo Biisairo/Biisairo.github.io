@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>pipex</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+                <h2>하위 그룹</h2>
+                <ul>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/born2beroot/">born2beroot</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/minilibx/">minilibx</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/ft_transcendence/">ft_transcendence</a></li>
+                    
+                </ul>
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/ft_printf.html">ft_printf</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/get_next_line.html">get_next_line</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/pipex.html">pipex</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/minishell.html">minishell</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/philosopher.html">philosopher</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/net_practice.html">net_practice</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/rbtree.html">rbtree</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/IRC.html">IRC</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>pipex</h1>
+<h1>goal</h1>
+<pre><code>./pipex file1 cmd1 cmd2 file2
+</code></pre>
+<p>to</p>
+<pre><code>&lt; file1 cmd1 | cmd2 &gt; file2
+</code></pre>
+<h1>system call</h1>
+<p>운영체제는 커널모드 (kernel mode) 와 사용자모드 (user mode) 로 나뉘어 구동된다 일반적으로 사용자는 사용자모드에서 작업을 수행하며 커널모드로 진입할 수 없다 system call 함수, 명령어를 사용해 커널모드에서의 작업을 수행할 수 있다</p>
+<h1>허용 함수</h1>
+<table>
+<thead>
+<tr>
+<th>header</th>
+<th>function</th>
+<th>new</th>
+<th>header</th>
+<th>funtion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fcntl.h</td>
+<td>open</td>
+<td>—</td>
+<td>unistd.h</td>
+<td>access</td>
+</tr>
+<tr>
+<td></td>
+<td>close</td>
+<td>—</td>
+<td></td>
+<td>dup</td>
+</tr>
+<tr>
+<td>unistd.h</td>
+<td>read</td>
+<td>—</td>
+<td></td>
+<td>dup2</td>
+</tr>
+<tr>
+<td></td>
+<td>write</td>
+<td>—</td>
+<td></td>
+<td>execve</td>
+</tr>
+<tr>
+<td>stdlib.h</td>
+<td>malloc</td>
+<td>—</td>
+<td></td>
+<td>fork</td>
+</tr>
+<tr>
+<td></td>
+<td>free</td>
+<td>—</td>
+<td></td>
+<td>pipe</td>
+</tr>
+<tr>
+<td></td>
+<td>exit</td>
+<td>—</td>
+<td></td>
+<td>unlink</td>
+</tr>
+<tr>
+<td>stdio.h</td>
+<td>perror</td>
+<td>—</td>
+<td>wait.h</td>
+<td>wait</td>
+</tr>
+<tr>
+<td>string.h</td>
+<td>strerror</td>
+<td>—</td>
+<td></td>
+<td>waitpid</td>
+</tr>
+</tbody>
+</table>
+<h3>access</h3>
+<p>파일의 권한을 확인해줌</p>
+<pre><code class="language-c">int access(const char *pathname, int mode)
+</code></pre>
+<p>mode - R_OK : 파일의 존재 여부, 읽기 권한 - W_OK : 파일의 존재 여부, 쓰기 권한 - X_OK : 파일의 존재 여부, 실행 권한 - F_OK : 파일의 존재 여부</p>
+<h3>return</h3>
+<p>권한이 있으면 0 없으면 -1 을 반환하며 errno 가 설정됨</p>
+<h3>dup, dup2</h3>
+<p>fd 를 복사함</p>
+<pre><code class="language-c">int dup(int fd);int dup2(int fd, int fd2);
+</code></pre>
+<h3>dup</h3>
+<p>전달 받은 fd를 복사하여 새로운 fd 에 할당 후 반환 - 새로 할당받은 fd와 기존의 fd 는 같은것(ex, 같은 파일)을 가리키고 있음 오류 시 -1 을 반환</p>
+<h3>dup2</h3>
+<p>fd2 가 fd 과 같은 것을 가리킴 - fd 는 현행 유지 - fd2 만 fd 와 같은 값을 가리키도록 변경</p>
+<h3>return</h3>
+<p>새로 생긴 file descriptor 를 반환 에러시 -1 을 반환하고 errno 가 설정됨</p>
+<h3>execve</h3>
+<pre><code class="language-c">int execve(const char *path, char *const argv[], char *const envp[])
+</code></pre>
+<ul>
+<li>path : 실행할 파일의 경로</li>
+<li>argv : 인자</li>
+<li>envp : 환경변수</li>
+</ul>
+<pre><code class="language-c">#include &quot;pipex.h&quot;int main(void){char *str[4];str[0] = &quot;/bin/ls&quot;;str[1] = &quot;-l&quot;;str[2] = &quot;..&quot;;str[3] = 0;execve(str[0], str + 1, 0);}
+</code></pre>
+<p>호출한 프로세스를 새 프로세스로 변경 새 프로세스는 함수의 path 가 가리키는 파일이 실행 원래의 프로세스를 대체하므로 pid(process identifier) 가 동일 기존의 프로세스 공간에 새로운 프로세스의 이미지로 덮어씌운다</p>
+<h3>return</h3>
+<p>성공시 원래의 프로세스는 사라지기때문에 리턴값이 없음 실패시 -1 을 반환하고 errno 가 설정됨</p>
+<h3>fork</h3>
+<pre><code class="language-c">pid_t fork(void)
+</code></pre>
+<p>현재의 프로세스를 복제 기존의 프로세스는 부모 프로세스 새로생긴 프로세스는 자식 프로세스가 됨</p>
+<h3>return</h3>
+<p>부모 프로세스 에서는 자식 프로세스의 pid 번호를 자식프로세스 에서는 0 오류시 -1 을 반환</p>
+<h3>pipe</h3>
+<pre><code class="language-c">int pipe(int fd[2])
+</code></pre>
+<p>커널에 새로운 파이프를 생성하며 해당 fd 가 int 배열에 등록된다 - fd[0] : 읽기용 fd - 프로세스의 입장에서 입력 받는 fd - fd[1] : 쓰기용 fd - 프로세스의 입장에서 출력하는 fd</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 을 반환하고 errno 가 설정됨</p>
+<h3>unlink</h3>
+<pre><code class="language-c">int unlink(const char *path)
+</code></pre>
+<p>path 경로의 파일을 지움</p>
+<p>자세히 말하면 해당 파일과 연결된 i-node 의 연결계수를 -1 한다 즉 해당 파일은 삭제되지만 hard link 된 다른 파일이 있는 경우 데이터는 남아있게 된다</p>
+<h3>연결계수</h3>
+<p>해당 파일이 연결된 i-node 에 hard link 된 파일의 수를 의미한다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 을 반환하고 errno 가 설정됨</p>
+<h3>wait</h3>
+<pre><code class="language-c">pid_t wait(int *status)
+</code></pre>
+<p>자식 프로세스가 종료될 때 까지 부모 프로세스를 대기시킴</p>
+<p>int 변수 하나의 주소값을 인자로 넣어줌 해당 변수에는 자식 프로세스가 끝날때 프로세스의 반환값이 저장됨 정상적인 종료시 status 의 하위 8 비트에는 0, 상위 8 비트에 반환값이 저장됨 - WIFEXITED(status) 매크로가 true를 반환 - WEXITSTATUS(status) 매크로를 이용해 자식 프로세스가 exit, _exit, _Exit에 넘겨준 인자값을 얻을 수 있음</p>
+<p>비정상적인 종료시 status 의 하위 8 비트에 반환값이, 상위 8 비트에는 0 이 저장됨 - WIFSIGNALED(statloc) 매크로가 true를 반환 - 비정상 종료 이유를 WTERMSIG(statloc) 매크로를 사용하여 구할 수 있음</p>
+<h3>return</h3>
+<p>성공시 자식 프로세스의 pid 실패시 -1 을 반환하고 errno 가 설정됨 실패하는 경우 - 프로세스의 자식 프로세스가 없는 경우 - 시스템 콜이 인터럽트 되었을때</p>
+<h3>waitpid</h3>
+<pre><code class="language-c">pid_t waitpid(pid_t pid, int *status, int option)
+</code></pre>
+<p>wait 와 비슷하게 자식 프로세스가 종료될 때 까지 부모 프로세스를 대기시킴</p>
+<p>pid - pid == -1 - 임의의 자식 프로세스를 기다림 - pid &gt; 0 - 해당 pid 의 자식 프로세스를 기다림 - pid &lt; -1 - pid 의 절대값과 같은 자식 프로세스를 기다림 - pid == 0 - 현재 프로세스의 그룹 id 와 같은 그룹의 자식 프로세스를 기다림</p>
+<p>option - WCONTINUED : 중단 되었다가 재개된 자식 프로세스의 상태를 받음 - WNOHANG : 자식프로세스가 종료되지 않았으면 기다리지 않고 0 을 반환, WIFEXITED 매크로도 0 을 반환 - WUNTRACED : 중단 되었다가 재개된 자식 프로세스의 상태를 받음</p>
+<h3>return</h3>
+<p>성공시 자식 프로세스의 pid 실패시 -1 을 반환하고 errno 가 설정됨</p>
+<h1>error</h1>
+<p>에러 하나가 나왔다고 종료하는 것이 아닌 모든 상황을 통과하고 모든 에러를 출력</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> malloc null guard</li>
+<li><input checked="" disabled="" type="checkbox"> 들어온 인자가 5보다 작은 경우</li>
+<li><input checked="" disabled="" type="checkbox"> file1, cmd1, cmd2, file2 중 하나라도 없는 경우</li>
+<li><input checked="" disabled="" type="checkbox"> fork 에 실패한 경우</li>
+<li><input checked="" disabled="" type="checkbox"> wait 시 자식프로세스가 비정상 종료된 경우</li>
+<li><input checked="" disabled="" type="checkbox"> 파일 1이 없는 경우 출력 zsh: no such file or directory: permit 결과 out 파일 생성되나 | 로 넘어가는것이 없음</li>
+<li><input checked="" disabled="" type="checkbox"> 파일 1이 존재하나 퍼미션이 없는 경우 출력 zsh: permission denied: un_in 결과 out 파일 생성되나 | 로 넘어가는것이 없음</li>
+<li><input disabled="" type="checkbox"> 명령어 1이 존재하지 않는 경우 출력 zsh: command not found: ca 결과 out 파일 생성되나 | 로 넘어가는것이 없음</li>
+<li><input disabled="" type="checkbox"> 명령어 1의 옵션이 잘못 들어간 경우 출력 cat: illegal option – k usage: cat [-benstuv] [file …] 결과 out 파일 생성되나 | 로 넘어가는것이 없음</li>
+<li><input disabled="" type="checkbox"> 명령어 2가 존재하지 않는 경우 출력 zsh: command not found: ca 결과 빈 파일 생성</li>
+<li><input disabled="" type="checkbox"> 명령어 2의 옵션이 잘못 들어간 경우 출력 cat: illegal option – k usage: cat [-benstuv] [file …] 결과 빈 파일 생성</li>
+<li><input checked="" disabled="" type="checkbox"> 파일 2가 존재하나 퍼미션이 없는 경우 출력 zsh: permission denied: un_out</li>
+</ul>
+<h1>구현</h1>
+<p>parent precess 는 컨트롤만 해 준다 cmd 갯수 만큼 child 를 fork 한 뒤 만든 순서대로 넘버링을 해 준다 child 구조체를 생성해 각각 child 에 pipe 를 하나씩 뚫어서 넣어 준다 0번 child 와 마지막 child 를 제외한 나머지는 본인의 pipe 로 다음 child 와 연결한다 이전의 child 와 이전 child 의 pipe 를 이용하여 연결한다 0번 child 는 file 을 open 하여 연결한 뒤 다음 child 와 연결한다 마지막 child 는 이전의 child 와 연결한 뒤 file 을 open 하여 연결한다 결과적으로 cmd 갯수 만큼의 child 들이 cmd 의 순서대로 연결이 되며 시작과 끝은 in, out file 과 연결이 된다</p>
+<p>here_doc 의 경우 1번 cmd 의 위치에 LIMITER 가 들어있다 execve 를 만나기 전 get_next_line 으로 한줄씩 받아와 준 뒤 ft_printf 를 사용해 stdout으로 내보내준다 물론 stdout 은 이미 다음 child 와 pipe 로 연결되어있다 입력이 끝나면 execve 를 만나지 않도록 바로 exit 시켜준다</p>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

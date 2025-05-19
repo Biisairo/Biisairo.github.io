@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ASM</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+                <h2>하위 그룹</h2>
+                <ul>
+                    
+                        <li><a href="https://biisairo.github.io/Study/Language/">Language</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/">리얼월드 HTTP</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/Server/">Server</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/UNIX/">UNIX</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/VIM/">VIM</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/computer%20science/">computer science</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/%ec%9a%b4%ec%98%81%ec%b2%b4%ec%a0%9c/">운영체제</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/">네트워크</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/OpenGL/">OpenGL</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/Object%20Oriented%20Programming/">Object Oriented Programming</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/%ec%b1%85/">책</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/">42</a></li>
+                    
+                </ul>
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/GIT.html">GIT</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/ASM.html">ASM</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/cmake.html">cmake</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98.html">알고리즘</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>ASM</h1>
+<h2>section</h2>
+<h3>data section</h3>
+<p>선언</p>
+<pre><code class="language-nasm">section.data
+</code></pre>
+<p>초기화된 데이터, 상수를 선언하는데 사용</p>
+<p>런타임에 변경되지 않음</p>
+<h3>bss section</h3>
+<p>선언</p>
+<pre><code class="language-nasm">section.bss
+</code></pre>
+<p>변수 선언에 사용</p>
+<h3>text section</h3>
+<p>선언</p>
+<pre><code class="language-nasm">section.text
+	global _start
+
+_start:
+....
+</code></pre>
+<p>실제 코드를 담는데 사용</p>
+<p>시작은 global _start 으로 시작되어야 함</p>
+<ul>
+<li>특정 버전 이후로 _main 으로 바뀌었다고 들었는데 확인 필요</li>
+<li>_start 가 프로그램이 시작될때 실행되는 함수</li>
+</ul>
+<h2>comment</h2>
+<p>주석</p>
+<pre><code class="language-nasm">;
+</code></pre>
+<p>; 를 사용하여 주석처리</p>
+<h2>어셈블리 언어 선언문</h2>
+<p>실행 가능한 명령어</p>
+<p>지침</p>
+<p>어셈블러 지시어</p>
+<p>의사 연산</p>
+<p>매크로</p>
+<h3>문법</h3>
+<pre><code class="language-nasm">[label] mneminic [operands] [;comment]
+</code></pre>
+<h2>compile</h2>
+<p>nasm -f macho64 [filename].s</p>
+<h2>memory segments</h2>
+<p>Data segment</p>
+<ul>
+<li>.data 로 이루어진 section
+<ul>
+<li>프로그램의 데이터 요소가 저장되는 메모리영역을 선언하는데 사용</li>
+<li>선언된 이후에는 변경되지 않으며 정적으로 유지됨</li>
+</ul>
+</li>
+<li>.bss 로 이루어진 section
+<ul>
+<li>나중에 프로그램에서 선언할 데이터(변수)를 위한 정적 메모리 섹션</li>
+<li>0으로 채워져있음</li>
+</ul>
+</li>
+</ul>
+<p>Code segment</p>
+<ul>
+<li>.text 로 이루어진 section
+<ul>
+<li>고정된 공간</li>
+<li>코드가 저장되어 있음</li>
+</ul>
+</li>
+</ul>
+<p>Stack</p>
+<ul>
+<li>프로그램 내 함수 및 프로시저에 전달되는 데이터 값이 저장됨</li>
+</ul>
+<h2>Register</h2>
+<h3>접두사</h3>
+<p>AX 를 예시로 설명</p>
+<p>AL</p>
+<ul>
+<li>low</li>
+<li>AX 의 낮은 1바이트 (8비트)</li>
+</ul>
+<p>AH</p>
+<ul>
+<li>high</li>
+<li>AX 의 높은 1 바이트 (8비트)</li>
+</ul>
+<p>AX</p>
+<ul>
+<li>2 바이트 (16비트)</li>
+</ul>
+<p>EAX</p>
+<ul>
+<li>4 바이트 (32비트)</li>
+</ul>
+<p>RAX</p>
+<ul>
+<li>8 바이트 (64비트)</li>
+</ul>
+<h3>Data register</h3>
+<p>AX</p>
+<ul>
+<li>Accumulator</li>
+<li>누산기</li>
+<li>기본산술 레지스터</li>
+<li>함수의 반환값, 연산결과를 저장</li>
+</ul>
+<p>BX</p>
+<ul>
+<li>Base Address</li>
+<li>배열의 주소를 저장</li>
+</ul>
+<p>CX</p>
+<ul>
+<li>Counter</li>
+<li>반복분에서 횟수를 기록할때 사용</li>
+<li>저장된 값이 1씩 감소하며 0이 될때까지 반복한다</li>
+</ul>
+<p>DX</p>
+<ul>
+<li>Data</li>
+<li>AX 의 보조 레지스터</li>
+<li>AX 의 용량이 부족할 때 확장의 용도로 사용한다</li>
+<li>부호 확장 명령, 산술 및 논리 연산 보조를 담당한다</li>
+</ul>
+<h3>Pointer register</h3>
+<p>IP</p>
+<ul>
+<li>Instruction Pointer</li>
+<li>프로그램 카운터의 역할을 수행</li>
+<li>실행할 다음 명령어의 오프셋 주소를 저장</li>
+</ul>
+<p>SP</p>
+<ul>
+<li>Stack Pointer</li>
+<li>스택의 오프셋 주소를 저장</li>
+<li>항상 스택의 최상단 (TOP) 주소를 가지고 있음</li>
+<li>스택은 Base 가 높은 주소, Top 이 낮은주소를 가짐</li>
+<li>Top 은 위아래로 확장됨</li>
+<li>PUSH, POP 에 의해 간접적으로 변함</li>
+</ul>
+<p>BP</p>
+<ul>
+<li>Base Pointer</li>
+<li>현재 스택 프래임의 시작주소</li>
+<li>스택 프래임이 유지되는 동안은 바뀌지 않음</li>
+<li>현재 스택 프래임이 소멸되면 이전 스택 프래임의 시작주소를 저장</li>
+<li>스택 세그먼트에 있는 함수의 지역변수, 매개변수를 참조하기 위해 사용</li>
+<li>BP 의 오프셋과 SS 레지스터의 주소를 결합하여 파라미터의 위치를 가져옴</li>
+<li>특수한 주소 지정을 위한 레지스터로 SI, DI 와 결합하여 사용</li>
+</ul>
+<h3>Index register</h3>
+<p>SI</p>
+<ul>
+<li>Source Index</li>
+<li>문자열 작업의 소스 인덱스로 사용</li>
+<li>데이터를 조작/복사 할 때 원본 데이터의 주소를 저장</li>
+</ul>
+<p>DI</p>
+<ul>
+<li>Destination Index</li>
+<li>문자열 작업의 대상 인덱스로 사용</li>
+<li>데이터를 복사할 때 목적지 주소를 저장</li>
+</ul>
+<h3>Control register</h3>
+<p>OF</p>
+<ul>
+<li>Overflow Flag</li>
+<li>부호 있는 연산의 결과가 범위를 넘어갔을 경우</li>
+</ul>
+<p>DF</p>
+<ul>
+<li>Direction Flag</li>
+<li>문자열의 처리 방향</li>
+<li>설정 되어있는 경우 정방향 (주솟값 감소)</li>
+<li>설정되어있지 않은 경우 역방향 (주솟값 증가)</li>
+</ul>
+<p>IF</p>
+<ul>
+<li>Interrupt Flag</li>
+<li>설정되어 있으면 외부 인터럽트를 처리해야함을 알림</li>
+</ul>
+<p>TF</p>
+<ul>
+<li>Trap Flag</li>
+<li>디버그 모드에서 사용</li>
+<li>설정되어 있으면 프로세서의 동작을 단일 단계 모드로 설정</li>
+</ul>
+<p>SF</p>
+<ul>
+<li>Sign Flag</li>
+<li>산술 연산 결과의 부호를 표시</li>
+<li>설정되어 있을 경우 음수</li>
+</ul>
+<p>ZF</p>
+<ul>
+<li>Zero Flag</li>
+<li>산술, 비교연산 결과를 표시</li>
+<li>설정된 경우 산술, 비교의 결과가 0이 아닌 경우</li>
+</ul>
+<p>AF</p>
+<ul>
+<li>Auxiliary Carry Flag</li>
+</ul>
+<p>PF</p>
+<ul>
+<li>Parity Flag</li>
+<li>산술 연산에서 얻은 결과에서 1비트의 수</li>
+<li>설정된 경우는 짝수, 설정이 되지 않은 경우 홀수</li>
+</ul>
+<p>CF</p>
+<ul>
+<li>Carry Flag</li>
+<li>산술 연산 후 가장 고차 비트 (제일 왼쪽 비트)에서 올림이 있는지를 표시</li>
+<li>시프트, 회전 연산에서 마지막 비트의 내용을 저장</li>
+</ul>
+<h3>Segment register</h3>
+<p>CS</p>
+<ul>
+<li>Code Segment</li>
+<li>실행할 명령어를 저장하는 영역</li>
+<li>code segment 의 시작 주소를 저장</li>
+</ul>
+<p>DS</p>
+<ul>
+<li>Data Segment</li>
+<li>데이터, 상수 및 작업 영역을 저장하는 영역</li>
+<li>data segment 의 시작 주소를 저장</li>
+</ul>
+<p>SS</p>
+<ul>
+<li>Stack Segment</li>
+<li>스택의 주소는 높은 주소에서 낮은 주소 방향으로 저장, 확장됨</li>
+<li>스택의 시작 주소를 저장</li>
+</ul>
+<p>이외</p>
+<ul>
+<li>BSS segment
+<ul>
+<li>초기화 되지 않은 전역변수, 정정변수가 저장되는 영역</li>
+<li>런타임에 크기가 변하지 않음</li>
+</ul>
+</li>
+<li>Heap segment
+<ul>
+<li>런타임에 프로그래머가 직접 할당한 메모리가 저장되는 영역</li>
+<li>메모리의 낮은 주소에서 높은 주소로 저장, 확장됨</li>
+<li>힙과 스택은 반대방향에서 서로를 향하는 방향으로 저장, 확장됨</li>
+</ul>
+</li>
+</ul>
+<h2>System Call</h2>
+<p>시스템 콜의 사용</p>
+<ul>
+<li>rax 레지스터에 시스템콜 번호를 저장</li>
+<li>syscall 로 시스템콜 사용</li>
+<li>함수의 결과 (return) 은 rax 레지스터에 저장</li>
+</ul>
+<p>총 6개의 매개변수를 사용할 수 있음</p>
+<ul>
+<li>rdi, rsi, rdx, rcx, r8, r9</li>
+</ul>
+<p>-S 옵션을 사용해 c 를 asm 파일로 만들어 확인했을 때</p>
+<ul>
+<li>callq [syscall func] 처럼 사용하는걸 확인 함</li>
+<li>[syscall func] 에는 _write 처럼 들어감</li>
+<li>unistd 함수에 _ 를 붙여 사용하면 될듯..?</li>
+</ul>
+<p>syscall table 은 x86 syscall table 을 참고</p>
+<ul>
+<li>syscall 번호는</li>
+<li><a href="https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master">https://opensource.apple.com/source/xnu/xnu-1504.3.12/bsd/kern/syscalls.master</a></li>
+<li>확인</li>
+<li>4 번이면 <code>0x2000004</code> 로 사용</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>syscall number</strong></th>
+<th><strong>syscall name</strong></th>
+<th><strong>number of parameters</strong></th>
+<th><strong>parameters</strong></th>
+<th><strong>registers used to pass parameters</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x2000001</td>
+<td>sys_exit</td>
+<td>1</td>
+<td>int status</td>
+<td>rdi</td>
+</tr>
+<tr>
+<td>0x2000003</td>
+<td>sys_read</td>
+<td>3</td>
+<td>int fd, void* buf, size_t nbytes</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x2000004</td>
+<td>sys_write</td>
+<td>3</td>
+<td>int fd, const void* buf, size_t nbytes</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x2000005</td>
+<td>sys_open</td>
+<td>3</td>
+<td>const char* path, int flags, mode_t mode</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x2000006</td>
+<td>sys_close</td>
+<td>1</td>
+<td>int fd</td>
+<td>rdi</td>
+</tr>
+<tr>
+<td>0x200000a</td>
+<td>sys_unlink</td>
+<td>1</td>
+<td>const char* path</td>
+<td>rdi</td>
+</tr>
+<tr>
+<td>0x200000c</td>
+<td>sys_fork</td>
+<td>0</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0x200000e</td>
+<td>sys_link</td>
+<td>2</td>
+<td>const char* from, const char* to</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000010</td>
+<td>sys_chdir</td>
+<td>1</td>
+<td>const char* path</td>
+<td>rdi</td>
+</tr>
+<tr>
+<td>0x2000011</td>
+<td>sys_fchdir</td>
+<td>1</td>
+<td>int fd</td>
+<td>rdi</td>
+</tr>
+<tr>
+<td>0x2000012</td>
+<td>sys_mknod</td>
+<td>3</td>
+<td>const char* path, mode_t mode, dev_t dev</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x2000013</td>
+<td>sys_chmod</td>
+<td>2</td>
+<td>const char* path, mode_t mode</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000014</td>
+<td>sys_chown</td>
+<td>3</td>
+<td>const char* path, uid_t owner, gid_t group</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x2000017</td>
+<td>sys_getpid</td>
+<td>0</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0x2000019</td>
+<td>sys_getppid</td>
+<td>0</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0x200001c</td>
+<td>sys_access</td>
+<td>2</td>
+<td>const char* path, int mode</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000021</td>
+<td>sys_stat</td>
+<td>2</td>
+<td>const char* path, struct stat* buf</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000022</td>
+<td>sys_lstat</td>
+<td>2</td>
+<td>const char* path, struct stat* buf</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000023</td>
+<td>sys_fstat</td>
+<td>2</td>
+<td>int fd, struct stat* buf</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000026</td>
+<td>sys_gettimeofday</td>
+<td>2</td>
+<td>struct timeval* tv, struct timezone* tz</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000028</td>
+<td>sys_getrusage</td>
+<td>2</td>
+<td>int who, struct rusage* rusage</td>
+<td>rdi, rsi</td>
+</tr>
+<tr>
+<td>0x2000029</td>
+<td>sys_getuid</td>
+<td>0</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0x200002a</td>
+<td>sys_geteuid</td>
+<td>0</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0x200002b</td>
+<td>sys_getgid</td>
+<td>0</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0x200002c</td>
+<td>sys_getegid</td>
+<td>0</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0x200002e</td>
+<td>sys_sigaction</td>
+<td>4</td>
+<td>int signum, const struct sigaction* act, struct sigaction* oldact, size_t sigsetsize</td>
+<td>rdi, rsi, rdx, rcx</td>
+</tr>
+<tr>
+<td>0x2000032</td>
+<td>sys_waitid</td>
+<td>5</td>
+<td>idtype_t idtype, id_t id, siginfo_t* infop, int options, struct rusage* rusage</td>
+<td>rdi, rsi, rdx, rcx, r8</td>
+</tr>
+<tr>
+<td>0x2000034</td>
+<td>sys_sysctl</td>
+<td>6</td>
+<td>int* name, u_int namelen, void* oldp, size_t* oldlenp, void* newp, size_t newlen</td>
+<td>rdi, rsi, rdx, rcx, r8, r9</td>
+</tr>
+<tr>
+<td>0x2000035</td>
+<td>sys_getdirentries</td>
+<td>4</td>
+<td>int fd, char* buf, u_int count, long* basep</td>
+<td>rdi, rsi, rdx, rcx</td>
+</tr>
+<tr>
+<td>0x2000036</td>
+<td>sys_mmap</td>
+<td>6</td>
+<td>caddr_t addr, size_t len, int prot, int flags, int fd, off_t pos</td>
+<td>rdi, rsi, rdx, rcx, r8, r9</td>
+</tr>
+<tr>
+<td>0x2000037</td>
+<td>sys_lseek</td>
+<td>3</td>
+<td>int fd, off_t offset, int whence</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x200003e</td>
+<td>sys_mprotect</td>
+<td>3</td>
+<td>caddr_t addr, size_t len, int prot</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x200003f</td>
+<td>sys_msync</td>
+<td>3</td>
+<td>caddr_t addr, size_t len, int flags</td>
+<td>rdi, rsi, rdx</td>
+</tr>
+<tr>
+<td>0x2000042</td>
+<td>sys_munmap</td>
+<td>2</td>
+<td>caddr_t addr,</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>Addressing Modes</h2>
+<p>대부분의 어셈블리어 명령에서는 피 연산자가 필요하다</p>
+<p>세가지 addressing</p>
+<ul>
+<li>
+<p>register addressing</p>
+<ul>
+<li>레지스터가 피 연산자인 경우</li>
+<li>레지스터간의 데이터 처리는 메모리가 필요하지 않으므로 빠른 처리가 가능</li>
+</ul>
+<pre><code class="language-nasm">; example
+MOV EAX, EBX
+</code></pre>
+</li>
+<li>
+<p>immediate addressing</p>
+<ul>
+<li>상수값, 표현식을 가짐</li>
+<li>첫번째 피 연산자는 메모리 위치, 레지스터</li>
+<li>두번째 피 연산자는 상수같은 값</li>
+</ul>
+<pre><code class="language-nasm">; example
+MOV AX, 45H
+</code></pre>
+</li>
+<li>
+<p>direct memory addressing</p>
+<ul>
+<li>메모리 주소 지정모드에서 피연산자를 지정하면 data segment 에 대한 메인 메모리에 직접 액세스 하게 됨 → 속도가 느려짐</li>
+<li>메모리에서 데이터의 위치를 찾기 위해선 DS 레지스터가 가진 세그먼트 시작 주소와 오프셋 값이 필요</li>
+<li>오프셋 값
+<ul>
+<li>유효주소 라고 함</li>
+</ul>
+</li>
+<li>해당 오프셋 값은 명령어의 일부로 지정되며 변수 이름으로 표시되어짐</li>
+<li>프로그램에서 사용하는 변수들의 오프셋 값을 심볼 테이블에 저장해 관리</li>
+</ul>
+<pre><code class="language-nasm">; example
+ADD BYTE_VALUE, DL
+</code></pre>
+</li>
+<li>
+<p>direct-offset addressing</p>
+<ul>
+<li>산술 연산자를 사용해 주소를 수정</li>
+</ul>
+<pre><code class="language-nasm">; example
+BYTE_TABLE DB 14, 15, 22, 45 ; Table of byte
+</code></pre>
+<ul>
+<li>테이블에서 데이터를 액세스</li>
+</ul>
+<pre><code class="language-nasm">; example
+MOV CL, BYTE_TABLE[2] ; get 3rd element of BYTE_TABLE
+MOV CL, BYTE_TABLE + 2 ; get 3rd element of BYTE_TABLE
+</code></pre>
+</li>
+<li>
+<p>indirect memroy addressing</p>
+<ul>
+<li>메모리 참조를 위해 대괄호안에 레지스터를 넣어 해당 주소를 참조</li>
+</ul>
+<pre><code class="language-nasm">; example
+MY_TABLE TIMES 10 DW 0 ; 2바이트의 WORD 를 10개 할당한 뒤 0으로 초기화
+MOV EBX, [MY_TABLE] ; Effective address if MY_TABLE in EBX
+MOV [EBX], 110 ; MY_TABLE[0] == 110
+ADD EBX, 2 ; EBX 에 2를 더함, WORD 가 2바이트 이기 때문에 MY_TABLE[1] 을 가리킴
+MOV [EBX], 123 ; MY_TABLE[1] == 123
+</code></pre>
+<ul>
+<li>Effective Address
+<ul>
+<li>Base(레지스터) + Index(레지스터) * Scale(자료형의 비트값) + Displacement()</li>
+<li>위의 데이터를 가지고 나온 실제 offset, 혹은 주솟값</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>MOV Instruction</p>
+<ul>
+<li>MOV destination, source</li>
+<li>source 의 데이터를 destination 으로 복사</li>
+<li>destication = source 와 동일</li>
+</ul>
+</li>
+<li>
+<p>데이터의 크기</p>
+<ul>
+<li>BYTE : 1</li>
+<li>WORD : 2</li>
+<li>DWROD : 4</li>
+<li>QWORD : 8</li>
+<li>TBYTE : 10</li>
+</ul>
+</li>
+</ul>
+<h2>Variables</h2>
+<p>변수선언 및 초기화</p>
+<pre><code class="language-nasm">[variable-name] define-directive initial-value [,initial-value … ]
+</code></pre>
+<ul>
+<li>directive</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Purpose</th>
+<th>Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DB</td>
+<td>Define Byte</td>
+<td>1 byte</td>
+</tr>
+<tr>
+<td>DW</td>
+<td>Define Word</td>
+<td>2 byte</td>
+</tr>
+<tr>
+<td>DD</td>
+<td>Define Double Word</td>
+<td>4 byte</td>
+</tr>
+<tr>
+<td>DQ</td>
+<td>Define Quad Word</td>
+<td>8 byte</td>
+</tr>
+<tr>
+<td>DT</td>
+<td>Define Ten Byte</td>
+<td>10 byte</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>주의사항
+<ul>
+<li>각각의 byte 는 ASCII 를 16진수로 저장한다</li>
+<li>각 10진수는 16진수로 변환되어 저장한다</li>
+<li>little-endian 으로 저장한다</li>
+<li>음수는 2의 보수로 저장한다</li>
+<li>부동소수점 숫자는 32, 64 bit 를 사용하여 표현한다</li>
+</ul>
+</li>
+</ul>
+<p>초기화 하지 않은 변수 선언</p>
+<ul>
+<li>directive</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RESB</td>
+<td>Reserve a Byte</td>
+</tr>
+<tr>
+<td>RESW</td>
+<td>Reserve a Word</td>
+</tr>
+<tr>
+<td>RESD</td>
+<td>Reserve a Double Word</td>
+</tr>
+<tr>
+<td>RESQ</td>
+<td>Reserve a Quad Word</td>
+</tr>
+<tr>
+<td>RESQ</td>
+<td>Reserve a Ten Byte</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>초기화 하지 않은 데이터공간을 예약하게 됨</li>
+</ul>
+<p>Multiple Initialization</p>
+<ul>
+<li>TIMES 지시어를 사용해 동일한 값으로 여러번 초기화할 수 있다</li>
+<li>배열을 만들 수 있다</li>
+</ul>
+<pre><code class="language-nasm">TABLE TIMES 9 DW 0 ; DW 가 9개가 들어가고 0으로 초기화된 TABLE 변수(배열로서 사용가능)
+</code></pre>
+<h2>Constants</h2>
+<p>상수를 관리하는 세가지 지시어</p>
+<ul>
+<li>EQU</li>
+<li>%assign</li>
+<li>%define</li>
+</ul>
+<p>EQU</p>
+<ul>
+<li>상수를 선언하는 지시어</li>
+</ul>
+<pre><code class="language-nasm">CONSTANT_NAME EQU [expression]
+; example
+TOTAL_COUNT EQU 50
+</code></pre>
+<p>%assign</p>
+<ul>
+<li>상수를 선언하는 지시어</li>
+<li>재정의가 가능함</li>
+</ul>
+<pre><code class="language-nasm">%assign CONSTANT_NAME [expression]
+; example
+%assign TOTAL 10
+%assign TOTAL 20 ; redefine
+</code></pre>
+<p>%define</p>
+<ul>
+<li>숫자, 문자열 상수 모두 정의 가능</li>
+<li>c 의 #define 과 유사</li>
+<li>재정의가 가능함</li>
+<li>대소문자를 구분함</li>
+</ul>
+<pre><code class="language-nasm">%define CONSTANT_NAME [expression]
+; example
+%define PTR [EBP + 4] ; 코드에서 PTR 을 [EBP + 4] 로 대체
+</code></pre>
+<h2>Arithmetic Instructions</h2>
+<p>산술 명령어</p>
+<p>INC 명령어</p>
+<ul>
+<li>피연산자를 하나 증가시키는데 사용</li>
+</ul>
+<pre><code class="language-nasm">INC destination
+</code></pre>
+<p>DEC 명령어</p>
+<ul>
+<li>피연산자를 하나 감소시키는데 사용</li>
+</ul>
+<pre><code class="language-nasm">DEC destination
+</code></pre>
+<p>ADD, SUB 명령어</p>
+<ul>
+<li>dest 에서 source 를 더하거나 뺄때 사용</li>
+<li>결과값은 dest 에 저장</li>
+<li>dest 는 값이 저장될 수 있는 레지스터나 메모리여야 하며 source 는 값이 있는 레지스터, 메모리, 상수일 수 있음</li>
+</ul>
+<pre><code class="language-nasm">ADD destination, source
+SUB destination, source
+</code></pre>
+<p>MUL, IMUL 명령어</p>
+<ul>
+<li>두 수를 곱할때 사용</li>
+</ul>
+<pre><code class="language-nasm">MUL [곱하는 수]
+IMUL [곱하는 수]
+</code></pre>
+<ul>
+<li>MUL 은 부호없는 데이터 (multiply)</li>
+<li>IMUL 은 부호있는 데이터 (Integer multiply)</li>
+<li>두 명령어 모두 carry, overflow flag 에 영향을 줌</li>
+<li>곱해지는 수와 곱하는 수의 크기에 따라 두개의 레지스터에 저장됨
+<ul>
+<li>두 바이트를 곱하는 경우
+<ul>
+<li>곱해지는 수는 AL 레지스터에 저장되어 있어야 함</li>
+<li>곱하는 수는 메모리나 다른 레지스터에 저장되어있음</li>
+<li>곱셈의 결과는 AX 레지스터에 저장됨
+<ul>
+<li>결과의 상위 8비트는 AH 에 저장</li>
+<li>결과의 하위 8비트는 AL 에 저장</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>두 WORD 를 곱하는 경우
+<ul>
+<li>곱해지는 수는 AX 레지스터에 저장되어 있어야 함</li>
+<li>곱하는 수는 메모리나 다른 레지스터에 저장되어있음</li>
+<li>곱셈의 결과는 두개의 레지스터에 저장됨
+<ul>
+<li>상위 부분은 DX 에 저장</li>
+<li>하위 부분은 AX 에 저장</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>두 DWORD 를 곱하는 경우
+<ul>
+<li>곱해지는 수는 EAX 레지스터에 저장되어 있어야 함</li>
+<li>곱하는 수는 메모리나 다른 레지스터에 저장된 복소수 값 이어야 함</li>
+<li>곱셈의 결과는 EDX, EAX 레지스터에 저장됨
+<ul>
+<li>상위 부분은 EDX 레지스터에 저장됨</li>
+<li>하위 부분은 EAX 레지스터에 저장됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>DIV, IDIV 명령어</p>
+<ul>
+<li>두 수를 나눌때 사용</li>
+</ul>
+<pre><code class="language-nasm">DIV [나누는 수]
+IDIV [나누는 수]
+</code></pre>
+<ul>
+<li>오버플로우가 발생할 경우 프로세서가 인터럽트를 생성함</li>
+<li>DIV 는 부호없는 데이터</li>
+<li>IDIV 는 부호있는 데이터</li>
+<li>6개의 상태 플래그에 모두 영향을 줌</li>
+<li>나누는 수의 크기에 따라 사용하는 레지스터가 달라짐
+<ul>
+<li>나누는 수가 1 바이트인 경우
+<ul>
+<li>나누어 지는 수는 AX 에 저장되어 있어야 함</li>
+<li>나눈 몫은 AL 에 저장</li>
+<li>나머지는 AH 에 저장</li>
+</ul>
+</li>
+<li>나누는 수가 1 WORD 인 경우
+<ul>
+<li>나누어지는 수의 상위 비트는 DX, 하위 비트는 AX 에 저장되어 있어야 함</li>
+<li>몫은 AX 에 저장</li>
+<li>나머지는 DX 에 저장</li>
+</ul>
+</li>
+<li>나누는 수가 1 DWORD 인 경우
+<ul>
+<li>나누어지는 수의 상위 비트는 EDX, 하위 비트는 EAX 에 저장되어 있어야 함</li>
+<li>몫은 EAX 에 저장</li>
+<li>나머지는 EDX 에 저장</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Logical Instructions</h2>
+<p>논리 명령어</p>
+<ul>
+<li>
+<p>AND</p>
+<ul>
+<li>AND operand1, operand2</li>
+</ul>
+</li>
+<li>
+<p>OR</p>
+<ul>
+<li>OR operand1, operand2</li>
+</ul>
+</li>
+<li>
+<p>XOR</p>
+<ul>
+<li>XOR operand1, operand2</li>
+</ul>
+</li>
+<li>
+<p>TEST</p>
+<ul>
+<li>TEST operand1, operand2</li>
+</ul>
+</li>
+<li>
+<p>NOT</p>
+<ul>
+<li>NOT operand</li>
+</ul>
+</li>
+<li>
+<p>AND, OR, XOR</p>
+<ul>
+<li>두 피연산자를 비교해 나온 결과를 operand1 에 저장</li>
+</ul>
+</li>
+<li>
+<p>TEST</p>
+<ul>
+<li>두 피연산자를 AND 연산 하지만 결과를 operand1 에 저장하지 않음</li>
+</ul>
+</li>
+<li>
+<p>NOT</p>
+<ul>
+<li>피 연산자를 NOT 해서 저장</li>
+</ul>
+</li>
+</ul>
+<h2>Conditions</h2>
+<p>비 조건부 jump</p>
+<ul>
+<li>JMP 명령어를 사용</li>
+<li>현재 실행 중인 코드를 특정 명령어의 주소로 이동</li>
+</ul>
+<p>조건부 jump</p>
+<ul>
+<li>특정 조건에 따라 명령어의 주소로 이동</li>
+<li>J&lt;조건&gt; 명령어를 사용</li>
+<li>IP 의 오프셋 값을 변경하여 수행</li>
+</ul>
+<p>CMP 명령어</p>
+<ul>
+<li>두 연산자를 비교</li>
+</ul>
+<pre><code class="language-nasm">CMP destination, source
+</code></pre>
+<ul>
+<li>두 연산자를 비교하기 위해 두 연산자를 빼서 확인</li>
+<li>dest, src 연산자를 파괴하지 않음</li>
+</ul>
+<p>unconditional jump</p>
+<ul>
+<li>JMP 명령어에 의해 수행</li>
+</ul>
+<p>conditional jump</p>
+<ul>
+<li>지정된 조건이 충족되면 대상 명령어로 제어를 전달</li>
+<li>산술 연산에서 사용되는 조건부 점프 명령어</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+<th>확인하는 flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JE/JZ</td>
+<td>Jump Equal or Jump Zero</td>
+<td>ZF</td>
+</tr>
+<tr>
+<td>JNE/JNZ</td>
+<td>Jump Not Equal or Jump Not Equal</td>
+<td>ZF</td>
+</tr>
+<tr>
+<td>JG/JNLE</td>
+<td>Jump Greater or Jump Not Less/Equal</td>
+<td>OF, SF, ZF</td>
+</tr>
+<tr>
+<td>JGE/JNL</td>
+<td>Jump Greater/Equal or Jump Not Less</td>
+<td>OF, SF</td>
+</tr>
+<tr>
+<td>JL/JNGE</td>
+<td>Jump Less or Jump Not Greater/Equal</td>
+<td>OF, SF</td>
+</tr>
+<tr>
+<td>JLE/JNG</td>
+<td>Jump Less/Equal or Jump Not Greater</td>
+<td>OF, SF, ZF</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>논리 연산에서 사용되는 조건부 점프 명령어</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+<th>확인하는 flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JE/JZ</td>
+<td>Jump Equal or Jump Zero</td>
+<td>ZF</td>
+</tr>
+<tr>
+<td>JNE/JNZ</td>
+<td>Jump Not Equal or Jump Not Equal</td>
+<td>ZF</td>
+</tr>
+<tr>
+<td>JA/JNBE</td>
+<td>Jump Above or Jump Not Below/Equal</td>
+<td>SF, ZF</td>
+</tr>
+<tr>
+<td>JAE/JNB</td>
+<td>Jump Above/Equal or Jump Not Below</td>
+<td>SF</td>
+</tr>
+<tr>
+<td>JB/JNAE</td>
+<td>Jump Below or Jump Not Above/Equal</td>
+<td>SF</td>
+</tr>
+<tr>
+<td>JBE/JNA</td>
+<td>Jump Below/Equal or Jump Not Above</td>
+<td>SF, ZF</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>특별한 경우 사용되는 조건부 점프 명령어</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>명령어</th>
+<th>설명</th>
+<th>확인하는 flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JXCZ</td>
+<td>Jump if CX is Zeor</td>
+<td>none</td>
+</tr>
+<tr>
+<td>JC</td>
+<td>Jump if Carry</td>
+<td>CF</td>
+</tr>
+<tr>
+<td>JNC</td>
+<td>Jump if No Carry</td>
+<td>CF</td>
+</tr>
+<tr>
+<td>JO</td>
+<td>Jump if Overflow</td>
+<td>OF</td>
+</tr>
+<tr>
+<td>JNO</td>
+<td>Jump if No Overflow</td>
+<td>OF</td>
+</tr>
+<tr>
+<td>JP/JPE</td>
+<td>Jump Parity or Jump Parity Even</td>
+<td>PF</td>
+</tr>
+<tr>
+<td>JNP/JPO</td>
+<td>Jump No Parity or Jump Parity Odd</td>
+<td>PF</td>
+</tr>
+<tr>
+<td>JS</td>
+<td>Jump Sign (negative value)</td>
+<td>SF</td>
+</tr>
+<tr>
+<td>JNS</td>
+<td>Jump No Sign (positive value)</td>
+<td>SF</td>
+</tr>
+</tbody>
+</table>
+<h2>Loops</h2>
+<p>JMP 명령어를 사용해 loop 를 만들 수 있다</p>
+<p>LOOP 구문을 사용해 loop 를 만들 수 있다</p>
+<pre><code class="language-nasm">LOOP lable
+; example
+mov ECX, 10
+l1:
+&lt;loop body&gt;
+loop l1
+</code></pre>
+<ul>
+<li>lable 은 jump 에서와 같이 대상을 식별하는 레이블로 사용</li>
+<li>LOOP 는 ECX 를 루프 카운터로 사용</li>
+<li>LOOP 를 사용하게 되면 ECX 가 감소</li>
+<li>ECX 가 0 에 도달하면 루프 중단</li>
+</ul>
+<h2>Numbers</h2>
+<p>ASCII 표현</p>
+<ul>
+<li>ascii 는 10 로</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

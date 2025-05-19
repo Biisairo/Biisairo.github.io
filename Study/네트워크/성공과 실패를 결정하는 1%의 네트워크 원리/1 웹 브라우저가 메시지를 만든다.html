@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1 웹 브라우저가 메시지를 만든다</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/1%20%ec%9b%b9%20%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80%ea%b0%80%20%eb%a9%94%ec%8b%9c%ec%a7%80%eb%a5%bc%20%eb%a7%8c%eb%93%a0%eb%8b%a4.html">1 웹 브라우저가 메시지를 만든다</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/2%20TCP%20IP%20%ec%9d%98%20%eb%8d%b0%ec%9d%b4%ed%84%b0%eb%a5%bc%20%ec%a0%84%ea%b8%b0%20%ec%8b%a0%ed%98%b8%eb%a1%9c%20%eb%a7%8c%eb%93%a4%ec%96%b4%20%eb%b3%b4%eb%82%b8.html">2 TCP IP 의 데이터를 전기 신호로 만들어 보낸</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/3%20%ec%bc%80%ec%9d%b4%eb%b8%94%ec%9d%98%20%ec%95%9e%ec%9d%80%20LAN%20%ea%b8%b0%ea%b8%b0%ec%98%80%eb%8b%a4.html">3 케이블의 앞은 LAN 기기였다</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/4%20%ec%95%a1%ec%84%b8%ec%8a%a4%20%ed%9a%8c%ec%84%a0%ec%9d%84%20%ed%86%b5%ed%95%b4%20%ec%9d%b8%ed%84%b0%eb%84%b7%ec%9d%98%20%eb%82%b4%eb%b6%80%eb%a1%9c.html">4 액세스 회선을 통해 인터넷의 내부로</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/5%20%ec%84%9c%eb%b2%84%ec%b8%a1%ec%9d%98%20LAN%20%ec%97%90%eb%8a%94%20%eb%ac%b4%ec%97%87%ec%9d%b4%20%ec%9e%88%eb%8a%94%ea%b0%80.html">5 서버측의 LAN 에는 무엇이 있는가</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/6%20%ec%9b%b9%20%ec%84%9c%eb%b2%84%ec%97%90%20%eb%8f%84%ec%b0%a9%ed%95%98%ec%97%ac%20%ec%9d%91%eb%8b%b5%20%eb%8d%b0%ec%9d%b4%ed%84%b0%ea%b0%80%20%ec%9b%b9%20%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80.html">6 웹 서버에 도착하여 응답 데이터가 웹 브라우저</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>1. 웹 브라우저가 메시지를 만든다</h1>
+<h2>1. HTTP 리퀘스트 메시지를 작성한다</h2>
+<h3>1. URL 에 입력에서 시작</h3>
+<ul>
+<li>URL
+<ul>
+<li>http:, https:, file:, mailto: 등 으로 시작</li>
+</ul>
+</li>
+<li>사용하는 프로토콜에 맞는 도메인명을 사용</li>
+</ul>
+<h3>2. URL 해독</h3>
+<ul>
+<li>브라우저가 서버에 보내는 리퀘스트를 작성하기 위한 첫 단계</li>
+<li>URL 의 구성 요소
+<ul>
+<li>{프로토콜이름}://{서버이름}[/{디렉토리이름}/{파일명}]</li>
+</ul>
+</li>
+</ul>
+<h3>4. HTTP 의 기본 개념</h3>
+<ul>
+<li>클라이언트 → 서버 : request 메시지
+<ul>
+<li>무엇을
+<ul>
+<li>URI</li>
+</ul>
+</li>
+<li>어떻게 해서
+<ul>
+<li>메소드</li>
+<li>GET, POST 등</li>
+</ul>
+</li>
+<li>보충정보
+<ul>
+<li>헤더 필드에 기재</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>서버 → 클라이언트 : response 메시지
+<ul>
+<li>실행 결과
+<ul>
+<li>스테이터스 코드</li>
+</ul>
+</li>
+<li>헤더</li>
+<li>데이터</li>
+</ul>
+</li>
+</ul>
+<h3>5. HTTP 요청 메시지 작성</h3>
+<ul>
+<li>리퀘스트 라인
+<ul>
+<li>요청 메시지의 첫번째 줄</li>
+<li>{메소드}{ }{URI}{ }{HTTP버전}</li>
+</ul>
+</li>
+<li>메시지 헤더
+<ul>
+<li>두번째 이후의 줄</li>
+<li>부가적인 정보</li>
+<li>날짜, 데이터의 종류, 언어, 압축형식 등</li>
+</ul>
+</li>
+<li>공백 줄
+<ul>
+<li>헤더와 본문을 구분하는 줄</li>
+</ul>
+</li>
+<li>메시지 본문
+<ul>
+<li>POST 등의 메소드에서 서버로 데이터를 전달하는 영역</li>
+</ul>
+</li>
+</ul>
+<h3>6. 응답</h3>
+<ul>
+<li>스테이터스 코드
+<ul>
+<li>정상종료인지 오류인지를 나타내는 코드</li>
+</ul>
+</li>
+<li>데이터
+<ul>
+<li>태그
+<ul>
+<li>화면에 정보를 표시할 때 해당 형태의 데이터를 찾아 넣음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>하나의 request 메시지당 하나의 URI가 있음
+<ul>
+<li>한번에 하나의 파일을 전송하게 됨</li>
+<li>여러개의 파일을 받을때는 여러번의 요청을 보냄</li>
+</ul>
+</li>
+</ul>
+<h2>2. 웹 서버의 IP 주소를 DNS 서버에 조회한다</h2>
+<h3>1. IP 주소의 기본</h3>
+<ul>
+<li>브라우저에서 HTTP 메시지를 작성한 후 OS 로 하여금 대상의 웹 서버로 전송
+<ul>
+<li>브라우저에는 송출하는 기능은 없음</li>
+</ul>
+</li>
+<li>URL 에 쓰여있는 서버의 도메인명에서 IP 주소를 찾아냄</li>
+<li>TCP/IP
+<ul>
+<li>인터넷, 인트라넷 등의 기초가 되는 개념</li>
+<li>하나의 네트워크에 ‘라우터’를 이용하여 연결</li>
+</ul>
+</li>
+<li>IP 주소
+<ul>
+<li>네트워크 번호 + 호스트 번호</li>
+<li>32 비트의 디지털 데이터</li>
+<li>주로 . 으로 구분하여 4칸의 10진수로 표현
+<ul>
+<li>ex) 10.12.0.1</li>
+</ul>
+</li>
+<li>어디까지가 네트워크 번호인지, 호스트 번호인지 알기 위해 넷마스크를 사용</li>
+</ul>
+</li>
+<li>넷마스크
+<ul>
+<li>2진수로 IP 주소와 넷마스크를 비교해 넷마스크의 1 인 부분이 네트워크 번호, 이외의 부분이 호스트 번호</li>
+<li>둘을 AND 연산하면 네트워크 번호가 나온다</li>
+<li>호스트 번호가 전부 0 이면 특정 기기가 아닌 서브넷 자체를 가리킴</li>
+<li>호스트 번호가 전부 1 이면 서브넷 기기 전체에 패킷을 보내는 ‘브로드캐스트’</li>
+</ul>
+</li>
+<li>데이터의 운반
+<ul>
+<li>메시지를 송신하면 서브넷 안의 허브를 통해 송신측의 가장 가까운 라우터로 전달</li>
+<li>라우터는 수신 상대의 IP 에 따라 다음 라우터로 데이터를 전송</li>
+<li>최종적으로 수신자가 있는 서브넷의 허브로 전달 후 수신</li>
+</ul>
+</li>
+</ul>
+<h3>2. 도메인명과 IP 주소를 구분하여 사용하는 이유</h3>
+<ul>
+<li>실제 데이터를 전송할때는 IP 주소를 사용하여 전송 함</li>
+<li>IP 주소는 사람이 기억하기 어렵기 때문에 쉽게 사용할 수 있는 URL 주소를 사용 함</li>
+<li>DNS (Domain Name System)
+<ul>
+<li>도메인명과 IP 주소를 변환시켜주는 서버</li>
+</ul>
+</li>
+</ul>
+<h3>3. Socket 라이브러리가 IP 주소를 찾는 기능을 제공한다</h3>
+<ul>
+<li>DNS 리졸버 (리졸버)
+<ul>
+<li>DNS 의 클라이언트에 해당</li>
+<li>name resolution
+<ul>
+<li>DNS 를 사용해 IP 주소를 조사하는 것</li>
+</ul>
+</li>
+<li>socket 라이브러리의 gethostbyname 함수를 사용</li>
+</ul>
+</li>
+<li>리졸버는 Socket 라이브러리를 사용하여 만들어짐</li>
+</ul>
+<h3>4. 리졸버를 이용해여 DNS 서버를 조회한다</h3>
+<ul>
+<li>리졸버와 URL 를 입력하면 리졸버가 DNS 서버에 조회 메시지를 보내 IP 주소를 받아옴</li>
+</ul>
+<h3>5. 리졸버 내부의 작동</h3>
+<ul>
+<li>브라우저가 리졸버를 호출하면 브라우저의 제어권을 리졸버에게 넘겨줌</li>
+<li>제어권을 받은 리졸버가 DNS 서버에 문의를 하기 위한 메시지를 작성</li>
+<li>리졸버가 OS 에 포함된 프로토콜 스택을 호출하여 DNS 서버에 메시지를 전송
+<ul>
+<li>프로토콜 스택
+<ul>
+<li>프로토콜 드라이버, TCP/IP 소프트웨어 등으로 불림</li>
+<li>OS 내부에 내장된 네트워크 제어용 소프트웨어</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DNS 가 메시지를 받고 찾고자 하는 도메인의 IP 주소가 존재하면 다시 리졸버에게 IP 주소를 전송</li>
+<li>리졸버가 메시지를 해독한 후 IP 주소를 추출하여 프로세스에 전달</li>
+<li>프로세스는 IP 주소를 메모리에 저장</li>
+<li>프로세스에게 제어권이 넘어감</li>
+<li>DNS 서버에 메시지를 전송할 때도 DNS 서버의 IP 가 필요하나 이는 이미 설정이 되어있음</li>
+</ul>
+<h2>3. 전 세계의 DNS 서버가 연대한다</h2>
+<h3>1. DNS 서버의 기본 동작</h3>
+<ul>
+<li>클라이언트가 보내는 조회 메시지
+<ul>
+<li>(a) 이름
+<ul>
+<li>서버 이름이나 메일 배송 목적지(@뒤에오는 부분)</li>
+</ul>
+</li>
+<li>(b) 클래스
+<ul>
+<li>인터넷 이외의 네트워크에서도 DNS 를 사용하고자 고안된 부분</li>
+<li>현재는 인터넷 이외의 기능들은 소멸하여 사용하지 않음</li>
+<li>항상 인터넷을 나타내는 ‘IN’ 을 사용</li>
+</ul>
+</li>
+<li>(c) 타입
+<ul>
+<li>이름에 사용되는 정보의 종류</li>
+<li>타입에 따라 반환되는 정보가 달라짐</li>
+<li>A (address) : IP 주소</li>
+<li>MX : 메일 타입</li>
+<li>PTR : IP 주소에서 이름을 조사</li>
+<li>CANME : 이름에 닉네임 (alias) 를 붙임</li>
+<li>NS : DNS 에 IP 주소를 등록</li>
+<li>SOA : 도메인 속성 정보를 등록</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>리소스 레코드
+<ul>
+<li>정보가 등록된 기록</li>
+<li>실제는 설정 파일등을 사용하여 저장함</li>
+</ul>
+</li>
+</ul>
+<h3>2. 도메인의 계층</h3>
+<ul>
+<li>실제로는 많은 도메인을 등록하기 위해 정보를 분산시켜 다수의 DNS 서버에 등록하고 다수의 DNS 서버들을 연동하여 정보를 찾아냄</li>
+<li>도메인명
+<ul>
+<li><a href="http://www.a.b.c">www.a.b.c</a> 와 같이 점과 글자들로 나누어진 계층 구조를 가짐</li>
+<li>계층 하나하나를 도메인 이라고 함</li>
+<li>c 도메인 아래 b 도메인 아래 a 도메인 아래 www 도메인 의 구도</li>
+</ul>
+</li>
+<li>DNS 는 하나의 도메인을 일괄적으로 취급하고 관리
+<ul>
+<li>하나의 도메인을 분할할 수 없음</li>
+<li>하나의 DNS 서버에 여러개의 도메인을 저장</li>
+</ul>
+</li>
+<li>하위 도메인
+<ul>
+<li><a href="http://example.co.kr">example.co.kr</a> 이라는 도메인이 있을 때</li>
+<li>sub1.example.co.kr, <a href="http://sub2.example.co.kr">sub2.example.co.kr</a> 과 같은 하위 도메인을 만들어 사용할 수 있음</li>
+</ul>
+</li>
+<li>예시
+<ul>
+<li><a href="http://www.cyber.co.kr">www.cyber.co.kr</a>
+<ul>
+<li>kr
+<ul>
+<li>최상위 도메인</li>
+<li>한국에 할당 되어있음</li>
+</ul>
+</li>
+<li>co
+<ul>
+<li>국내의 도메인을 분류하기 위한 도메인</li>
+<li>company, 즉 회사들을 나타냄</li>
+</ul>
+</li>
+<li>cyber
+<ul>
+<li><a href="http://co.kr">co.kr</a> 에서 해당 회사에 할당 된 도메인</li>
+</ul>
+</li>
+<li>www
+<ul>
+<li>최하위 도메인</li>
+<li>회사 내의 서버의 이름</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>3. 담당 DNS 서버를 찾아 IP 주소를 가져온다</h3>
+<ul>
+<li>상위 도메인이 저장되어있는 DNS 서버부터 순차적으로 저장</li>
+<li>IP 를 찾을때는 도메인 이름의 상위 도메인이 저장되어있는 DNS 부터 순차적으로 탐색하여 최종 도메인이 저장되어있는 곳에서 IP 를 찾아냄</li>
+<li>최상위 도메인의 위에는 ‘루트 도메인’ 이 있으며 루트 도메인부터 탐색을 시작함</li>
+<li>도메인 이름에는 루트 도메인이 생략되어 있음</li>
+<li>실제로 명시할 때는 도메인 이름 마지막에 . 을 붙여 <a href="http://www.xxx.yyy">www.xxx.yyy</a>. 처럼 표기</li>
+<li>모든 DNS 서버에는 루트 도메인의 DNS 서버를 연결하여 어느 클라이언트가 접근하든 루트 도메인의 DNS 로 접근 할 수 있도록 함</li>
+<li>IP 주소를 찾아오는 단계
+<ul>
+<li>가장 가까운 DNS 서버에 접속하여 해당 도메인이름이 등록되어있는지 확인</li>
+<li>등록되어있지 않을 시 루트 도메인의 DNS 에 클라이언트의 메시지를 전송</li>
+<li>루트 도메인 DNS 는 최상위 도메인의 DNS 서버 주소를 반송</li>
+<li>DNS 서버가 최상위 도메인의 DNS 서버에 클라이언트의 메시지를 전송</li>
+<li>최상위 도메인의 DNS 서버는 하위 도메인의 DNS 서버 주소를 반송</li>
+<li>위의 작업을 반복하며 클라이언트에서 가장 가까운 DNS 서버는 원하는 도메인 이름의 IP 를 취득</li>
+<li>취득한 IP 주소를 클라이언트에게 전송</li>
+</ul>
+</li>
+<li>위 과정에서 무조건 하나의 도메인이 하나의 DNS 서버에 있는것이 아님</li>
+<li>하위 도메인이 상위 도메인과 같은 DNS 서버에 있을 시 한단계를 건너뛰고 바로 하위 도메인을 탐색</li>
+</ul>
+<h3>4. DNS 서버는 캐시 기능으로 빠르게 회답할 수 있다</h3>
+<ul>
+<li>DNS 는 한번 조사한 도메인 이름은 캐시에 기록함</li>
+<li>해당 DNS 에 같은 이름에 대한 요청이 들어왔을 때 탐색을 하지 않고 바로 전송해 줄 수 있음</li>
+<li>들어온 이름이 도메인에 등록이 되어있지 않을 경우또한 캐시에 기록 해 두어 탐색을 하지 않고 해당 도메인이 존재하지 않음을 알림</li>
+<li>캐시에 정보가 등록된 후 도메인이 바뀔 수 있음
+<ul>
+<li>캐시의 정보가 항상 정확하지 않음</li>
+<li>DNS 에서 클라이언트에 정보를 전달할 때 해당 내용이 캐시에 있던 내용인지 DNS 에서 탐색한 내용인지를 알려줌</li>
+</ul>
+</li>
+</ul>
+<h2>4. 프로토콜 스택에 메시지 송신을 의뢰한다</h2>
+<h3>1. 데이터 송.수신 동작의 개요</h3>
+<ul>
+<li>IP 주소의 조사가 끝난 뒤 상대의 웹 서버에 접속을 OS 의 프로토콜 스택을 통해 요청</li>
+<li>해당 요청은 웹 뿐이 아닌 모든 네트워크 어플리케이션에 공통으로 작동</li>
+<li>소켓 라이브러리를 사용
+<ul>
+<li>소켓
+<ul>
+<li>데이터의 출입구</li>
+<li>데이터가 지나가는 통로를 파이프라고 생각했을 때 파이프의 양쪽 입구</li>
+</ul>
+</li>
+<li>서버에서 소켓을 만들어 두면 클라이언트에서 소켓을 만들어 둘을 연결하게 됨</li>
+<li>데이터의 전송이 끝나면 서버나 클라이언트 한쪽에서 파이프를 분리하여 연결을 끊음</li>
+</ul>
+</li>
+<li>데이터 송.수신 단계
+<ul>
+<li>소켓 생성</li>
+<li>접속</li>
+<li>송수신</li>
+<li>연결 종료</li>
+</ul>
+</li>
+</ul>
+<h3>2. 소켓의 작성 단계</h3>
+<ul>
+<li>클라이언트에서 socket 라이브러리를 사용해 소켓을 생성</li>
+<li>소켓 생성함수를 호출해서 나오는 디스크립터를 메모리에 저장</li>
+<li>특정 소켓을 식별하여 사용할때 디스크립터를 사용</li>
+</ul>
+<h3>3. 파이프를 연결하는 접속 단계</h3>
+<ul>
+<li>클라이언트에서 socket 라이브러리의 connect 함수를 사용 해 서버에 연결</li>
+<li>connect 를 사용할 때는 연결할 소켓을 지정하는 디스크립터, 서버의 ip 주소, 포트번호가 필요함</li>
+<li>디스크립터를 사용해 클라이언트의 어느 소켓을 서버에 연결할지를 결정</li>
+<li>ip 주소를 사용해 해당 서버에 접속</li>
+<li>포트번호를 사용해 해당 서버의 특정 포트에 접속
+<ul>
+<li>포트번호는 애플리케이션에 종류에 따라 미리 지정이 된 값이 있음
+<ul>
+<li>http 는 80 번</li>
+<li>메일은 25 번</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>4. 메시지를 주고받는 송.수신 단계</h3>
+<ul>
+<li>연결이 되고 나면 socket 을 write 함수를 사용해 데이터를 전송</li>
+<li>데이터를 받을때는 read 함수를 사용해 데이터를 수신
+<ul>
+<li>데이터를 저장하기 위해 수신 버퍼를 사용</li>
+</ul>
+</li>
+</ul>
+<h3>5. 연결 끊기 단계에서 송.수신이 완료된다</h3>
+<ul>
+<li>브라우저가 데이터 수신을 완료하면 송.수신이 종료됨</li>
+<li>socket 의 close 함수를 사용해 소켓의 연결을 끊고 소켓을 말소시킴</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

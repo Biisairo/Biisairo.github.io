@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>philosopher</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+                <h2>하위 그룹</h2>
+                <ul>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/born2beroot/">born2beroot</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/minilibx/">minilibx</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/ft_transcendence/">ft_transcendence</a></li>
+                    
+                </ul>
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/ft_printf.html">ft_printf</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/get_next_line.html">get_next_line</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/pipex.html">pipex</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/minishell.html">minishell</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/philosopher.html">philosopher</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/net_practice.html">net_practice</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/rbtree.html">rbtree</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/IRC.html">IRC</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>philosopher</h1>
+<h1>전제</h1>
+<ol>
+<li>1명 이상의 철학자가 테이블에 않아있고 가운데에 스파게티가 담긴 그릇이 있다</li>
+<li>철학자는 먹고, 생각하고, 자며 한번에 한가지 동작만을 한다</li>
+<li>테이블에는 철학자의 수 만큼의 포크가 있다</li>
+<li>철학자가 스파게티를 먹으려면 양손에 포크를 쥐어야 한다, 즉 양옆의 철학자는 먹지 못한다</li>
+<li>철학자가 먹고난 뒤에는 포크를 다시 내려놓고 잠을 잔다, 잠에서 일어나면 생각한다</li>
+<li>시뮬레이션은 한명의 철학자라도 굶어 죽으면 끝이 난다</li>
+<li>모든 철학자는 죽지 않기 위해서 먹어야 한다</li>
+<li>철학자는 서로 말할 수 없다</li>
+<li>철학자는 다른 철학자가 죽을지 말지 모른다</li>
+<li>철학자를 살려라</li>
+</ol>
+<h1>규칙</h1>
+<ol>
+<li>전역변수 금지</li>
+<li>다음의 인자를 받는다
+<ul>
+<li>철학자의 수</li>
+<li>죽는 시간 : 해당 시간동안 먹지 못하면 죽는다</li>
+<li>먹는데 걸리는 시간 : 해당 시간동안 양손에 포크를 들고있다</li>
+<li>자는데 걸리는 시간</li>
+<li><a href="option">먹어야 하는 횟수</a> : 모든 철학자가 해당 횟수만큼 먹으면 시뮬레이션이 끝난다, 명시되어있지 않으면 철학자가 죽을 때 까지 멈추지 않는다</li>
+</ul>
+</li>
+<li>각각의 철학지는 1 부터 ‘철학자의 수’ 까지 넘버링이 되어있다</li>
+<li>1번 철학자는 무조건 ’철학자의 수’번 철학자 없에 않아있어야 한다</li>
+<li>다른 철학자의 양 옆에는 자신의 +-1 에 해당하는 철학자가 않아있어야 한다</li>
+<li>Data Race 가 있으면 안된다!!</li>
+</ol>
+<h3>data race</h3>
+<p>여러 스레드에서 동시에 하나의 자원에 접근하려 할 경우 자원을 이용하는 것 뿐만 아닌 접근하여 확인만 하는것도 포함 동기화 락(syncronization lock) 을 사용하여 해결</p>
+<h3>log</h3>
+<ol>
+<li>철학자의 상태가 바뀔때 마다 로그를 출력한다
+<ul>
+<li><timestamp>_in_ms X had taken a fork</li>
+<li><timestamp>_in_ms X is eating</li>
+<li><timestamp>_in_ms X is sleeping</li>
+<li><timestamp>_in_ms X is thinking</li>
+<li><timestamp>_in_ms X died</li>
+<li>timestamp 위치에는 ms 단위의 현재 시간이 들어가야한다</li>
+<li>X 위치에는 철학자의 번호가 들어가야 한다</li>
+</ul>
+</li>
+<li>상태 메세지는 다른 메세지와 섞이면 안된다</li>
+<li>철학자의 사망을 알리는 메세지는 철학자가 죽은 후 10ms 이내에 나와야 한다</li>
+</ol>
+<h1>본론</h1>
+<p>각각의 철학자는 thread 이다 포크는 각각의 철학자 사이에 있다 철학자가 한명이면 포크도 한개이다 철학자가 포크를 복사하는걸 막기위해 각각의 포크는 mutex 를 사용하여 보호해야한다</p>
+<h1>허용 함수</h1>
+<p>libft 사용 금지</p>
+<p>string.h - memset stdio.h - printf stdlib.h - malloc - free unistd.h - write - usleep sys/time.h - gettimeofday pthread.h - pthread_create - pthread_detach - pthread_join - pthread_mutex_init - pthread_mutex_destroy - pthread_mutex_lock - pthread_mutex_unlock</p>
+<h3>memset</h3>
+<pre><code class="language-c">void *memset(void *b, int c, size_t len)
+</code></pre>
+<p>string b 에 c 를 len 만큼 채운다</p>
+<h3>return</h3>
+<p>첫번째 인자를 반환한다</p>
+<h3>usleep</h3>
+<pre><code class="language-c">int usleep(useconds_t microseconds)
+</code></pre>
+<p>microsleep 만큼 sleep 한다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1</p>
+<h3>gettimeofday</h3>
+<pre><code class="language-c">int gettimeofday(struct timeval *restrict tp, void *restrict tzp)
+</code></pre>
+<pre><code class="language-c">struct timeval{    time_t      tv_sec;    suseconds_t tv_usec;}
+</code></pre>
+<p>timeval 은 time.h 에 정의되어있다 tzp 는 사용하지 않아 NULL 을 넣어준다</p>
+<pre><code class="language-c">struct timeval time_now;gettimeofday(&amp;time_now, 0);
+</code></pre>
+<p>현재의 시간을 timeval 구조체 안에 저장한다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1</p>
+<h2>pthread</h2>
+<p>posix thread 의 약자로 유닉스계열의 posix 시스템에서 thread 관리를 할수 있게 해주는 소프트웨어를 작성하기 위한 api 컴파일 시에 -pthread 옵션을 붙여주어야 한다</p>
+<h3>pthread_create</h3>
+<pre><code class="language-c"> int pthread_create(pthread_t *thread, const pthread_attr_t *attr,void *(*start_routine)(void *), void *arg)
+</code></pre>
+<p>새 스레드를 생성한다</p>
+<p>첫번째 인자 - 스레드 식별자 - 성공적으로 스레드를 생성했을 시 thread 에 식별 번호가 저장이 된다 두번째 인자 - 스레드에 특정한 특성을 지정해 줄때 사용 - 0 (NULL) 로 지정시 기본 스레드가 생성된다 세번째 인자 - 스레드 시작과 동시에 실행 할 함수 네번째 인자 - start_routine 에 넘겨질 인자</p>
+<h3>return</h3>
+<p>성공시 0 실패시 에러코드 (음수) - EAGAIN : 생성을 위한 자원이 부족하거나 PTHREAD_THREADS_MAX 를 초과하여 생성을 시도할 때</p>
+<h3>pthread_detach</h3>
+<pre><code class="language-c">int pthread_detach(pthread_t th)
+</code></pre>
+<p>th 식별자를 가진 스레드를 main 스레드에서 detach 한다 detach 는 ‘때어내다’ 라는 뜻을 가진다 detach 된 스레드는 해당 스레드가 종료될 경우 pthread_join 을 하지 않아도 즉시 자원이 해제된다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 0 이 아닌값 - ESRCH : 해당 식별자를 가진 스레드가 존재하지 않는다 - EINVAL : 해당 식별자를 가진 스레드가 이미 detach 상태이다</p>
+<h3>pthread_join</h3>
+<pre><code class="language-c">int pthread_join(pthread_t th, void **thread_return)
+</code></pre>
+<p>스레드가 끝날때 까지 기다린다 fork - wait 에서 wait 와 같다고 생각하면 된다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 0 이 아닌 값 - ESRCH : 식별번호가 잘못된 식별번호 일 경우 - EINVAL : 식별번호 쓰레드가 detached 상태일경우</p>
+<h2>pthread_mutex_XXX</h2>
+<p>스레드가 공유하는 데이터 영역을 보호하기 위해 사용되는 도구 mutex 는 MUTual EXclusion(상호 배제)devide 의 줄임말 critical section (임계영역) 을 만들어 해당 구역 내에는 한번에 하나의 스레드만 접근할 수 있도록 한다 lock 으로 임계영역에 접근할 수 있도록 요청을 하고 임계영역에서 빠져나오면서 unlock 으로 다른 스레드가 접근할 수 있도록 한다 lock 으로 접근 요청을 했을 시 이미 다른 스레드가 접근중이라면 해당 스레드가 unlock 할 때 까지 기다린다</p>
+<h3>pthread_mutex_init</h3>
+<pre><code class="language-c">int pthread_mutex_init(pthread_mutex_t * mutex, const pthread_mutex_attr *attr)
+</code></pre>
+<p>뮤텍스 객체를 초기화 한다</p>
+<pre><code class="language-c">pthread_mutex_init(&amp;mutex_lock, NULL);
+</code></pre>
+<p>첫번째 인자 - 초기화 할 뮤텍스 객체 두번째 인자 - 뮤택스 객체에 특정한 특성을 지정해 줄때 사용 - 0 (NULL) 로 지정시 기본 뮤텍스 객체가 생성된다 - fast, recurisev, error checking 의 3종류가 있으며 기본은 fast 이다</p>
+<h3>return</h3>
+<p>항상 0</p>
+<h3>pthread_mutex_destroy</h3>
+<pre><code class="language-c">int pthread_mutex_destroy(pthread_mutex_t *mutex)
+</code></pre>
+<p>뮤텍스의 사용이 끝났을때 사용한다 뮤텍스에 할당된 자원들을 반환시킨다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 0 이 아닌값</p>
+<h3>pthread_mutex_lock</h3>
+<pre><code class="language-c">int pthread_mutex_lock(pthread_mutex_t *mutex)
+</code></pre>
+<p>critical section 에 접근 요청을 한다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 0 이 아닌값 errno - EINVAL : 뮤텍스가 제대로 초기화 되지 않았다. - EDEADLK : 뮤텍스가 이미 잠겨있다.(“error checking” 뮤텍스의 경우에만 발생)</p>
+<h3>pthread_mutex_unlock</h3>
+<pre><code class="language-c">int pthread_mutex_unlock(pthread_mutex_t *mutex)
+</code></pre>
+<h3>return</h3>
+<p>성공시 0 실패시 0 이 아닌값</p>
+<h1>Bonus 허용함수</h1>
+<p>libft 사용 금지</p>
+<p>string.h - memset</p>
+<p>stdio.h - printf</p>
+<p>stdlib.h - malloc - free - exit</p>
+<p>unistd.h - write - fork - usleep</p>
+<p>signal.h - kill</p>
+<p>sys/time.h - gettimeofday</p>
+<p>sys/wait.h - waitpid</p>
+<p>pthread.h - pthread_create - pthread_detach - pthread_join</p>
+<p>semaphore.h - sem_open - sem_close - sem_post - sem_wait - sem_unlink</p>
+<h2>semaphore 원리</h2>
+<p>파일 시스템에는 보이지 않는 일종의 파일을 만들에 해당 파일에 접근 가능한 수를 기록 sem_wait 가 들어올 때 마다 기록 된 수를 -1 기록 된 수가 음수가 되면, 즉 더이상 접근이 불가능 한 시점(0)인데 접근을 시도하였을 경우, 다른 곳에서 sem_post 를 해줄 때 까지 대기</p>
+<h3>sem_open</h3>
+<pre><code class="language-c">sem_t *sem_open(const char *name, int oflag, [mode_t mode, unsigned int value])
+</code></pre>
+<p>첫번째 인자로 semaphore 의 이름을 두번째 인자로 open 방식에 대한 옵션을 준다 - oflag 에는 O_CREAT, O_EXCL 밖에 들어갈 수 없다 - O_CREAT : 파일이 존재하면 open, 존재하지 않을 시 새로 만든다, mode_t 에 644 와 같은 premission 을 지정 해 주어야 한다 - O_EXCL : O_CREAT 를 할 시 파일이 존재하면 error 를 낸다 - fcntl 에서 사용하는 다른 옵션을 사용하는 것은 undefined behavior 이다</p>
+<p>세번째 네번째 인자는 옵션이다 - name 에서 이미 파일이 존재하는 경우 아래 옵션들은 무시한다</p>
+<p>세번째 인자는 O_CREAT 할 때 만들어지는 semaphore 의 권한을 chmod 와 같은 방법으로 표기한다 네번째 인자는 semaphore 의 초기 value 를 설정 해 준다</p>
+<p>value - 해당 semaphore 에 접근 가능한 수</p>
+<h3>return</h3>
+<p>성공시 생성된 semaphore 에 대한 주소값 실패시 SEM_FAILED 메크로 값 - sem_t 는 단순한 int 의 typedef 로 사실상 fd 를 나타내며 return 값인 sem_t * 는 만들어진 semaphore 에 대한 fd 를 참조하는 포인터이다 - SEM_FAILED 는 (sem_t *)-1 로 변수의 모든 비트값이 1로 채워진 값이다</p>
+<h3>sem_close</h3>
+<pre><code class="language-c">int sem_close(sem_t *sem)
+</code></pre>
+<p>semaphore 의 주소값(open 으로 반환된) 을 받아 닫는다 프로세스가 종료되면 자동으로 수행된다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 반환 후 errno 설정</p>
+<h3>sem_post</h3>
+<pre><code class="language-c">int sem_post(sem_t *sem)
+</code></pre>
+<p>해당 semaphore 에 대해 unlock 한다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 반환 후 errno 설정</p>
+<h3>sem_wait</h3>
+<pre><code class="language-c">int sem_wait(sem_t *sem)
+</code></pre>
+<p>해당 semaphore 에 대해 lock 한다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 반환 후 errno 설정</p>
+<h3>sem_unlink</h3>
+<pre><code class="language-c">int sem_unlink(const char *name)
+</code></pre>
+<p>해당 이름의 semaphore 를 unlink 한다 즉, 삭제한다</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 반환 후 errno 설정</p>
+<h3>kill</h3>
+<pre><code class="language-c">int kill(pid_t pid, int sig)
+</code></pre>
+<p>해당 pid 를 가진 자식을 죽인다 사용가능한 signal 목록은 kill -l 로 확인 가능하다 - <strong>sig + kill -l 을 쳤을 때 나온 signal</strong> 가 정의되어있다 - ex) SIGKILL, SIGBUS 등등</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 반환 후 errno 설정</p>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

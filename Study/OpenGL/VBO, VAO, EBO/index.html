@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+        
+        
+        <article>
+            <h1>VBO, VAO, EBO</h1>
+<h2>VBO</h2>
+<ul>
+<li>Vertex Buffer Object</li>
+<li>정점들을 모아놓은 객체</li>
+<li>GPU 와 CPU 사이에 데이터 전송이 많으면 속도가 느려지기 때문에 한번에 많은 양의 데이터를 넘겨주는 것이 좋음</li>
+<li>이때 정점 데이터를 한번에 보내기 위한 객체</li>
+</ul>
+<pre><code class="language-cpp">glGenBuffers(GLsizei size, GLuint &amp;buffers)
+</code></pre>
+<ul>
+<li>각각의 buffer 는 고유한 ID 를 가짐
+<ul>
+<li>size 갯수 만큼의 buffer 를 생성하고 해당 buffer 의 id 를 buffers 에 저장</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-cpp">glBindBuffer(GLenum target, GLuint buffer)
+</code></pre>
+<ul>
+<li>
+<p>여러가지 종류의 buffer 가 존재하며 생성한 buffer 에 필요한 타입의 buffer 를 bind 함</p>
+<ul>
+<li>만들기를 원하는 타입을 target 에 전달</li>
+<li>bind 하기를 원하는 buffer 의 id 를 buffer 에 전달</li>
+<li>이후 나오는 glBufferData, glVertexAttribPoint 와 같은 함수는 해당 시점 bind 되어있는 buffer 를 기준으로 작동</li>
+</ul>
+<pre><code class="language-cpp">glBufferData(GLenum target,
+							GLsizeiptr size,
+							const void * data,
+							GLenum usage)
+</code></pre>
+</li>
+<li>
+<p>생성된 buffer 에 데이터를 넣는 과정이 필요</p>
+<ul>
+<li>target 에 buffer type</li>
+<li>size 에 총 데이터의 크기</li>
+<li>data 에 데이터의 시작 주소값</li>
+<li>usage 에 해당 데이터의 사용 목적</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-cpp">glVertexAttribPointer(GLuint index,
+											GLint size,
+											GLenum type,
+											GLboolean normalized,
+											GLsizei stride
+											const void * pointer)
+</code></pre>
+<ul>
+<li>
+<p>opengl 이 현재 bind 된 buffer 를 다루는 방법에 대해서 기입</p>
+<ul>
+<li>index 에 설정할 index 번호 (shader 의 layout 에 들어가는 location 값)</li>
+<li>size 는 각 인자의 요소 갯수 (vec3 인 경우 3)</li>
+<li>type 에는 요소의 타입</li>
+<li>nomalized 에는 정규화 여부</li>
+<li>stride 에는 각 인자의 크기 (vec3 인 경우 3 * sizeof(float))</li>
+<li>pointer 에는 각 인자의 시작 지점으로부터의 오프셋</li>
+</ul>
+<pre><code class="language-cpp">float vertices[] = {
+    // positions         // colors
+     0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // bottom left
+     0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // top 
+};
+</code></pre>
+<p><img src="VBO,%20VAO,%20EBO%202fafa6b59052464a822dddf01743b802/Untitled.png" alt="Untitled"></p>
+<ul>
+<li>위 예시에서 array 에 pos 와 color 가 동시에 존재</li>
+<li>각각의 vertex 의 pos 와 color 를 동시에 알려주려면 stride 와 pointer offset 을 설정해 주어야 함</li>
+</ul>
+<pre><code class="language-cpp">// pos
+glVertexAttribPointer(0,
+											3,
+											GL_FLOAT,
+											GL_FALSE,
+											6 * sizeof(float),
+											(void*)0);
+// color
+glVertexAttribPointer(1,
+											3,
+											GL_FLOAT,
+											GL_FALSE,
+											6 * sizeof(float),
+											(void*)(3* sizeof(float)));
+</code></pre>
+<h2>EBO</h2>
+</li>
+<li>
+<p>VBO 와 같은 버퍼 객체</p>
+</li>
+<li>
+<p>정점을 그리는 순서를 결정하는 인덱스를 저장</p>
+</li>
+<li>
+<p>indexed drawing 방식</p>
+</li>
+<li>
+<p>삼각형 이상의 face 를 그릴때 모든 정점을 삼각형으로 표현하면 배열에 중복되는 정점이 생겨 overhead 가 발생함</p>
+</li>
+<li>
+<p>이를 막기 위한 방식</p>
+<h2>VAO</h2>
+</li>
+<li>
+<p>vertex array object</p>
+</li>
+<li>
+<p>VBO 를 포함해 vertex attribute call 들이 저장되어있음</p>
+</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>get_next_line</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+                <h2>하위 그룹</h2>
+                <ul>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/born2beroot/">born2beroot</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/minilibx/">minilibx</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/ft_transcendence/">ft_transcendence</a></li>
+                    
+                </ul>
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/ft_printf.html">ft_printf</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/get_next_line.html">get_next_line</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/pipex.html">pipex</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/minishell.html">minishell</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/philosopher.html">philosopher</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/net_practice.html">net_practice</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/rbtree.html">rbtree</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/IRC.html">IRC</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>get_next_line</h1>
+<h2>inode 비스무레한거 구현</h2>
+<ul>
+<li>구조체 리스트 만들기
+<ul>
+<li>구조체 content 내용
+<ul>
+<li>int : fd</li>
+<li>char *: 현재 확인중인 줄의 데이터</li>
+<li>size_t : 현재 확인중인 줄의 크기</li>
+<li>char [BUFFER_SIZE]현재 버퍼 데이터</li>
+<li>size_t : 현재 버퍼에서의 LF 위치</li>
+</ul>
+</li>
+<li>리스트 함수 구현
+<ul>
+<li>new node</li>
+<li>find node : fd 를 이용해 찾기</li>
+<li>set : 데이터 입력
+<ul>
+<li>char *: 현재 확인중인 줄의 데이터</li>
+<li>size_t : 현재 확인중인 줄의 크기</li>
+<li>char [BUFFER_SIZE]현재 버퍼 데이터</li>
+<li>size_t : 현재 버퍼에서의 LF 위치</li>
+</ul>
+</li>
+<li>del : node 삭제</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>get_next_line 구현</h2>
+<ul>
+<li>들어온 fd를 가지는 node 찾기, 없으면 생성 및 초기화</li>
+<li>이미 있는 buf 내에 LF 위치 이후에 LF가 있으면
+<ul>
+<li>LF 위치부터 다음 LF 까지 char * 에 저장</li>
+<li>다음 LF 위치를 LF 위치에 저장</li>
+<li>char * 리턴</li>
+</ul>
+</li>
+<li>반복
+<ul>
+<li>BUFFER_SIZE 만큼 읽어오기</li>
+<li>buf 내에 LF가 없으면
+<ul>
+<li>BUFFER_SIZE 만큼 char * 에 저장</li>
+<li>size_t(줄의크기)에 BUFFER_SIZE 만큼 더함</li>
+</ul>
+</li>
+<li>buf 내에 LF가 있으면
+<ul>
+<li>LF 전까지 char * 에 저장</li>
+<li>buf 에서 LF 위치를 size_t(현재버퍼에 저장)</li>
+<li>size_t(줄의크기)에 LF 전까지 크기만큼 저장</li>
+<li>반복문 탈출</li>
+</ul>
+</li>
+<li>위의 작업이 끝나면 구조체의 모든 content가 채워짐</li>
+<li>구조체의 char * 를 리턴</li>
+</ul>
+</li>
+</ul>
+<h2>sudo code</h2>
+<h3>no bonus</h3>
+<pre><code>char *get_next_line(int fd)
+{
+    static t_node file = {fd, 0, 0, &quot;&quot;, 0};
+
+    buf의 LF위치를 기반으로 이후에 다른 LF가 있는지 확인
+    있다면
+        다음 LF 까지를 char * 에 저장
+        다음 LF 위치를 저장
+        char * 리턴
+    없다면
+        끝까지 char * 에 저장
+        저장한 길이를 줄 크기에 저장
+}
+</code></pre>
+<h1>구현</h1>
+<pre><code>static char \*buf
+char \*line
+
+buf = malloc(BUFFER_SIZE + 1)
++1 은 0을 넣어 string 으로 만들기 위한 조건
+BURRER_SIZE + 1 이 size_t 를 넘지 않도록 확인
+
+반복
+    buf 가 비어있지않으면
+        만약 buf 에 개행이 있으면
+            개행까지 line 에 옮기기
+            buf 에서 개행 이후를 맨 앞으로 당겨온 다음 빈칸 0으로 초기화
+        만약 buf 에 개행이 없으면
+            전부 line 에 옮기기
+            buf 내부 0으로 초기화
+        line 리턴
+    buf 에 BUFFER_SIZE 만큼 read
+    만약 read_size 가 0 이면
+        line 리턴
+</code></pre>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+        
+        
+        <article>
+            <h1>gamma correction</h1>
+<p>사람이 느끼는 빛의 강도 차이와 실제로 빛의 강도차이에는 차이가 있음</p>
+<p>실제 빛의 강도는 2배가 될 때 방출하는 광자의 양이 2배가 된다는 뜻</p>
+<p><img src="gamma%20correction%2063fe389490414a419583b5260f71516f/Screen_Shot_2023-10-05_at_12.26.56_PM.png" alt="Screen Shot 2023-10-05 at 12.26.56 PM.png"></p>
+<p>위의 그림은 사람이 느끼는 2배씩 밝아지는 빛</p>
+<p>아래의 그림은 실제로 2배씩 밝아지는 빛</p>
+<h2>gamma correction</h2>
+<p>모니터에 출력하기 전 모니터 감마의 역수를 최종 출력에 적용하는 것</p>
+<p>감마값은 2.2 로 디스플레이가 가지는 평균적인 감마값</p>
+<h3>opengl 내장 sRGB 프레임 버퍼</h3>
+<p>쉬운 방법이지만 제어력이 떨어짐</p>
+<p>GL_FRAMEBUFFER_SRGB 를 사용</p>
+<p>draw 명령으로 색이 color buffer 에 저장되기 전 sRGB 의 색공간의 색을 감마보정</p>
+<p>sRGB 는 2.2 감마에 해당하는 색 공간</p>
+<pre><code class="language-cpp">glEnable(GL_FRAMEBUFFER_SRGB)
+</code></pre>
+<p>위 코드를 사용해 sRGB 를 사용</p>
+<p>활성화 되면 자동적으로 감마보정이 수행</p>
+<p>감마 보정은 한번만 되어야 함</p>
+<ul>
+<li>framebuffer 를 사용하는 경우</li>
+<li>framebuffer 로 랜더링을 할때는 원래의 선형 공간에서 작업을 진행</li>
+<li>실제 모니터에 출력 할때만 감마 보정을 사용</li>
+</ul>
+<h3>fragment shader 에서 감마보정을 수행</h3>
+<pre><code class="language-cpp">float gamma = 2.2;
+color.rgb = pow(color.rgb, vec3(1.0/gamma));
+</code></pre>
+<p>모든 물체를 그릴때 fragment shader 마다 설정을 해 주어야함</p>
+<p>혹은 framebuffer 를 사용하여 한장의 이미지로 만들어서 해당 이미지를 출력할때 보정을 사용</p>
+<h3>sRGB texture</h3>
+<p>랜더링 되는 이미지가 아닌 texture 이미지의 경우에는 작업자가 이미 sRGB 공간에서 작업하고 있게 됨</p>
+<p>이때 해당 이미지를 다시 감마보정을 하면 두번의 감마보정이 들어가게 되어 너무 밝은 이미지가 랜더링 되게 됨</p>
+<ul>
+<li>
+<p>texture 를 선형공간으로 변형</p>
+<ul>
+<li>위에서는 gamma 의 역수를 주어 감마보정을 했음</li>
+<li>이미 감마 보정이 되어있는 texture 이미지는 gamma 를 곱해 이미 들어가 있는 보정을 없애줌</li>
+</ul>
+<pre><code class="language-cpp">float gamma = 2.2;
+vec3 diffuseColor = pow(texture(diffuse, texCoords).rgb, vec3(gamma));
+</code></pre>
+<ul>
+<li>이후 최종단계에서 다시 감마보정을 사용</li>
+</ul>
+</li>
+<li>
+<p>texture 를 만들 때 내부 형식을 제공</p>
+<ul>
+<li>glTexImage2D 를 사용해 texture 를 생성할 때 GL_SRGB, GL_SRGB_ALPHA 를 포맷으로 주어 해당 이미지가 sRGB 공간에 있다는 것을 명시</li>
+<li>오브젝트 채색에 사용되는 texture 는 sRGB 에, 반사맵, 노멀맵과 같은 texture 는 선형공간에 있음을 주의해야 함</li>
+</ul>
+</li>
+</ul>
+<h2>Attenuation</h2>
+<p>조명 감쇠</p>
+<p>실제 물리적인 조명은 거리의 제곱에 반비례하여 감쇠함</p>
+<pre><code class="language-cpp">// quadratic
+float attenuation = 1 / (distance * distance);
+// linear
+float attenuation = 1 / distance;
+</code></pre>
+<p>감마 보정이 없으면 이차 감쇠를 하면 너무 어두워짐</p>
+<p>감마 보정을 하고 선형 감쇠를 하면 너무 밝아짐</p>
+<p>감마 보정을 하고 이차감쇠를 하는것이 바람직</p>
+<p>감마 보정이 불가능하면 선형 감쇠를 사용</p>
+<p><img src="gamma%20correction%2063fe389490414a419583b5260f71516f/Screen_Shot_2023-10-05_at_1.33.59_PM.png" alt="Screen Shot 2023-10-05 at 1.33.59 PM.png"></p>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

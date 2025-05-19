@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>4 액세스 회선을 통해 인터넷의 내부로</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/1%20%ec%9b%b9%20%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80%ea%b0%80%20%eb%a9%94%ec%8b%9c%ec%a7%80%eb%a5%bc%20%eb%a7%8c%eb%93%a0%eb%8b%a4.html">1 웹 브라우저가 메시지를 만든다</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/2%20TCP%20IP%20%ec%9d%98%20%eb%8d%b0%ec%9d%b4%ed%84%b0%eb%a5%bc%20%ec%a0%84%ea%b8%b0%20%ec%8b%a0%ed%98%b8%eb%a1%9c%20%eb%a7%8c%eb%93%a4%ec%96%b4%20%eb%b3%b4%eb%82%b8.html">2 TCP IP 의 데이터를 전기 신호로 만들어 보낸</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/3%20%ec%bc%80%ec%9d%b4%eb%b8%94%ec%9d%98%20%ec%95%9e%ec%9d%80%20LAN%20%ea%b8%b0%ea%b8%b0%ec%98%80%eb%8b%a4.html">3 케이블의 앞은 LAN 기기였다</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/4%20%ec%95%a1%ec%84%b8%ec%8a%a4%20%ed%9a%8c%ec%84%a0%ec%9d%84%20%ed%86%b5%ed%95%b4%20%ec%9d%b8%ed%84%b0%eb%84%b7%ec%9d%98%20%eb%82%b4%eb%b6%80%eb%a1%9c.html">4 액세스 회선을 통해 인터넷의 내부로</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/5%20%ec%84%9c%eb%b2%84%ec%b8%a1%ec%9d%98%20LAN%20%ec%97%90%eb%8a%94%20%eb%ac%b4%ec%97%87%ec%9d%b4%20%ec%9e%88%eb%8a%94%ea%b0%80.html">5 서버측의 LAN 에는 무엇이 있는가</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/6%20%ec%9b%b9%20%ec%84%9c%eb%b2%84%ec%97%90%20%eb%8f%84%ec%b0%a9%ed%95%98%ec%97%ac%20%ec%9d%91%eb%8b%b5%20%eb%8d%b0%ec%9d%b4%ed%84%b0%ea%b0%80%20%ec%9b%b9%20%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80.html">6 웹 서버에 도착하여 응답 데이터가 웹 브라우저</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>4. 액세스 회선을 통해 인터넷의 내부로</h1>
+<h2>1. ADSL 기술을 이용한 액세스 회선의 구조와 동작</h2>
+<h3>1. 인터넷의 기본은 가정이나 회사의 LAN과 같다</h3>
+<ul>
+<li>라우터의 패킷 중계, 라우터의 기본동작 또한 인터넷과 다를바 없음</li>
+<li>중계 거리의 차이</li>
+<li>중계 대상을 제어하는 부분의 차이
+<ul>
+<li>경로표에 정보를 등록하는 동작</li>
+<li>경로표에 등록되어있는 정보의 양</li>
+</ul>
+</li>
+<li>인터넷의 라우터에는 십만개 이상의 경로가 등록되어있음</li>
+<li>회선의 장애나 새로운 회선의 추가를 위한 자동 등록을 위한 구조</li>
+</ul>
+<h3>2. 사용자와 인터넷을 연결하는 액세스 회선</h3>
+<ul>
+<li>인터넷 접속용 라우터</li>
+<li>액세스 회선
+<ul>
+<li>인터넷과 개인의 LAN 을 연결하는 통신 회선</li>
+<li>ADSL, FTTH, CATV, 전화회선, ISDN 등을 사용
+<ul>
+<li>ADSL
+<ul>
+<li>Asymmetric Digital Subscriber LIne</li>
+<li>업/다운로드의 속도가 다른 비대칭회선</li>
+</ul>
+</li>
+<li>FTTH
+<ul>
+<li>Fiber To The Home</li>
+<li>광섬유</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>이전의 라우터와 비슷함</li>
+<li>차이는 연결된 액세스 회선에 따라 패킷 송신 동작을 실행한다는 점</li>
+</ul>
+<h3>3. ADSL 모델에서 패킷을 셀로 분할한다</h3>
+<ul>
+<li>사용자의 라우터 - ADSL 모뎀 - 케이블 - 전화국 - 프로바이더(ISP: Internet Service Provider)</li>
+<li>라우터 → ADSL 모뎀
+<ul>
+<li>이더넷으로 연결되어있으면 이전의 작업과 같음</li>
+<li>추가로 헤더 기입
+<ul>
+<li>MAC 헤더</li>
+<li>PPPoE 헤더</li>
+<li>PPP 헤더</li>
+</ul>
+</li>
+<li>추가로 기입된 헤더에 따라 신호를 변환하여 송신하게 됨</li>
+</ul>
+</li>
+<li>ADSL 모뎀
+<ul>
+<li>셀
+<ul>
+<li>헤더
+<ul>
+<li>5바이트</li>
+</ul>
+</li>
+<li>데이터
+<ul>
+<li>48바이트</li>
+</ul>
+</li>
+<li>작은 데이터 덩어리</li>
+<li>ATM 통신 규격에 사용
+<ul>
+<li>Asynchronous Transfer Mode</li>
+<li>전화 회선의 개념에 기초한 통신 방식</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>패킷을 작게 분할하여 셀에 저장</li>
+<li>셀의 데이터 부분에 패킷을 나누어 저장</li>
+<li>TCP 에서 큰 데이터를 보내는 것과 비슷함</li>
+</ul>
+</li>
+</ul>
+<h3>4. ADSL은 변조 방식으로 셀을 신호화한다</h3>
+<ul>
+<li>셀의 데이터를 신호로 변경</li>
+<li>0과 1의 디지털 신호를 그대로 보내면 파형의 손상이 쉬워져서 신호를 변조하여 보냄</li>
+<li>정현파와 0과 1 의 비트값을 합성</li>
+<li>진폭변조(ASK)와 위상변조(PSK)를 결합한 직교진폭변조(QAM)을 사용</li>
+<li>진폭 변조
+<ul>
+<li>진폭이 작은 신호를 0, 진폭이 큰 신호를 1로 대응시키는 방법</li>
+<li>진폭의 단계를 나누어 여러 비트에 대응되도록 할 수 있음</li>
+<li>단계를 너무 나누면 인접비트로 오해할 수 있음</li>
+</ul>
+</li>
+<li>위상 변조
+<ul>
+<li>신호의 위상에 0과 1을 대응시키는 방법</li>
+<li>0도에서 시작되는 파형을 0, 180도에서 시작되는 파형을 1로 대응시키는 방법</li>
+<li>각도를 세분화하여 여러 비트에 대응시킬 수 있음</li>
+<li>각도가 가까우면 인접비트로 오해할 수 있음</li>
+</ul>
+</li>
+<li>직교 진폭 변조
+<ul>
+<li>위의 두가지 방식을 합쳐 놓은 방식</li>
+<li>신호의 진폭과 위상에 각각 하나의 비트를 대응시켜 하나의 파장에 두개의 비트를 대응시킴</li>
+<li>한 파장에 대응되는 비트수를 늘려 속도를 향상시킴</li>
+<li>진폭과 위상에 각각 대응되는 비트수를 늘리면 두 수의 곱만큼 대응되는 비트가 많아짐</li>
+</ul>
+</li>
+</ul>
+<h3>5. ADSL은 파를 많이 사용하여 고속화를 실현한다</h3>
+<ul>
+<li>여러 주파수의 파형을 사용하여 한번에 여러 주파수의 파형을 보낼 수 있음</li>
+<li>합성된 파장은 필터 회로를 통해 특정 주파수만 분리</li>
+<li>주파수를 다르게 한 여러개의 파장을 사용하여 각각의 주파수에 직교 진폭 변조를 사용해 비트 신호를 대응시킴</li>
+<li>잡음이 없는 주파수는 많은 비트를, 잡음이 있는 주파수는 적은 비트를 대응시킴</li>
+<li>업로드에는 26개, 다운로드에는 95~223개의 주파수대역을 사용하고있어서 업로드와 다운로드의 속도가 차이나게 됨</li>
+<li>회선에 따라 잡음, 감쇠 특성이 다르고 시간에 따라 특성이 변화할 수 있음</li>
+<li>트레이닝
+<ul>
+<li>모뎀에 전원이 공급될 때 시험신호를 보내고 수신 상태에 따라 주파수와 비트수를 판단하는 것</li>
+</ul>
+</li>
+</ul>
+<h3>6. 스플리터의 역할</h3>
+<ul>
+<li>전기신호로 변환된 셀이 스플리터로 들어감</li>
+<li>송신측에서는 셀의 신호와 전화의 음성신호를 섞어서 흘려보냄</li>
+<li>수신측에서는 전화신호와 셀의 신호를 나누는 역할을 함</li>
+<li>일정한 주파수를 초과하는 신호를 차단해 ADSL 의 신호가 전화로 흘러가지 않도록 함</li>
+<li>ADSL 신호는 모뎀내에서 필터링이 되어 굳이 전화신호를 차단할 필요가 없음</li>
+<li>ADSL 통신 중 수화기를 들면 신호를 전달하는 방향이 달라지며 ADSL 에 잡음이 생기고 트래이닝을 다시 해야할 필요가 생기는데 이를 방지하기도 함</li>
+</ul>
+<h3>7. 전화국까지의 여정</h3>
+<ul>
+<li>스플리터 앞에있는 전화 케이블을 꽂는 커넥터를 통과해 건물의 IDF, MDF 로 연결</li>
+<li>IDF
+<ul>
+<li>Intermediate Distribution Frame</li>
+<li>중간 배선반</li>
+</ul>
+</li>
+<li>MDF
+<ul>
+<li>Main Distribution Frame</li>
+<li>주 배선반</li>
+</ul>
+</li>
+<li>건물 밖에서 들어오는 배선과 건물의 배선이 들어있으며 건물 밖과 옥내 배선이 연결됨</li>
+<li>단독주택 같은 경우 배선이 많지 않아 옥외 배선이 직접 옥내배선에 연결되어있음</li>
+<li>이후 보안기로 연결
+<ul>
+<li>낙뢰와 같은 옥외 배선에 과대한 전류가 흘러들어오지 않도록 막음</li>
+</ul>
+</li>
+<li>전신주의 전화 케이블로 연결</li>
+<li>연결된 전화 케이블이 전화국의 MDF 로 들어감</li>
+</ul>
+<h3>8. 잡음의 영향</h3>
+<ul>
+<li>전화 케이블은 신호가 통과하면서 잡음의 영향을 받음</li>
+<li>외부에서 들어오는 잡음, 크로스토크</li>
+<li>높은 주파수를 가정하고 만든 케이블이 아니라 잡음의 영향을 받기 쉬움</li>
+</ul>
+<h3>9. DSLAM 을 통과하여 BAS 에 도달한다</h3>
+<ul>
+<li>DSL Access Multiplexer
+<ul>
+<li>전화국용 ADSL 집합 모뎀</li>
+<li>다수의 ADSL 모뎀들을 하나로 묶어 관리하는 기기</li>
+</ul>
+</li>
+<li>전화 케이블을 통해 전화국으로 들어온 신호가 배선반과 스플리터를 통해 DSLAM 에 도달</li>
+<li>전기 신호를 디지털 신호로 복원</li>
+<li>ADSL 과 다르게 DSLAM 은 이더넷 형태의 인터페이스가 아닌 ATM 인터페이스를 가짐</li>
+<li>디지털 신호로 복원된 셀을 후방의 라우터와 주고받게 됨</li>
+<li>DSLAM 에서 BAS 로 셀을 전달</li>
+<li>BAS에 있는 ATM 인터페이스에서 셀을 수신</li>
+<li>ATM 인터페이스에서 셀을 취합해 패킷으로 복원</li>
+<li>패킷의 맨앞에 있는 MAC 헤더와 PPPoE 헤더는 BAS 의 인터페이스에 패킷을 전달하기 위한 헤더로 폐기</li>
+<li>PPP 헤더 이후의 부분을 추출</li>
+<li>패킷에 터널링용 헤더를 붙여 터널링의 출구로 패킷을 중계</li>
+<li>터널링용 라우터에 패킷이 도달</li>
+<li>터널링용 헤더를 분리하고 IP 패킷을 추출하여 인터넷 내부로 중계</li>
+</ul>
+<h2>2. 광섬유를 이용한 액세스 회선</h2>
+<h3>1. 광섬유의 기본</h3>
+<ul>
+<li>빛이 켜지면 1, 꺼져있으면 0</li>
+<li>디지털 신호를 전기 신호로 변환한 후 광신호로 변환</li>
+</ul>
+<h3>2. 싱글모드와 멀티모드의 차이</h3>
+<ul>
+<li>싱글모드 (8-10µm)
+<ul>
+<li>코어가 가늠</li>
+<li>입사각이 작고 위상이 같은 빛만 전송 가능</li>
+<li>광원, 수광 소자의 성능이 좋아야 함</li>
+<li>신호의 변형이 적음</li>
+</ul>
+</li>
+<li>멀티모드 (50-62.5µm)
+<ul>
+<li>코어가 두꺼움</li>
+<li>입사각이 크고 위상이 다른 빛도 전송 가능</li>
+<li>복수의 신호 전달 가능</li>
+<li>광원, 수광 소자의 성능이 낮아도 괜찮음</li>
+</ul>
+</li>
+<li>신호의 변형
+<ul>
+<li>빛이 코어를 지나갈 때 반사되는 횟수와 관계 있음</li>
+<li>반사각이 작은 싱글모드가 목적지 까지 도달하는데 반사하는 횟수가 적어 변형이 적음</li>
+<li>변형이 허용 한도를 초과하면 통신 오류가 생김</li>
+</ul>
+</li>
+<li>FTTH 는 긴거리를 연결할때 사용하며 싱글모드가 쓰임</li>
+</ul>
+<h3>3. 광섬유를 분기시켜서 비용을 절감한다</h3>
+<ul>
+<li>ADSL 대신 광섬유를 사용해 인터넷의 BAS 와 연결하는 것이 FTTH</li>
+<li>광섬유로 사용자와 가장 가까운 전화국을 연결하는 방법
+<ul>
+<li>사용자와 전화국을 한개의 광섬유로 연결함</li>
+<li>사용자의 미디어 컨버터를 사용해 이더넷의 전기 신호를 광신호로 변환
+<ul>
+<li>ADSL 처럼 셀을 쓰는 것이 아닌 패킷을 그대로 광신호로 변환</li>
+</ul>
+</li>
+<li>광신호는 하나의 광섬유를 타고 BAS 바로 앞단의 미디어 컨버터로 전달됨</li>
+<li>전기 신호로 변환 된 신호를 BAS 포트에서 수신</li>
+<li>상향, 하향광신호가 하나의 광섬유를 통해 전달되며 이때 신호가 혼합되게 됨</li>
+<li>파장 다중
+<ul>
+<li>여러개의 신호를 다른 주파수에 태워 보내는 것</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>광스플리터를 사용하는 것
+<ul>
+<li>광스플리터에서 광섬유를 분기시켜 복수의 사용자를 연결하는 것</li>
+<li>ONU
+<ul>
+<li>Optical Network Unit</li>
+<li>미디어 컨버터대신 사용</li>
+<li>전화국의 OTL 과 연대하여 신호의 충돌을 방지하는 ‘종단장치’의 역할</li>
+</ul>
+</li>
+<li>OTL
+<ul>
+<li>Optical Line Terminal</li>
+</ul>
+</li>
+<li>ONU 를 통해 전기 신호가 광신호로 변환되고 전화국의 OTL 로 들어감</li>
+<li>OTL 이 송신 타이밍을 조정해여ONU 에 송신 지시를 내림</li>
+<li>BAS 에서 사용자에게 신호를 뿌리게 되면 분기 장치에서는 충돌이 일어나지 않고 신호를 흘리기만 함
+<ul>
+<li>그대로 다른 사용자에게 정보가 누설될 수 있음</li>
+<li>패킷 맨 앞에 각각의 ONU 를 식별하는 정보를 부가</li>
+<li>ONU 는 자신에게 들어온 광신호만 수신</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>3. 액세스 회선으로 이용하는 PPP와 터널링</h2>
+<h3>1. 본인 확인과 설정 정보를 통지한다</h3>
+<ul>
+<li>인터넷은 다수의 라우터를 연결하여 만든것</li>
+<li>액세스 회선이 진화한 만큼 라우터도 진화할 필요가 생겼는데 이것이 BAS</li>
+<li>본인 확인과 설정값 통지
+<ul>
+<li>최초에 사용자명과 패스워드를 입력하여 로그인해 인터넷에 액세스</li>
+<li>BAS 에서 로그인 동작의 창구 역할을 함</li>
+<li>PPPoE (Point to Point Protocol over Ethernet)
+<ul>
+<li>보통의 전화회선을 다이얼업(dial-up)접속으로 이용하는 PPP구조의 발전</li>
+</ul>
+</li>
+<li>PPP
+<ul>
+<li>전화회선이나 ISDN 을 사용하여 인터넷에 다이얼업 방식으로 접속할때 사용</li>
+<li>프로바이더의 액세스 포인트에 전화를 검</li>
+<li>전화가 연결되면 사용자명과 패스워드를 입력해 로그인을 함
+<ul>
+<li>RADIUS (Remote Authentication Dial-in User Service) 프로토콜을 사용</li>
+</ul>
+</li>
+<li>RAS (Remote Access Server)에서 인증 서버에 전송</li>
+<li>로그인이 가능하면 인증서버에서 IP 주소등의 설정 정보가 반환되어 사용자에게 전송</li>
+<li>사용자는 해당 정보에 따라 IP 주소를 설정해 TCP/IP 송수신을 준비</li>
+<li>액세스 작업에서 사용되는 글로벌주소를 받아오는 과정</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>2. 이더넷에서 PPP 메시지를 주고받는 PPPoE</h3>
+<ul>
+<li>ADSL 이나 FTTH 또한 인터넷을 사용하기 위해 글로벌주소가 필요</li>
+<li>ADSL 이나 FTTH 는 BAS 에 고정적으로 연결되어있어 본인확인이 필요하지는 않음</li>
+<li>그러나 사용자명과 패스워드를 입력하는 동작을 사용해 사용자명에따라 프로바이더를 전환할 수 있음</li>
+<li>PPP 프로토콜에서는 정보를 운반하기 위해 HDLS 프로토콜을 사용</li>
+<li>ADSL 아니 FTTH 에서는 HDLS 를 사용할 수 없기때문에 이를 위한 프로토콜인 PPPoE가 개발</li>
+</ul>
+<h3>3. 터널링 기능에 의해 프로바이더에 패킷을 전달한다</h3>
+<ul>
+<li>터널링
+<ul>
+<li>한쪽 터널링 출입구에서 반대쪽 출입구로 패킷을 그대로 전송시킴</li>
+</ul>
+</li>
+<li>BAS 와 프로바이더의 라우터 사이에있는 ADSL/FTTH 접속 서비스 사업자의 네트워크안에 터널을 만듬</li>
+<li>사용자와 BAS 를 연결하는 액세스 회선을 연결하면 사용자와 프로바이더의 라우터까지 한개의 길이 만들어지며 사용자의 패킷을 인터넷으로 보내게 됨</li>
+<li>터널링의 구현
+<ul>
+<li>TCP 커넥션
+<ul>
+<li>터널링용 라우터 사이에 TCP 커넥션을 만듬</li>
+<li>커넥션의 양끝에 있는 소켓을 라우터의 포트로 간주하고 패킷을 송수신</li>
+</ul>
+</li>
+<li>캡슐화
+<ul>
+<li>헤더를 포함한 패킷 전채를 별도의 패킷안에 저장하여 터널 반대쪽으로 전송</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>4. 액세스 회선 전체의 동작</h3>
+<ul>
+<li>사용자가 인터넷 접속용 라우터를 설치하고 인터넷에 접속하면서 시작</li>
+<li>인터넷 접속용 라우터에 프로바이더가 할당한 사용자명, 패스워드를 등록</li>
+<li>인터넷 접속용 라우터에서 PPPoE 의 Discovery 구조를 사용해 BAS 를 탐색
+<ul>
+<li>인터넷의 브로드캐스트를 이용한 것</li>
+<li>BAS 의 MAC 주소를 반환받음</li>
+</ul>
+</li>
+<li>BAS 의 MAC 주소를 사용해 BAS 와 통신할 수 있게됨</li>
+<li>사용자명과 패스워드를 BAS 에 전송
+<ul>
+<li>CHAP
+<ul>
+<li>Challenge Handshake Authentication Protocol</li>
+<li>패스워드를 암호화 하여 보내는 방식</li>
+</ul>
+</li>
+<li>PAP
+<ul>
+<li>Password Authentication Protocol</li>
+<li>패스워드를 암호화 하지 않고 보내는 방식</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>암호를 확인한 후 BAS 에서 사용자에게 TCP/IP 설정정보를 통지
+<ul>
+<li>접속 기기에 할당된 IP</li>
+<li>DNS 서버의 IP</li>
+<li>기본 게이트웨이의 IP</li>
+</ul>
+</li>
+<li>라우터의 BAS 측 포트에 글로벌 주소가 할당됨</li>
+<li>경로표에 기본 게이트웨이를 설정함</li>
+<li>이후 인터넷접속을 중계</li>
+<li>클라이언트, 브라우저에서 인터넷에 접속하려하면 패킷이 넘어옴</li>
+<li>패킷의 목적지는 인터넷의 어느 한 부분이므로 경로표에는 등록이 되어있지 않음</li>
+<li>패킷을 기본 경로로 보내기 위해 기본 게이트웨이로 패킷을 중계</li>
+<li>중계 대상을 판단한 후 패킷을 보낼때는 PPPoE 규격을 따르게 됨
+<ul>
+<li>패킷에 앞에서부터 MAC, PPPoE, PPP 헤더 부여</li>
+<li>MAC 헤더
+<ul>
+<li>수신처 MAC 주소에는 PPPoE 의 Discovery 로 조사한 BAS 의 MAC 주소를 기록</li>
+<li>송신처 MAC 주소에는 인터넷 접속용 라우터의 BAS 로 연결된 포트의 MAC 주소를 기록</li>
+<li>이더타입은 PPPoE 를 나타내는 8864(16진수)를 기록</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>패킷이 BAS 에 도달하면 BAS 에서 MAC 헤더와 PPPoE 헤더를 제거한 후 PPP 헤더를 포함한 이후의 부분을 터널링을 사용하여 송신</li>
+<li>터널링을 이용해 프로바이터의 라우터에 도착</li>
+</ul>
+<h3>5. IP 어드레스를 할당하지 않는 언넘버드</h3>
+<ul>
+<li>인터넷 접속용 라우터가 패킷을 송신할 때 부가하는 헤더의 값은 이미 정해져 있는 상태</li>
+<li>경로표의 기본게이트웨이 항목이 어떤값이 되든 상관이 없게 됨</li>
+<li>1대 1, 라우터의 포트끼리 하나의 케이블로 연결되는 상태는 한쪽으로 들어온 패킷이 무조건 반대로 가게 되어있음</li>
+<li>이 상황에는 상대를 굳이 특정할 필요가 없어지며 전송시 필요한 IP 주소를 알 필요가 없게 됨
+<ul>
+<li>PPPoE 는 이더넷에서 작동하는 프로토콜이며 허브를 경유하여 BAS 에 도달하게 되므로 물리적으로는 1대 1의 상황이 아님</li>
+<li>실제로는 Discovery 를 사용하여 BAS 와 직접 대화하는 단계이므로 논리적으로 1대 1로 간주</li>
+</ul>
+</li>
+<li>기존에는 각 포트에 IP 를 부가하여 IP 주소를</li>
+<li>글로벌 주소가 부족해진 이후 1대 1로 접속하는 경우에 한해 IP 주소를 할당하지 않는것이 일반적인 경우가 됨
+<ul>
+<li>언넘버드</li>
+</ul>
+</li>
+</ul>
+<h3>6. 인터넷 접속용 라우터에서 프라이비트 주소를 글로벌 주소로 변환한다</h3>
+<ul>
+<li>인터넷 접속용 라우터를 사용하면 BAS 에서 통지한 글로벌 주소를 라우터가 가지게 되고 컴퓨터에는 글로벌 주소를 할당할 수 없게 됨</li>
+<li>컴퓨터는 프라이빗 주소를 할당하고 이를 라우터에서 변환하여 인터넷에 중계함</li>
+<li>주소 변환의 영향으로 애플리케이션이 제대로 작동하지 않는 경우 라우터를 사용하지 않고 BAS 가 통지하는 PPPoE의 메세지를 컴퓨터가 직접 받아 인터넷에 연결하는 원래의 방법을 사용</li>
+<li>이 경우 인터넷과 컴퓨터가 직접 연결되어있어 공격에 취약해지며 이를 위한 방화벽 등의 방어수단을 준비하는 것이 좋음</li>
+</ul>
+<h3>7. PPPoE 이외의 방식</h3>
+<ul>
+<li>PPPoA (Point to Point Protocol over ATM)
+<ul>
+<li>ADSL 을 이용한 방식</li>
+<li>PPPoE 에서는 PPP 메시지를 이더넷 패킷에 저장한 후 셀에저장</li>
+<li>PPPoA 는 PPP 메시지를 그대로 셀에 저장</li>
+<li>맨 앞에 MAC 헤더가 붙지 않으므로 PPP 메시지를 그대로 이더넷에 전송해야 함</li>
+<li>PPP 메시지는 그대로 이더넷에 전송되지 않으므로 PC, 라우터, 모뎀등을 ADSL 에 일체화 해야 함
+<ul>
+<li>PC 와 USB 인터페이스에 ADSL 모뎀을 연결하는 방법</li>
+<li>ADSL 모뎀과 라우터를 일체화한 라우터 일체형 ADSL 모뎀을 사용하는 방법</li>
+</ul>
+</li>
+<li>PPPoE 를 사용하면 PPPoE 헤더를 부가하여 MTU 가 짧아지게 됨</li>
+<li>PPPoA 는 이더넷의 패킷을 사용하지 않으므로 MTU 가 짧아지지 않고 효율성을 챙길 수 있음</li>
+</ul>
+</li>
+<li>DHCP (Dynamic Host Configuration Protocol)
+<ul>
+<li>PPPoE 는 효율성이 떨어지고 PPPoA 는 ADSL 모뎀과 라우터를 분리할 수 없는 제약이 생김</li>
+<li>PPP 대신 DHCP 를 사용</li>
+<li>주로 사내 LAN 에서 클라이언트 PC 에 TCP/IP 설정정보를 통지하기위해 사용
+<ul>
+<li>PC 에서 DHCP 서버에 설정정보를 요구</li>
+<li>DHCP 서버에서는 PC 에 설정정보를 통지</li>
+</ul>
+</li>
+<li>구조가 단순하고 사용자 인증을 하는 과정도 없음</li>
+<li>PPP 의 추가 헤더도 사용하지 않아 MTU 가 상대적으로 김</li>
+<li>ADSL 모뎀의 방식도 셀을 사용하지 않고 이더넷 패킷을 그대로 ADSL 신호로 변환</li>
+</ul>
+</li>
+</ul>
+<h2>4. 프로바이더의 내부</h2>
+<h3>1. POP 와 NOC</h3>
+<ul>
+<li>액세스 회선을 통과한 패킷이 프로바이더의 라우터에 도착</li>
+<li>프로바이더를 통해 인터넷에 접속하게 됨</li>
+<li>POP (Point Of Presence)
+<ul>
+<li>인터넷은 다수의 프로바이터의 네트워크를 연결한 것</li>
+<li>각각의 ADSL, FTTH 회선은 프로바이터의 어떤 설비에 연결되어있음</li>
+<li>해당 설비가 POP</li>
+</ul>
+</li>
+<li>POP 의 내부
+<ul>
+<li>여러종류, 다수의 회선을 받기 위한 라우터가 존재
+<ul>
+<li>기본 라우터
+<ul>
+<li>전용 액세스 회선</li>
+</ul>
+</li>
+<li>RAS 라우터
+<ul>
+<li>ISDN 회선</li>
+<li>PPP 프로토콜을 아용해 사용자를 식별하고 설정정보를 통지하는 기능</li>
+</ul>
+</li>
+<li>PPPoE 회선용 라우터
+<ul>
+<li>ADSL, FTTH 용 BAS 설치</li>
+</ul>
+</li>
+<li>PPPoA 회선용 라우터
+<ul>
+<li>DSLAM 에서 ATM 스위치를 경유해 BAS 에 연결</li>
+<li>사용자에서 온 신호가 DSLAM 에서 셀로 복원된 후 ATM 스위치에서 셀을 BAS 에 중계한 후 BAS 에서 셀을 패킷으로 복원</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>액세스 회선이 연결된 부분은 연결된 회선은 많으나 패킷의 양은 적음</li>
+<li>반대로 NOC나 POP 로 연결되는 반대쪽 라우터는 다수의 사용자로부터온 많은 양의 패킷을 중계해야 함</li>
+</ul>
+</li>
+<li>NOC (Network Operation Center)
+<ul>
+<li>프로바이더의 핵심 설비</li>
+<li>POP 로 들어온 패킷이 모여 다른 POP 나 프로바이더로 중계됨</li>
+<li>다량의 패킷이 중계되어야 하므로 고성능의 라우터를 사용</li>
+<li>NOC 에도 회선 접속용 라우터가 있는 경우가 있음</li>
+</ul>
+</li>
+</ul>
+<h3>2. 건물 밖은 통신 회선 등으로 접속한다</h3>
+<ul>
+<li>멀리 떨어져 있는 POP 나 NOC 에 접속하는 방법
+<ul>
+<li>직접 광섬유를 가진 프로바이더는 상대 POP 나 NOC 에 직접 연결
+<ul>
+<li>광섬유를 가설하려면 케이블을 매장하는 공사를 진행해야 하며 절단시 수리가 필요함</li>
+<li>큰 비용이 들게 되므로 소수의 대형 프로바이더가 하는 방식</li>
+</ul>
+</li>
+<li>대형 프로바이더의 광섬유 회선을 대여
+<ul>
+<li>위의 대형 프로바이더는 회선을 세세하게 나누어 다량의 광섬유 회선을 가지고 있음</li>
+<li>이들이 빌려주는 회선을 ‘통신회선’ 이라고 하며 이를 빌려 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>5. 프로바이더를 경유하여 흐르는 패킷</h2>
+<h3>1. 프로바이더끼리의 접속</h3>
+<ul>
+<li>동일 프로바이더에 목적지가 있는 경우
+<ul>
+<li>POP, NOC 들을 거치면서 최종 목적지가 연결된 POP 에 도달하고 목적지에 도착</li>
+</ul>
+</li>
+<li>목적지가 다른 프로바이더에 있는 경우
+<ul>
+<li>연결된 프로바이더와 그안의 POP, NOC 를 거치며 목적지 프로바이더의 POP 에 전달된 후 목적지에 도착</li>
+</ul>
+</li>
+</ul>
+<h3>2. 프로바이더끼리 경로 정보 교환하기</h3>
+<ul>
+<li>BGP (Border Gateway Protocol)
+<ul>
+<li>접속하는 상대가 접속하는 대상에게 본인의 경로 정보를 알려줌</li>
+<li>접속하는 대상은 상대가 전해준 경로정보를 저장하고 있다가 후에 사용</li>
+<li>해당 과정은 라우터에 의해 자동적으로 수행</li>
+</ul>
+</li>
+<li>트랜지트 (transit)
+<ul>
+<li>접속하는 상대가 알고있는 모든 경로정보를 전달하는 방식</li>
+<li>접속하는 대상은 접속하는 상대가 연결된 모든 경로 정보를 알 수 있음</li>
+<li>연결되어있는 누군가로 패킷을 보낼때 처음에 정보를 알려준 상대를 통해 패킷을 보내게 됨</li>
+</ul>
+</li>
+<li>비트앤지트, 피어 (peer)
+<ul>
+<li>접속하는 상대 본인의 정보 경로만 전달하는 방식</li>
+<li>상대의 네트워크로 갈 패킷만 보내게 됨</li>
+</ul>
+</li>
+</ul>
+<h3>3. 사내 네트워크에 자동 등록하기</h3>
+<ul>
+<li>사내의 네트워크는 목적지까지의 최단경로를 찾아 패킷을 중계하도록 되어있음</li>
+<li>주변에 연결된 전체 라우터와 무차별적인 경로 정보를 공유함</li>
+<li>프로바이더에서는 이런식으로 최단거리를 사용하려고 하면 허락되지 않은 다른 프로바이더의 회선을 사용하게 될 수 있어 비용문제가 생길 수 있음
+<ul>
+<li>단순히 최단 경로를 선택하는 것이 아니며 의도하지 않은 상대로부터 오는 패킷을 중지하는 구조가 필요
+<ul>
+<li>경로 정보를 교환하는 상대를 지정하는 방법
+<ul>
+<li>사내의 라우터의 정보교환과 다르게 특정 라우터와 1 대 1 로 정보 교환을 함</li>
+<li>비용 부담등의 내용이 합의된 상대에게서만 경로 정보를 교환함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>결로 정보를 교환하지 않은 상대에게서는 패킷을 전달할 수 없게 됨</li>
+<li>한 프로바이더가 다수의 프로바이더들과 연결되어 있어 직접 상대 프로바이더에 연결되어있지 않더라도 상대 프로바이더에 접근할 수 있도록 연결을 해 둠</li>
+</ul>
+</li>
+</ul>
+<h3>4. IX 의 필요성</h3>
+<ul>
+<li>IX (Internet eXchange)</li>
+<li>프로바이더와 프로바이더가 무조건 1대 1로 연결이 되어있다면 모든 프로바이더가 연결되어야 하는 경우 회선이 많아짐</li>
+<li>연결의 중심이 되는 설비인 IX 를 설치하고 이를 경유하도록 하여 통신 회선의 수를 줄임</li>
+</ul>
+<h3>5. IX 에서 프로바이더끼리 접속하는 모습</h3>
+<ul>
+<li>IX 의 중심에는 고속 LAN 인터페이스가 장착된 layer-2 스위치가 있음
+<ul>
+<li>기본 동작은 스위치 허브와 같음</li>
+</ul>
+</li>
+<li>IX 와 같은 건물에 NOC 를 설치한 프로바이더
+<ul>
+<li>NOC 에서 광섬유를 이용해 IX 에 직접 연결</li>
+<li>라우터를 IX 에 연결한 뒤 라우터에 프로바이더를 연결</li>
+<li>프로바이더의 라우터를 IX 에 직접 연결</li>
+</ul>
+</li>
+<li>패킷의 흐름이 집중되는 외부에 IX 스위치를 설치하고 여기에 프로바이더를 연결</li>
+<li>정보 교환이 되어있는 프로바이더에게만 패킷을 전송</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

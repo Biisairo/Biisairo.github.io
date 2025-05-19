@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IRC</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+                <h2>하위 그룹</h2>
+                <ul>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/born2beroot/">born2beroot</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/minilibx/">minilibx</a></li>
+                    
+                        <li><a href="https://biisairo.github.io/Study/42/ft_transcendence/">ft_transcendence</a></li>
+                    
+                </ul>
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/ft_printf.html">ft_printf</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/get_next_line.html">get_next_line</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/pipex.html">pipex</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/minishell.html">minishell</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/philosopher.html">philosopher</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/net_practice.html">net_practice</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/rbtree.html">rbtree</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/IRC.html">IRC</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>IRC</h1>
+<p><a href="https://badayak.com/entry/C%EC%96%B8%EC%96%B4-%EC%86%8C%EC%BC%93-%EC%83%9D%EC%84%B1-%ED%95%A8%EC%88%98-socket">socket 통신 튜토리얼</a> 참고</p>
+<h1>function</h1>
+<ul>
+<li>sys/types.h</li>
+<li>sys/socket.h
+<ul>
+<li>socket</li>
+<li>setdockopt</li>
+<li>getsockopt</li>
+<li>bind</li>
+<li>connect</li>
+<li>listen</li>
+<li>accept</li>
+<li>inet_addr</li>
+<li>send</li>
+<li>recv</li>
+</ul>
+</li>
+<li>netdb.h
+<ul>
+<li>getprotobyname</li>
+<li>gethostbyname</li>
+<li>getaddrinfo</li>
+<li>freeaddrinfo</li>
+</ul>
+</li>
+<li>arpa/inet.h
+<ul>
+<li>htons</li>
+<li>htonl</li>
+<li>ntohs</li>
+<li>ntohl</li>
+<li>inet_ntoa</li>
+</ul>
+</li>
+<li>signal.h
+<ul>
+<li>signal</li>
+</ul>
+</li>
+<li>unistd.h
+<ul>
+<li>lseek</li>
+<li>select</li>
+</ul>
+</li>
+<li>sys/stat.h
+<ul>
+<li>fstat</li>
+</ul>
+</li>
+<li>fcntl.h
+<ul>
+<li>fcntl</li>
+</ul>
+</li>
+<li>poll.h
+<ul>
+<li>poll</li>
+</ul>
+</li>
+<li>sys/types.h</li>
+<li>sys/event.h</li>
+<li>sys/time.h
+<ul>
+<li>kqueue.h</li>
+</ul>
+</li>
+</ul>
+<h2>sys/socket.h</h2>
+<h3>socket</h3>
+<pre><code class="language-cpp">int socket(int domain, int type, int protocol);
+</code></pre>
+<ul>
+<li>통신을 위한 endpoint 를 생성한다
+<ul>
+<li>endpoint : ip 주소와 port 번호의 조합</li>
+</ul>
+</li>
+<li>domain
+<ul>
+<li>sys/socket.h 에 정의되어있음</li>
+<li>통신 도매인을 특정한다</li>
+<li>PF_INET, AF_INET : IPv4</li>
+<li>PF_INET6 : IPv6</li>
+<li>PF_LOCAL, AF_UNIX : 로컬 프로세스</li>
+<li>…</li>
+</ul>
+</li>
+<li>type
+<ul>
+<li>소켓의 타입</li>
+<li>SOCK_STREAM : TCP/IP</li>
+<li>SOCK_DGRAM : UDP/IP</li>
+</ul>
+</li>
+<li>protocol
+<ul>
+<li>소켓이 사용할 특정 프로토콜</li>
+<li>일반적으로 0 사용</li>
+</ul>
+</li>
+</ul>
+<h3>return</h3>
+<p>성공시 endpoint 를 담고있는 fd 를 반환 실패시 -1, errno 에 저장</p>
+<h3>setsockopt, getsockopt</h3>
+<pre><code class="language-cpp">int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen);int getsockopt(int sockfd, int level, int optname, void *restrict optval, socklen_t *restrict optlen);
+</code></pre>
+<ul>
+<li>소켓의 option 을 get, set 한다</li>
+<li>sockfd
+<ul>
+<li>소켓의 fd</li>
+</ul>
+</li>
+<li>level, optname
+<ul>
+<li>조작할 옵션의 이름과 레벨</li>
+<li>api 레벨에서의 조작은 SOL_SOCKET 으로 지정</li>
+<li>다른 레벨에서 옵션을 조작하려면 해당 프로토콜의 옵션을 제어하는 적절한 프로토콜의 프로토콜 번호옵션이 제공됩니다(?)</li>
+<li>ex)
+<ul>
+<li>한 옵션이 tcp 프로토콜에 의해 해석되어야 한다는 것을 알리려면 level 은 tcp 의 프로토콜 번호가 되어야 한다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>optval, optlen
+<ul>
+<li>set- 에서는 옵션의 값에 접근하는데 사용</li>
+<li>get- 에서는 요청된 옵션의 값을 반환할 버퍼로 사용</li>
+<li>get- 에서 optlen은 값의 결과를 나타내는 인자로 optval 이 가리키는 버퍼의 크기를 반환, 반환값이 없을경우 optval 이 null 일 수 있음</li>
+</ul>
+</li>
+</ul>
+<h3>return</h3>
+<p>성공시 0 실패시 -1, errno 에 저장</p>
+<h3>bind</h3>
+<pre><code class="language-cpp">int bind(int sockfd, struct sockaddr *myaddr, socklen_t addrlen);
+</code></pre>
+<ul>
+<li>만들어진 socket 에 필요한 정보를 할당하고 커널에 등록</li>
+<li>인터넷 연결인 AF_INET 인경우와 내부 연결은 AF_UNIX 에 따라 달라진다
+<ul>
+<li>AF_INET : struct sockaddr_in 사용</li>
+<li>AF_UNIX : struct sockaddr 사용</li>
+</ul>
+</li>
+<li>socket 으로 만들어진 fd 는 정보가 없는 그냥 fd</li>
+<li>bind 로 소켓에 주소를 할당하고 port 번호를 할당해서 커널에 등록함</li>
+</ul>
+<h3>return</h3>
+<p>성공시 0 실패시 -1, errno 에 저장</p>
+<h3>connect</h3>
+<pre><code class="language-cpp">int connect(int sockfd, const struct sockaddr *serv_addr, socklen_t addrlen);
+</code></pre>
+<ul>
+<li>클라이언트에서 서버로 접속을 시도할때 사용</li>
+<li>sockaddr 구조체에 설정을 하고 인자로 넣어 접속을 시도</li>
+</ul>
+<h3>return</h3>
+<p>성공시 -1 이외의 fd 실패시 -1, errno 에 저장</p>
+<h3>listen</h3>
+<pre><code class="language-cpp">int listen(int sockfd, int backlog);
+</code></pre>
+<ul>
+<li>소켓으로 부터 연결을 기다리며 들어오는 연결의 수를 제한한다</li>
+<li>backlog : 들어오는 연결의 수를 제한</li>
+</ul>
+<h3>return</h3>
+<p>성공시 0 실패시 -1, errno 에 저장</p>
+<h3>accept</h3>
+<pre><code class="language-cpp">int addcpt(int sockfd, struct sockaddr *addr, socklen_t *addrlen);
+</code></pre>
+<ul>
+<li>클라이언트와의 연결 허가</li>
+<li>자동으로 소켓을 생성하게 된다</li>
+</ul>
+<h3>return</h3>
+<p>성공시 -1 이외의 fd 실패시 -1, errno 에 저장</p>
+<h3>inet_addr</h3>
+<pre><code class="language-cpp">unsigned long int inet_addr(const char *cp);
+</code></pre>
+<ul>
+<li>숫자와 점으로 이루어진 ip 주소 문자열을 숫자로 바꾸어줌</li>
+<li>struct sockaddr_in 의 sin_addr.s_add 의 값을 숫자로 넣어줄때 사용</li>
+</ul>
+<h3>return</h3>
+<p>성공시 -1 이외의 ip 주소 실패시 -1</p>
+<h3>send</h3>
+<pre><code class="language-cpp">int send(int sockfd, const void *msg, size_t len, int flags);
+</code></pre>
+<ul>
+<li>msg : 전송할 메세지</li>
+<li>len : msg 의 크기</li>
+<li>flag
+<ul>
+<li>MSG_DONTWAIT : 전송할 준비 전에 대기가 필요하다면 기다리지 않고 -1 을 반환하면서 종료</li>
+<li>MSG_NOSIGNAL : 상대방과의 연결이 끊겼을 때, SIGPIPE 시그널을 받지 않음</li>
+</ul>
+</li>
+</ul>
+<h3>return</h3>
+<p>성공시 -1 실제 전송한 바이트 수 실패시 -1</p>
+<h3>recv</h3>
+<pre><code class="language-cpp">int recv(int sockfd, void *buff, size_t len, int flags)
+</code></pre>
+<ul>
+<li>buff : 수신할 버퍼 포인터</li>
+<li>len : buff 의 크기</li>
+<li>flag : send 와 같음</li>
+</ul>
+<h2>netdb.h</h2>
+<h3>getprotobyname</h3>
+<pre><code class="language-cpp">struct protoent *getprotobyname(const char *name);
+</code></pre>
+<pre><code class="language-cpp">struct protoent{    char *p_name;     // 프로토콜의 이름    char **p_aliases; // alias 리스트, null 로 종료되는 리스트이며 프로토콜의 별칭들이 들어있다    int p_proto;      // 프로토콜 번호
+</code></pre>
+<ul>
+<li>프로토콜의 이름과 일치하는 데이터베이스의 항목을 반환</li>
+<li>필요한 경우 데이터베이스에 대한 연결이 열린다</li>
+</ul>
+<h3>return</h3>
+<p>성공시 protoent 구조체 포인터 반환 실패시 null 반환, errno 에 저장</p>
+<h3>gethostbyname</h3>
+<pre><code class="language-cpp">struct hostent *gethostbyname(const char *name);
+</code></pre>
+<pre><code class="language-cpp">struct hostent{    char *h_name;        // host 의 공식 이름    char **h_aliases;    // 별칭 리스트, null terminate    int h_addrtype;      // 호스트 주소 타입, 현재는 거의 AF_INET, AF_INET6    int h_length;        // 주소의 길이, byte 단위    char **h_addr_list;  // 호스트의 네크위터 주소 리스트, null terminate}
+</code></pre>
+<blockquote>
+<p>더는 사용되지 않는 함수라고 나와있다</p>
+</blockquote>
+<ul>
+<li>주어진 host 이름에 대해 hostent 구조체로 반환</li>
+<li>name : hostname 또는 점 표기법의 IPv4 주소</li>
+</ul>
+<h3>return</h3>
+<p>성공시 hostent 구조체 포인터 반환 실패시 null 반환, h_error 에 저장</p>
+<h3>getaddrinfo, freeaddrinfo</h3>
+<pre><code class="language-cpp">int getaddrinfo(const char *restrict nodename,                const char *restrict servname,                const struct addrinfo *restrict hints,                struct addrinfo **restrict res);void freeaddrinfo(struct addrinfo *ad);
+</code></pre>
+<ul>
+<li>freeaddrinfo
+<ul>
+<li>하나 이상의 addrinfo 구조체와 그에 연관된 모든 메모리를 free 한다</li>
+<li>구조체의 ai_next 가 null 이 아니면 구조체의 전체 목록이 해제된다</li>
+</ul>
+</li>
+<li>getaddrinfo
+<ul>
+<li>서비스 위치의 이름(ex. host name) 이나 서비스이름을 변환하고 소켓 주소를 지정하는데 사용할 소켓주소 및 관련 정보들의 집합을 반환</li>
+</ul>
+</li>
+<li>nodename, servname
+<ul>
+<li>문자열 형태의 char *</li>
+<li>둘중 하나는 null 이 아닌 값이 들어와야 한다</li>
+</ul>
+</li>
+<li>nodename 이 null 이 아닌경우
+<ul>
+<li>이름이거나 주소값을 나타낸다.</li>
+<li>상세 주소가 AF_INET, AF_INET6, AF_UNSPEC 인 경우 hostname 을 포함한다</li>
+<li>상세 주소가 AF_INET, AF_UNSPEC 인 경우 주소 문자열은 점 표기법으로 표기된다</li>
+<li>nodename 이 null 이 아닌경우
+<ul>
+<li>요청된 서비스 위치의 이름이 nodename 으로 저장되며</li>
+</ul>
+</li>
+<li>nodename 이 null 인경우
+<ul>
+<li>요청된 서비스의 위치는 local 이다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>servname 이 null 이 아닌경우
+<ul>
+<li>nodename 의 network-level 을 반환한다</li>
+<li>요청된 서비스를 판별하기 위한 문자열이다</li>
+<li>이것은 설명이 포함된 이름이거나 주소를 나타내는 숫자이다</li>
+</ul>
+</li>
+<li>hints 가 null 이 아닌경우
+<ul>
+<li>힌트 인수가 null이 아닌 경우 아래 설명된 대로 옵션을 제공하고 반환된 정보를 특정 소켓 유형, 주소 패밀리 및/또는 프로토콜로 제한하여 작업을 지시하는 입력 값을 포함하는 구조를 참조합니다.</li>
+<li>애플리케이션은 각 ai_addrlen, ai_addr, ai_canonname 및 ai_next 멤버뿐만 아니라 이 힌트 구조의 각 비표준 추가 멤버(있는 경우)가 초기화되도록 해야 합니다.</li>
+<li>이러한 멤버 중 하나라도 기본 초기화의 결과 값이 아닌 다른 값을 갖는 경우 동작은 구현 정의입니다.</li>
+<li>ai_family에 대한 AF_UNSPEC 값은 호출자가 모든 주소 패밀리를 수락해야 함을 의미합니다.</li>
+<li>ai_socktype의 값이 0이면 호출자가 모든 소켓 유형을 수락해야 함을 의미합니다.</li>
+<li>ai_protocol의 값이 0이면 호출자가 모든 프로토콜을 수락해야 함을 의미합니다.</li>
+<li>힌트가 널 포인터인 경우 동작은 ai_flags, ai_socktype 및 ai_protocol 필드에 대한 값 0과 ai_family 필드에 대한 AF_UNSPEC을 포함하는 구조를 참조하는 것과 같습니다.</li>
+</ul>
+</li>
+</ul>
+<h2>arpa/inet.h</h2>
+<h3>htons, htonl, ntohs, ntohl</h3>
+<pre><code class="language-cpp">uint16_t htons(uint16_t hostshort);uint32_t htonl(uint32_t hostlong);uint16_t ntohs(uint16_t netshort);uint32_t ntohl(uint32_t netlong);
+</code></pre>
+<ul>
+<li>각각 uint16, uint32 의 host byte order 데이터, network byte order 데이터를 반대로 바꿔준다</li>
+<li>네트워크는 큰 단위의 값부터 먼저쓰는 Big-endian 을 사용</li>
+<li>호스트는 작은 단위의 값부터 먼저 쓰는 Little-endian 을 사용</li>
+<li>example data 0x1234</li>
+<li>big endian
+<ul>
+<li>0x12, 0x34 순서로 저장</li>
+</ul>
+</li>
+<li>little endian
+<ul>
+<li>0x34, 0x12 순서로 저장</li>
+</ul>
+</li>
+</ul>
+<h3>return</h3>
+<p>성공시 변환된 값 실패시 -1</p>
+<h3>inet_ntoa</h3>
+<pre><code class="language-cpp">const char *inet_ntop(int af, const void *restruct src, char *restrict dst, socklen_t size);
+</code></pre>
+<ul>
+<li>af 주소 계열의 네크워트 안의 sddr 구조체를 문자열로 변환</li>
+<li>결과는 dst 가 가리키는 주소에 복사됨</li>
+<li>size 는 dst 에서 사용 가능한 크기를 지정</li>
+</ul>
+<h3>return</h3>
+<p>성공시 dst 의 값을 반환 실패시 null 반환, errno 에 저장</p>
+<h2>signal.h</h2>
+<h3>signal</h3>
+<pre><code class="language-c">void (*signal(int sig, void (*func)(int)))(int)
+</code></pre>
+<p><code>signal(SIGINT, sig_func)</code></p>
+<p>int sig 에 해당하는 signal 이 들어왔을 때 처리를 담당 func 에 함수를 넣어 시그널이 들어왔을 때 함수를 호출한다 해당 함수의 인자로는 해당 시그널이 들어간다 func 인자 - SIG_DFL : 기존의 방법을 따른다 - SIG_IGN : 시그널을 무시한다 - 함수이름 : 해당 함수를 호출한다</p>
+<p>SIGKILL, SIGSTOP 은 handling 을 할 수 없다</p>
+<h3>return</h3>
+<p>성공시 이전에 실행되던 작업이 반환된다 즉 신호 처리 이후 반환값을 실행하면 이전 작업이 계속 진행된다 실패시 SIG_ERR 가 반환되며 errno 가 설정된다</p>
+<h2>unistd.h</h2>
+<h3>lseek</h3>
+<pre><code class="language-cpp">off_t lseek(int fd, off_t offset, int whence);
+</code></pre>
+<ul>
+<li>fd 에서 offset 만큼 위치를 변경한다</li>
+<li>기준점은 whence 부터이다
+<ul>
+<li>SEEK_SET : 파일의 처음부터</li>
+<li>SEEK_CUR : 파일의 현 위치부터</li>
+<li>SEEK_END : 파일의 마지막부터</li>
+</ul>
+</li>
+</ul>
+<h3>return</h3>
+<p>성공시 파일의 시작부터 떨어진 offset 을 반환 실패시 -1 반환</p>
+<h3>select</h3>
+<pre><code class="language-cpp">int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
+</code></pre>
+<pre><code class="language-cpp">FD_ZERO(*fd_set);FD_SET(fd, *fd_set);FD_CLR(fd, *fd_set);FD_ISSET(fd, *fd_set);
+</code></pre>
+<ul>
+<li>nfds : 관리하는 fd의 갯수, 파일 최대 지정번호 + 1 로 지정</li>
+<li>fd_set : 관리하는 fd 의 지정번호가 들어있는 bit 배열 구조체
+<ul>
+<li>readfds : 읽을 데이터가 있는지 검사하기 위한 파일 목록</li>
+<li>writefds : 쓰여진 데이터가 있는지 검사하기 위한 파일 목록</li>
+<li>exceptfds : 예외사항들이 있는지 검사하기 위한 파일 목록</li>
+</ul>
+</li>
+<li>timeout : fd_set 에 변경사항이 있는지를 timeout 시간동안 검사함
+<ul>
+<li>timeout 시간동안 변경이 없을 시 : 0 반환</li>
+<li>timeout 이 null 일시 : 변경이 생길때 까지 무한대기</li>
+<li>timeout 구조체의 멤버값이 모두 0 일시 : 즉시 반환</li>
+</ul>
+</li>
+<li>fd_set
+<ul>
+<li>1024 크기의 비트배열을 포함한다</li>
+<li>각 fd를 배열에 대응된다 (1번째면 0번)</li>
+<li>변경된 데이터가 있을 시 1 번으로 바뀐다</li>
+</ul>
+</li>
+<li>FD_ZERO : fd_set 을 초기화한다</li>
+<li>FD_SET : fd 번째 fd_set 을 1로 변경</li>
+<li>FD_CLR : fd 번째 fd_set 을 0으로 변경</li>
+<li>FD_ISSET : fd_set 에 확인할 목록이 있는지 검사한다</li>
+</ul>
+<h3>return</h3>
+<p>성공시 변경된 파일의 갯수, 즉 1의 갯수를 반환 실패시 -1</p>
+<h2>sys/stat.h</h2>
+<h3>fstat</h3>
+<pre><code class="language-c">int fstat(int fd, struct stat *buf)
+</code></pre>
+<pre><code class="language-c">struct stat{dev_t st_dev; /*ID of device containing file */ino_t st_ino; /*inode number*/mode_t st_mode; /*protection*/nlink_t st_nlink; /*number of hard links*/uid_t st_uid; /*user ID of owner*/gid_t st_gid; /*group ID of owner*/dev_t st_rdev; /*device ID (if special file)*/off_t st_size; /*total size, in byte*/blksize_t st_blksize; /*blocksize for file system I/O*/blkcnt_t st_blocks; /*number of 512B blocks allocated*/time_t st_atime; /*time of last access*/time_t st_mtime; /*time of last modification*/time_t st_xtime; /*time of last status change*/}
+</code></pre>
+<p>파일의 크기, 권한, 생성일시, 최종 변경일 등 파일의 상태나 정보를 얻는 함수</p>
+<p>fstat 은 파일 디스크립터를 받으며 stat 와 같게 작동</p>
+<h3>return</h3>
+<p>성공시 0 실패시 -1 반환, errno 설정</p>
+<h2>fcntl.h</h2>
+<h3>fcntl</h3>
+<pre><code class="language-cpp">int fcntl(int fd, int cmd, ...);
+</code></pre>
+<ul>
+<li>fd 에 대해 cmd 를 수행</li>
+<li>fd 제어를 위해 사용</li>
+<li>cmd
+<ul>
+<li>F_DUPFD : fd 를 복제, dup2 와 비슷, 사용중이 아닌 가장 작은 fd 를 사용
+<ul>
+<li>반환값은 새로운 fd</li>
+</ul>
+</li>
+<li>F_GETFD : fd 플래그를 조회하여 반환
+<ul>
+<li>반환값은 fd 플래그</li>
+</ul>
+</li>
+<li>F_SETFD : fd 플래그를 설정, 설정할 값은 가변인자로 넘겨줌
+<ul>
+<li>반환값은 -1 이 아닌 정수</li>
+</ul>
+</li>
+<li>F_GETFL : open() 함수 호출 시 설정한 파일상태 플래그를 반환
+<ul>
+<li>반환값은 fd 파일상채 플래그</li>
+</ul>
+</li>
+<li>F_SETFL : 파일상태 플래스를 설정, 설정할 플래그는 가변인자로 넘겨줌</li>
+</ul>
+</li>
+<li>세번째 변수
+<ul>
+<li>O_NONBLOCK : read 에서 버퍼에 존재하는 data 의 크기가 요구하는 size 보다 작더라도 버퍼에 존재하는 만큼 가져오며 blocking 되지 않음</li>
+</ul>
+</li>
+</ul>
+<h3>return</h3>
+<p>성공시 cmd 별로의 반환값 실패시 -1</p>
+<h2>poll.h</h2>
+<h3>poll</h3>
+<pre><code class="language-cpp">int poll(struct pollfd *fds, nfds_t nfds, int timeout);
+</code></pre>
+<ul>
+<li>순서대로 읽기를 하게되면 데이터가 오지 않는 경우 read, recv 를 하면 blocking 상태가 되며 다른 fd 에서 전송이 되어도 받을 수 없음</li>
+<li>socket, pipe 에서 여러개의 io 를 사용할 때 읽을 수 있는 상태가 되면 blocking 을 해제해줌</li>
+</ul>
+<pre><code class="language-cpp">struct pollfd{    int fd;         // fd    short events;   // 요청된 이벤트    short revents;  // 반환된 이벤트}/*fd : file descriptorevents : monitoring 할 event 종류로 아래의 상수로 Bit Or 연산으로 여러가지 설정할 수 있습니다revents : 반환 event로 events에서 설정한 값 중에 일치하는 값과 추가적인 몇가지 event가 설정됩니다[Event 상수 값]POLLIN : 읽을 데이터가 있습니다. (events / revents)POLLPRI : 긴급 데이터(Out-of-band Data)를 읽을 것이 있습니다. (events / revents)POLLOUT : 바로 쓸 수 있는 상태입니다. (events / revents)POLLWRBAND : 긴급 데이터(Out-of-band data)를 쓸 수 있습니다. (events / revents)POLLERR : 주어진 file descriptor에 오류가 있습니다. (revents only)POLLHUP : 주어진 file descriptor에서 event가 지체되고 있습니다.(revents only) POLLNVAL : 주어진 file descriptor가 유효하지 않습니다. (revents only)*/
+</code></pre>
+<ul>
+<li>fds : 모니터링 할 fd 와 event 종류를 설정하고 poll 이 반환되었을 때 결과값을 저장하는 구조체 배열의 주소값</li>
+<li>nfds : 설정된 fds 의 갯수</li>
+<li>timeout : milli sec 단위의 time out 을 설정
+<ul>
+<li>0 으로 해둘 시 poll 함수는 곧바로 return 됨</li>
+<li>값이면 무한대, 즉 event 가 생길때 까지 무한 대기</li>
+</ul>
+</li>
+</ul>
+<h3>return</h3>
+<p>성공시 1 이상 : event 가 발생한 fd 의 갯수 0 : timeout 발생 실패시 -1 반환, errno 저장</p>
+<h2>sys/types.h</h2>
+<h2>sys/event.h</h2>
+<h2>sys/time.h</h2>
+<h3>kqueue</h3>
+<h3>kevent</h3>
+<pre><code class="language-cpp">int kqueue();int kevent(int kq, const struct kevent *changelist, int nchanges, struct kevent *eventlist, int nevents, const struct timespec *timeout);
+</code></pre>
+<pre><code class="language-cpp">struct kevent {    uintptr_t ident; /* identifier for this event */    int16_t filter; /* filter for event */    uint16_t flags; /* action flags for kqueue */    uint32_t fflags; /* filter flag value */    intptr_t data; /* filter data value */    void *udata; /* opaque user data identifier */    };
+</code></pre>
+<pre><code class="language-cpp">EV_SET(&amp;kev, ident, filter, flags, fflags, data, udata); // kevent 구조체의 주소를 전달
+</code></pre>
+<ul>
+<li>ident : event 식별자, fd 번호</li>
+<li>filter : 커널이 event 를 핸들링 할때 사용 되는 필터값, event 의 식별자로도 사용
+<ul>
+<li>EVFILT_READ : ident 의 fd 를 모니터링 하고 read 가능한 data 가 있으면 event 는 return 된다, fd 의 형식(pipe, socket 등)에 따라 다른 동작을 한다</li>
+<li>EVFILT_WRITE : ident 의 fd 를 모니터링 하고 write 가능한 data 가 있으면 event 는 return 된다</li>
+<li>EVFILT_VNODE, EVFILT_VNODE 등…</li>
+</ul>
+</li>
+<li>flag : event 를 적용시키거나 return 되었을 때 사용되는 flag
+<ul>
+<li>EV_ADD : kqueue 에 event 를 등록한다, 이미 등록된 event, 즉 ident 와 filter 가 같은 event 를 재등록 하는 경우에는 새로 만들지 않고 덮어씌워진다, 등록된 이벤트는 자동으로 활성화된다</li>
+<li>EV_ENABLE : kevent 가 event 를 return 할 수 있도록 활성화한다</li>
+<li>EV_DISABLE : event 를 비활성화한다, kevent 가 event 를 return 하지 않는다</li>
+<li>EV_DELETE : kevent 에서 event 를 삭제한다, fd 를 close() 한 경우 관련 event 는 자동으로 삭제한다</li>
+</ul>
+</li>
+<li>fflag : filter 에 따라 걸리는 flag</li>
+<li>data : filter 에 따라 저장되는 값
+<ul>
+<li>EVFILT_READ 같은 경우는 read 가능한 값이 저장된다</li>
+</ul>
+</li>
+<li>udata : event 와 같이 등록하여 return 시 사용할 수 있는 user-data 이다, udata 또한 event 의 식별자로 사용할 수 있다</li>
+<li>kevent 는 ident 와 filter 를 식별자로 사용한다</li>
+<li>event 의 중복 등록을 막고 사용하지 않는 event 를 삭제되어 최소한의 kevent 를 만든다</li>
+<li>EV_SET 을 사용해 kevent 구조체를 초기화하면 편하다</li>
+<li>kq : kqueue 에서의 반환값</li>
+<li>changelest : kq 에 등록될 event 들</li>
+<li>nchanges : 등록할 event 의 갯수</li>
+<li>eventlist : 발생할 event 가 return 될 배열</li>
+<li>nevents : eventlist 배열의 크기 (최대 저장될 event 의 갯수)</li>
+<li>timeout : NULL 전달 시 이벤트 발생까지 blocking, 혹은 timeout 시간 지정</li>
+<li>kqueue() 를 사용하면 event 들을 저장 할 event queue 를 만들고 해당 큐의 fd 를 반환한다</li>
+<li>kevent() 를 사용해 kqueue 의 fd 에 새로 모니터링 할 event 들을 등록하고 발생한 이벤트의 갯수를 반환한다, event 들을 eventlist 에 저장된다</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+        
+        
+        <article>
+            <h1>advanced glsl</h1>
+<h2>vertex shader 변수</h2>
+<h3>gl_Position</h3>
+<p>vertex shader 의 출력 벡터</p>
+<p>정점의 좌표를 나타냄</p>
+<h3>gl_PointSize</h3>
+<p>glPointSize 를 사용해 정점의 크기를 정하는 것과 같은 효과</p>
+<p>출력할 점의 넓이와 높이를 정할 수 있음</p>
+<p>glEnable 을 사용해 GL_PROGRAM_POINT_SIZE 를 활성화 시켜주어야 함</p>
+<p>gl_Position 처럼 변수에 값을 할당시켜 줌</p>
+<h3>gl_VertexID</h3>
+<p>gl_Position, gl_PointSize 는 출력변수</p>
+<p>gl_VertexID 는 입력 변수, 즉 읽어올 수 있는 변수</p>
+<p>현재의 정점 ID 를 불러옴</p>
+<p>glDrawElements 를 사용할 때 현재 인덱스 번호를 불러옴</p>
+<p>glDrawArrays 를 사용할 때 랜더 이후 호출된, 처리된 정점의 번호를 가져옴</p>
+<h2>fragment shader 변수</h2>
+<h3>gl_FragCoord</h3>
+<p>해당 조각의 화면에서의 좌표를 받아옴</p>
+<h3>gl_FrontFacing</h3>
+<p>face culling 에서 확인된 해당 fragment 가 앞면인지 뒷면인지 확인</p>
+<p>GL_FACE_CULL 을 enable 시켰을 때 사용 가능</p>
+<p>앞면일 경우 true, 뒷면일 경우 false 로 정의되어있음</p>
+<h3>gl_FragDepth</h3>
+<p>gl_FragCoord 는 깊이를 알 수 있지만 읽기전용 변수</p>
+<p>gl_FragDepth 는 출력변수로 해당 fragment 의 깊이를 설정할 수 있음</p>
+<p>0 ~ 1 사이의 값을 적용</p>
+<p>따로 설정하지 않을 시 gl_FragCoord 의 z 값을 default 로 사용</p>
+<p>depth test 에서는 gl_FragDepth 를 사용하면 값이 바뀔 수 있기 때문에 pre depth test 를 하지 않게됨</p>
+<ul>
+<li>성능저하가 올 수 있음</li>
+<li>opengl 4.2 이후에서는 layout 을 사용해 이를 중재할 수있음
+<ul>
+<li>
+<p>layout (depth_<conditon>) out float gl_FragDepth;</p>
+<p><img src="advanced%20glsl%207a205ef7cc254ab7ae7abb9822f3c4fb/Screen_Shot_2023-09-25_at_4.34.11_PM.png" alt="Screen Shot 2023-09-25 at 4.34.11 PM.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Interface block</h2>
+<p>vertex shader 에서 fragment shader 로 변수를 보낼때 in/out 선언을 사용</p>
+<p>규모가 커지면 이를 그룹화 해서 사용할 수 있음</p>
+<p>구조체 선언과 비슷하나 struct 키워드가 아닌 in/out 키워드를 사용</p>
+<p><img src="advanced%20glsl%207a205ef7cc254ab7ae7abb9822f3c4fb/Screen_Shot_2023-09-25_at_4.35.47_PM.png" alt="Screen Shot 2023-09-25 at 4.35.47 PM.png"></p>
+<p><img src="advanced%20glsl%207a205ef7cc254ab7ae7abb9822f3c4fb/Screen_Shot_2023-09-25_at_4.36.00_PM.png" alt="Screen Shot 2023-09-25 at 4.36.00 PM.png"></p>
+<p><img src="advanced%20glsl%207a205ef7cc254ab7ae7abb9822f3c4fb/Screen_Shot_2023-09-25_at_4.35.52_PM.png" alt="Screen Shot 2023-09-25 at 4.35.52 PM.png"></p>
+<p><img src="advanced%20glsl%207a205ef7cc254ab7ae7abb9822f3c4fb/Screen_Shot_2023-09-25_at_4.36.07_PM.png" alt="Screen Shot 2023-09-25 at 4.36.07 PM.png"></p>
+<h2>Uniform buffer objects</h2>
+<p>쉐이더를 여러개를 사용하면 쉐이더 마다 uniform 을 따로 설정해야 했음</p>
+<p>uniform buffer 를 만들어 동일한 uniform 을 한번만 설정하여 넣어줄 수 있음</p>
+<p><img src="advanced%20glsl%207a205ef7cc254ab7ae7abb9822f3c4fb/Screen_Shot_2023-09-25_at_4.38.07_PM.png" alt="Screen Shot 2023-09-25 at 4.38.07 PM.png"></p>
+<h2>Uniform block layout</h2>
+<p>위에서 uniform buffer 를 사용할 경우 예약된 메모리를 버퍼에 저장할 뿐 해당 메모리의 type 은 저장하지 않음</p>
+<p>glsl 에서는 shared layout 은 균일한 메모리 레이아웃을 사용</p>
+<p>메모리에 따라 offset 을 지정할 수 있지만 std140 이라고 하는 스텐다드를 사용해 이를 해결</p>
+<p>위에서 사용한 std140 의 경우 N 으로 표기되는 4바이트의 블럭을 기준으로 사용</p>
+<h2>Uniform buffers</h2>
+<pre><code class="language-cpp">unsigned int uboExampleBlock;
+glGenBuffers(1, &amp;uboExampleBlock);
+glBindBuffer(GL_UNIFORM_BUFFER, uboExampleBlock);
+glBufferData(GL_UNIFORM_BUFFER, 152, NULL, GL_STATIC_DRAW); // allocate 150 bytes of memory
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+</code></pre>
+<p>버퍼에 데이터를 넣을 때 해당 객체를 bind 하고 glBufferSubData 를 사용해 메모리를 업데이트</p>
+<p>해당 버퍼를 사용하는 쉐이더는 버퍼안의 메모리를 사용하게 됨</p>
+<pre><code class="language-cpp">// code
+unsigned int lights_index = glGetUniformBlockIndex(shaderA.ID, &quot;Lights&quot;);   
+glUniformBlockBinding(shaderA.ID, lights_index, 2); // 2 는 binding point
+// glsl
+layout(std140, binding = 2) uniform Lights { ... };
+</code></pre>
+<p>glGetUniformBlockIndex 를 사용해 사용할 uniform 의 index 를 가져와 필요한 만큼의 블록을 바인딩 함</p>
+<pre><code class="language-cpp">glBindBufferBase(GL_UNIFORM_BUFFER, 2, uboExampleBlock); 
+// or
+glBindBufferRange(GL_UNIFORM_BUFFER, 2, uboExampleBlock, 0, 152);
+</code></pre>
+<p>실제 버퍼에 바인딩</p>
+<h3>example</h3>
+<pre><code class="language-cpp">unsigned int uniformBlockIndexRed    = glGetUniformBlockIndex(shaderRed.ID, &quot;Matrices&quot;);
+unsigned int uniformBlockIndexGreen  = glGetUniformBlockIndex(shaderGreen.ID, &quot;Matrices&quot;);
+unsigned int uniformBlockIndexBlue   = glGetUniformBlockIndex(shaderBlue.ID, &quot;Matrices&quot;);
+unsigned int uniformBlockIndexYellow = glGetUniformBlockIndex(shaderYellow.ID, &quot;Matrices&quot;);  
+  
+glUniformBlockBinding(shaderRed.ID,    uniformBlockIndexRed, 0);
+glUniformBlockBinding(shaderGreen.ID,  uniformBlockIndexGreen, 0);
+glUniformBlockBinding(shaderBlue.ID,   uniformBlockIndexBlue, 0);
+glUniformBlockBinding(shaderYellow.ID, uniformBlockIndexYellow, 0);
+</code></pre>
+<ul>
+<li>각각의 쉐이더에 같은 바인딩 포인트에 block 을 바인딩</li>
+</ul>
+<pre><code class="language-cpp">unsigned int uboMatrices
+glGenBuffers(1, &amp;uboMatrices);
+  
+glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_STATIC_DRAW);
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+  
+glBindBufferRange(GL_UNIFORM_BUFFER, 0, uboMatrices, 0, 2 * sizeof(glm::mat4));
+</code></pre>
+<ul>
+<li>buffer 를 생성한뒤 해당 버퍼에 필요 범위 (mat4 * 2 의 사이즈) 를 buffer 에 할당</li>
+</ul>
+<pre><code class="language-cpp">glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)width/(float)height, 0.1f, 100.0f);
+glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(projection));
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+</code></pre>
+<ul>
+<li>projection matrix 를 offset 0 위치에 할당</li>
+</ul>
+<pre><code class="language-cpp">glm::mat4 view = camera.GetViewMatrix();	       
+glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(view));
+glBindBuffer(GL_UNIFORM_BUFFER, 0);
+</code></pre>
+<ul>
+<li>view matrix 를 offset sizeof(glm::mat4) 위치에 할당</li>
+</ul>
+<p>model matrix 는 다른 model 을 사용하므로 기존과 같게 shader 별로 uniform 전달</p>
+<pre><code class="language-cpp">#version 330 core
+layout (location = 0) in vec3 aPos;
+
+layout (std140) uniform Matrices
+{
+    mat4 projection;
+    mat4 view;
+};
+uniform mat4 model;
+
+void main()
+{
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+}
+</code></pre>
+<ul>
+<li>shader code</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

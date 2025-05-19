@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Language</title>
+    <title>REST API</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -137,29 +137,81 @@ footer p {
     <main>
         
             
-                <h2>하위 그룹</h2>
-                <ul>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/Golang/">Golang</a></li>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/C%20lang/">C lang</a></li>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/">C&#43;&#43; lang</a></li>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/">html, css, js</a></li>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/">Java lang</a></li>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/Python/">Python</a></li>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/C#/">C#</a></li>
-                    
-                </ul>
-            
         
 
         
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Server/CRUD.html">CRUD</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Server/REST%20API.html">REST API</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Server/%eb%b3%b4%ec%95%88%ec%9d%98%20%eb%8b%a8%ea%b3%84.html">보안의 단계</a></li>
+                
+            </ul>
         
+        
+        
+        <article>
+            <h1>REST API</h1>
+<p>api 의 architecture(아키텍처) 중 하나</p>
+<p>api 를 구성하는 <strong>약속, 규칙</strong>들</p>
+<p><strong>REST API 의 핵심 규칙</strong></p>
+<ol>
+<li>
+<p>HTTP 동사(언어)를 사용한다</p>
+</li>
+<li>
+<p>특정한 패턴의 경로/Endpoint URL 을 사용한다</p>
+</li>
+</ol>
+<p><strong>상세내용</strong></p>
+<ol>
+<li>HTTP 동사(언어)를 사용한다</li>
+</ol>
+<ul>
+<li>GET, POST, PUT, PATCH, DELETE 의 다섯가지 방식을 사용한다</li>
+<li>GET : 받아서 정보를 찾아 전달 해 주는 것
+<ul>
+<li>Read 와 유사</li>
+</ul>
+</li>
+<li>POST : 받아서 정보를 토대로 새로운 데이터를 입력하는 것
+<ul>
+<li>Create 와 유사</li>
+</ul>
+</li>
+<li>PUT : 정보의 업데이트
+<ul>
+<li>Update 와 유사</li>
+<li>정보를 추출해 변경한 다음 전체 부분을 업데이트한 부분으로 변경
+<ul>
+<li>ex) 고장난 제품을 세 제품으로 교환</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PATCH : 정보의 업데이트
+<ul>
+<li>Update 와 유사</li>
+<li>정보에서 업데이트 할 부분만 수정
+<ul>
+<li>ex) 고장난 제품의 부품만 교환</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>DELETE :</li>
+</ul>
+<ol start="2">
+<li>특정한 패턴의 경로/Endpoint URL 을 사용한다</li>
+</ol>
+<ul>
+<li>경로와 API 에 특정한 패턴이 존재한다</li>
+</ul>
+
+        </article>
         
     </main>
 
