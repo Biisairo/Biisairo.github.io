@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -174,8 +177,9 @@ footer p {
         
         
         
-        <article>
-            <h1>pipex</h1>
+            
+            <article>
+                <h1>pipex</h1>
 <h1>goal</h1>
 <pre><code>./pipex file1 cmd1 cmd2 file2
 </code></pre>
@@ -348,7 +352,8 @@ footer p {
 <p>parent precess 는 컨트롤만 해 준다 cmd 갯수 만큼 child 를 fork 한 뒤 만든 순서대로 넘버링을 해 준다 child 구조체를 생성해 각각 child 에 pipe 를 하나씩 뚫어서 넣어 준다 0번 child 와 마지막 child 를 제외한 나머지는 본인의 pipe 로 다음 child 와 연결한다 이전의 child 와 이전 child 의 pipe 를 이용하여 연결한다 0번 child 는 file 을 open 하여 연결한 뒤 다음 child 와 연결한다 마지막 child 는 이전의 child 와 연결한 뒤 file 을 open 하여 연결한다 결과적으로 cmd 갯수 만큼의 child 들이 cmd 의 순서대로 연결이 되며 시작과 끝은 in, out file 과 연결이 된다</p>
 <p>here_doc 의 경우 1번 cmd 의 위치에 LIMITER 가 들어있다 execve 를 만나기 전 get_next_line 으로 한줄씩 받아와 준 뒤 ft_printf 를 사용해 stdout으로 내보내준다 물론 stdout 은 이미 다음 child 와 pipe 로 연결되어있다 입력이 끝나면 execve 를 만나지 않도록 바로 exit 시켜준다</p>
 
-        </article>
+            </article>
+            
         
     </main>
 

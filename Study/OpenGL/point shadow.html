@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -230,8 +233,9 @@ footer p {
         
         
         
-        <article>
-            <h1>point shadow</h1>
+            
+            <article>
+                <h1>point shadow</h1>
 <p>방향성이 있는 spot light 나 directional light 와 다르게 point light 는 모든 방향으로 퍼져나가는 빛</p>
 <p>일반적인 2D texture 를 사용하는 것이 아닌 cube map 을 사용해 모든 방향으로 render</p>
 <pre><code class="language-cpp">glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
@@ -554,7 +558,8 @@ float calcShadow(vec3 fragPos) {
 <li>추가로 diskRadius (샘플링하는 범위) 를 거리에 따라 조절해 멀수록 흐린 그림자를 만듬</li>
 </ul>
 
-        </article>
+            </article>
+            
         
     </main>
 

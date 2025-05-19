@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -163,8 +166,9 @@ footer p {
         
         
         
-        <article>
-            <h1>6. Loop</h1>
+            
+            <article>
+                <h1>6. Loop</h1>
 <h1>Hooking into loop</h1>
 <p>무한루프를 만들기 위해 <code>mlx_loop</code> 함수를 사용하며 여기에는 <code>mlx</code> 인자 하나만 들어가게 된다</p>
 <pre><code class="language-c">#include &lt;mlx.h&gt;int main(void){    void *mlx;    mlx = mlx_init();    mlx_loop(mlx);}
@@ -174,7 +178,8 @@ footer p {
 </code></pre>
 <p>매 loop 마다 render_next_frame 이 호출되도록 한다</p>
 
-        </article>
+            </article>
+            
         
     </main>
 

@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -230,8 +233,9 @@ footer p {
         
         
         
-        <article>
-            <h1>초기화</h1>
+            
+            <article>
+                <h1>초기화</h1>
 <p>GLFW 초기화</p>
 <pre><code class="language-cpp">if (!glfwInit()) {
 	std::cout &lt;&lt; &quot;Fail to init glfw&quot; &lt;&lt; std::endl;
@@ -265,7 +269,8 @@ if (glewInit() != GLEW_OK) {
 }
 </code></pre>
 
-        </article>
+            </article>
+            
         
     </main>
 

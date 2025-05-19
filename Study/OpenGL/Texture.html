@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -230,8 +233,9 @@ footer p {
         
         
         
-        <article>
-            <h1>Texture</h1>
+            
+            <article>
+                <h1>Texture</h1>
 <h2>UV mapping</h2>
 <p>texture 의 좌표는 좌하단 (0, 0), 우상단 (1, 1) 로 정규화 되어진다</p>
 <p>실제 물체에 mapping 될 때는 vertex 를 texture 좌표에 대응시키게 된다</p>
@@ -276,7 +280,8 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
 <p>실제 texture 를 불러오면 좌상단이 (0, 0) 으로 되어짐</p>
 <p>v(y) 를 1-v 를 하거나 stb 라이브러리의 stbi_set_flip_vertically_on_load(true); 를 사용해 해결</p>
 
-        </article>
+            </article>
+            
         
     </main>
 

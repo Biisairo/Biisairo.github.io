@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -163,8 +166,9 @@ footer p {
         
         
         
-        <article>
-            <h1>4. Events</h1>
+            
+            <article>
+                <h1>4. Events</h1>
 <h3>MacOS</h3>
 <p>Cocoa(AppKit) 와 OpenGL 을 사용하는 MacOS 에서 minilibx 는 <code>X11 mask</code> 를 지원하지 않으며 <code>X11 event</code> 을 부분적으로 지원한다 - <code>mlx_hook</code> 의 <code>x_mask</code> 인수는 쓸모가 없으므로 0을 전달한다 지원하는 이벤트는 다음과 같다</p>
 <pre><code class="language-c">enum {    ON_KEYDOWN = 2,    ON_KEYUP = 3,    ON_MOUSEDOWN = 4,    ON_MOUSEUP = 5,    ON_MOUSEMOVE = 6,    ON_EXPOSE = 12,    ON_DESTROY = 17};
@@ -209,7 +213,8 @@ int main(void)
 }
 </code></pre>
 
-        </article>
+            </article>
+            
         
     </main>
 

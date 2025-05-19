@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -163,8 +166,9 @@ footer p {
         
         
         
-        <article>
-            <h1>3장</h1>
+            
+            <article>
+                <h1>3장</h1>
 <h1>HTTP/1.1 의 신택스</h1>
 <p>1장은 HTTP/1.0 의 기본이 되는 네가지 요소를 2장에서는 구성요소의 조합으로 이루어지는 브라우저의 다양한 처리를 설명했다</p>
 <p>이 장에서는 프로토콜 신택스로서 HTTP/1.1 의 변경사항은 다음과 같다 - 통신 고속화 - Keep-Alive 가 기본적으로 유효하다 - 파이프라이닝 - TLS 에 의한 암호화 통신 - 새로운 메서드의 추가 - PUT, DELETE 가 필수 메서드가 됨 - OPTIONS, TRACE, CONNECT 가 추가됨 - 프로토콜 업데이트 - 이름을 이용한 가상 호스트를 지원 - 크기를 사전에 알 수 없는 콘텐츠의 청크 전송 인코딩 지원</p>
@@ -295,7 +299,8 @@ footer p {
 <p>클라이언트가 바디를 제외한 모든 헤더와 아래의 헤더를 넣어 서버에 요청을 보냄 파일이 없더라고 Content-Length 헤더를 함께 보냄 <code>Expect: 100-continue</code></p>
 <p>서버로 부터 <code>100 Continue</code> 응답이 돌아오면 서버가 이를 처리할 수 있다는 뜻이므로 바디를 붙여 다시 전송 서버가 요청을 받을 수 없는경우 <code>417 Expectation Failed</code> 가 돌아올 수 있음</p>
 
-        </article>
+            </article>
+            
         
     </main>
 

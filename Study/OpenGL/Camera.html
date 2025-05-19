@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -230,8 +233,9 @@ footer p {
         
         
         
-        <article>
-            <h1>Camera</h1>
+            
+            <article>
+                <h1>Camera</h1>
 <p>3D 공간에서 물체를 투영할 때 시점을 나타냄</p>
 <p>카메라의 위치, 보는 방향 벡터, 오른쪽 방향 벡터, 위 방향 벡터 성분을 가짐</p>
 <pre><code class="language-cpp">glm::vec3 position;
@@ -278,7 +282,8 @@ glm::vec3 right_vector;
 <h2>Event</h2>
 <p>이벤트를 처리하여 키보드, 마우스 움직임을 감지해 변화값을 넣어 위의 벡터들을 변환시킨 뒤 view matrix 를 생성한다</p>
 
-        </article>
+            </article>
+            
         
     </main>
 

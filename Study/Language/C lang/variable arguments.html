@@ -123,6 +123,9 @@ ul {
 
 article {
     margin-top: 2rem;
+    border: 1px solid #33d3c8;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 footer p {
@@ -155,8 +158,9 @@ footer p {
         
         
         
-        <article>
-            <h1>variable arguments</h1>
+            
+            <article>
+                <h1>variable arguments</h1>
 <p><strong>관련 헤더</strong></p>
 <ul>
 <li>stdarg.h
@@ -220,7 +224,8 @@ footer p {
 <pre><code class="language-c">va_list ap;int i;int s;va_start(ap, argv);i = -1;while (++i &lt; argc){    s = va_arg(ap, int);    printf(&quot;%d &quot;, s);}va_end(ap);printf(&quot;\n&quot;);
 </code></pre>
 
-        </article>
+            </article>
+            
         
     </main>
 
