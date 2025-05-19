@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>자료형 숫자, 불, 문자, 문자열, StringBuffer</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/class,%20method.html">class, method</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/vs%20code%20java%20%ec%84%a4%ec%b9%98.html">vs code java 설치</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%eb%8b%a4%ed%98%95%ec%84%b1,%20%ec%b6%94%ec%83%81%20%ed%81%b4%eb%9e%98%ec%8a%a4.html">다형성, 추상 클래스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%83%81%ec%86%8d.html">상속</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%83%81%ec%86%8d%20%ec%83%9d%ec%84%b1%ec%9e%90.html">상속 생성자</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%86%8c%ec%8a%a4%ec%bd%94%eb%93%9c%ec%9d%98%20%ea%b5%ac%ec%a1%b0.html">소스코드의 구조</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%93%b0%eb%a0%88%eb%93%9c%20Thread.html">쓰레드 Thread</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%98%88%ec%99%b8%ec%b2%98%eb%a6%ac.html">예외처리</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4.html">인터페이스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%eb%b0%b0%ec%97%b4%20%eb%a6%ac%ec%8a%a4%ed%8a%b8%20%eb%a7%b5%20%ec%a7%91%ed%95%a9.html">자료형 배열 리스트 맵 집합</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%ec%83%81%ec%88%98%ec%a7%91%ed%95%a9%20%ed%98%95%eb%b3%80%ed%98%95%20final.html">자료형 상수집합 형변형 final</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%ec%88%ab%ec%9e%90,%20%eb%b6%88,%20%eb%ac%b8%ec%9e%90,%20%eb%ac%b8%ec%9e%90%ec%97%b4,%20StringBuffer.html">자료형 숫자, 불, 문자, 문자열, StringBuffer</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%91%ea%b7%bc%ec%a0%9c%ec%96%b4%ec%9e%90.html">접근제어자</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%95%ec%a0%81%20static%20%eb%b3%80%ec%88%98%ec%99%80%20%eb%a9%94%ec%86%8c%eb%93%9c.html">정적 static 변수와 메소드</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%9c%ec%96%b4%eb%ac%b8.html">제어문</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%bd%98%ec%86%94%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">콘솔 입출력</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%8c%8c%ec%9d%bc%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">파일 입출력</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%8c%a8%ed%82%a4%ec%a7%80%ec%99%80%20%ed%81%b4%eb%9e%98%ec%8a%a4.html">패키지와 클래스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%95%a8%ec%88%98%ed%98%95%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d.html">함수형 프로그래밍</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>자료형 숫자, 불, 문자, 문자열, StringBuffer</h1>
+<p>변수명은 숫자로 시작할 수 없으며</p>
+<p>_ 와 $ 를 제외한 어떤 특수문자도 올 수 없으며</p>
+<p>자바의 키워드는 변수명으로 사용할 수 없다</p>
+<p><strong>자료형(Type)</strong></p>
+<ul>
+<li>int</li>
+<li>long</li>
+<li>double</li>
+<li>boolean</li>
+<li>char</li>
+<li>String</li>
+<li>StringBuffer</li>
+<li>List</li>
+<li>Map</li>
+<li>Set</li>
+</ul>
+<p><strong>사용자정의자료형</strong></p>
+<ul>
+<li>직접 자료형을 만들어 사용할 수 있다</li>
+<li>ex)</li>
+</ul>
+<pre><code>class Animal{ // Animal 이라는 클래스를 만들고
+}
+.
+.
+Animal cat; // Animal 자료형 변수를 선언한다
+</code></pre>
+<h3><strong>자료형 숫자</strong></h3>
+<p><strong>정수</strong></p>
+<ul>
+<li>int : -2147483648 ~ 2147483647</li>
+<li>long : -9223372036854775808 ~ 9223372036854775807
+<ul>
+<li>int 의 한계를 넘어가는 큰/작은 숫자를 입력할 때</li>
+<li>long num = 8764827384923849L;</li>
+<li>과같이 숫자 맨 뒤에 L 또는 l (소문자L) 을 붙여주어야 한다</li>
+<li>소문자 l 은 헷갈릴 일이 많아 잘 사용하지 않는다</li>
+</ul>
+</li>
+</ul>
+<p><strong>실수</strong></p>
+<ul>
+<li>float : -3.4<em>10^38 ~ 3.4</em>10^38</li>
+<li>double : -3.4<em>10^308 ~ 3.4</em>10^308
+<ul>
+<li>실수형의 디폴트는 double 이므로 float 형을 사용할때는</li>
+<li>float pi = 3.14F;</li>
+<li>와 같이 F 또는 f 를 붙여주어야한다</li>
+</ul>
+</li>
+</ul>
+<p><strong>8진수와 16진수</strong></p>
+<ul>
+<li>정수형 int 를 사용한다</li>
+<li>8진수는 맨 앞에 0 을</li>
+<li>16진수는 맨 앞에 0x 를 붙인다
+<ul>
+<li>int octal = 023 ;</li>
+<li>int hex = 0xC ;</li>
+</ul>
+</li>
+</ul>
+<p><strong>사칙연산</strong></p>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>/ % 등 똑같이 사용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>증감연산자 ++, –
+<ul>
+<li>i++. i– 등으로 사용</li>
+<li>i 에 1을 더하거나 빼 준다</li>
+<li>i++ 는 i 를 사용한 다음 1을 더해주고</li>
+<li>++i 는 i 에 1을 더해준 다음 사용한다</li>
+</ul>
+</li>
+</ul>
+<h3><strong>자료형 불</strong></h3>
+<p><strong>불, 불리언, boolean</strong></p>
+<ul>
+<li>treu, false 두개의 값만 대입 가능하다</li>
+<li>
+<blockquote>
+<p>, &lt;, ==, 등 연산의 결과값으로 저장이 가능하다</p>
+</blockquote>
+</li>
+</ul>
+<h3><strong>자료형 문자</strong></h3>
+<p><strong>문자 한개 (알파벳 한개)</strong></p>
+<ul>
+<li>char</li>
+<li>대입하는 문자값은 ’ 로 감싸주어야한다</li>
+<li>char a1 = ‘a’;</li>
+</ul>
+<p><strong>문자열</strong></p>
+<ul>
+<li>String</li>
+<li>문장을 뜻한다</li>
+<li>대입하는 문자열은 &quot; 로 감싸주어야한다</li>
+<li>String a = “something” ;</li>
+<li>String a = new String(“something”)</li>
+<li>두가지 방법으로 사용 가능하나 첫번째 방식으로 만드는게 가독성이 좋다</li>
+<li>두번째 방법은 객체를 생성할 때 사용한다</li>
+<li>한번 만들면 불변하다 = immutable</li>
+<li><strong>문자열 내장 메소드</strong>
+<ul>
+<li>내장 메소드는 a.indexOf() ~ 라는 식으로 사용하면 된다</li>
+<li>euqals - 두 객체가 서로 같은지 비교</li>
+<li>indexOf - 특정 문자열이 시작하는 인덱스 리턴</li>
+<li>contains - 포함여부</li>
+<li>charAt - 해당 인덱스의 문자(char)를 리턴</li>
+<li>replaceAll - 특정 문자열을 다른문자열로 바꿈</li>
+<li>substring - 특정 문자열을 뽑아냄(=슬라이싱)</li>
+<li>toUpperCase / toLowerCase - 모두대문자/소문자로</li>
+<li>split - 해당 구분자로 문자열을 분리해 배열로 만듬</li>
+</ul>
+</li>
+<li><strong>문자열 포매팅</strong>
+<ul>
+<li>문자열을 만들떄 변수를 대입한다
+<ul>
+<li>String.format(“I have %d apple”, 3) // I have 3 apple</li>
+<li>String.format(“I have %s”, apple) // I have apple</li>
+</ul>
+</li>
+<li>대체할 문자열, 숫자 등은 변수로 대입이 가능하다
+<ul>
+<li>int num = 3;</li>
+<li>String.format(“I have %d apple”, num) // I have 3 apple</li>
+</ul>
+</li>
+<li>여러개의 값 넣기
+<ul>
+<li>여러개의 파라미터로 전달하면 된다</li>
+<li>String.format(“I have %d %s”, 3. apple) // I have 3 apple</li>
+</ul>
+</li>
+<li>문자열 포멧 코드
+<ul>
+<li>%s : 문자열</li>
+<li>%c : 문자 1개</li>
+<li>%d : 정수</li>
+<li>%f : 부동소수</li>
+<li>%o : 8진수</li>
+<li>%x : 16진수</li>
+<li>%% : 기호 % 그 자체 - 포메팅과 % 를 동시에 사용할 때
+<ul>
+<li>이때 %s 를 사용하면 뒤의 어떤 변수를 사용하든 문자열로 변환해 대입한다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>포멧 코드의 응용
+<ul>
+<li>%10s - 해당 문자열 왼쪽으로 10 칸의 공백이 들어간다. 음수일때는 오른쪽으로 공백이 들어간다</li>
+<li>%.4f - 소수점 4자리 까지만 보여준다</li>
+</ul>
+</li>
+<li>System.out printf
+<ul>
+<li>일반적으로 System.out println 메소드를 사용해
+<ul>
+<li>System.out println(String.format(“some %s thing”, 변수) 로 사용하지만</li>
+</ul>
+</li>
+<li>포메팅한 문자열은 System.out printf 메소드를 사용해
+<ul>
+<li>System.out printf(“some %s thing”, 변수) 로 사용하면 String.format 메소드 없이 같은 효과를 낼 수 있다</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>StringBuffer</strong></p>
+<ul>
+<li>문자열을 추가, 변경할때 사용</li>
+<li>StringBuffer sb = new StringBuffer();</li>
+<li>sb.append(“something”); . . .</li>
+<li>String 에 + 를 하여 연산을 해도 append 와 같은 결과를 얻을 수 있다</li>
+<li>String 에 비해 상대적으로 무거운편이기에 문자열의 변동이 많고 적고를 구분하여 사용한다</li>
+<li>변경이 가능하다 = mutable</li>
+<li><strong>StringBuilder</strong>
+<ul>
+<li>StringBuffer 와 같은 역할을 한다</li>
+<li>StringBuffer 는 멀티스레드 환경에 안전하고 StringBuilder 는 성능이 우수하다</li>
+</ul>
+</li>
+<li><strong>내장 메소드</strong>
+<ul>
+<li>insert - 원하는 인덱스에 문자열 추가</li>
+<li>append - 문자열 추가</li>
+<li>substring - 슬라이싱</li>
+<li>toString - 문자열로 변경</li>
+</ul>
+</li>
+</ul>
+<h3><strong>원시자료형</strong></h3>
+<ul>
+<li>int, long, double, float, boolean, char 은 원시자료형이다</li>
+<li>원시자료형은 new 값으로 키워드를 만들 수 없고 리터럴 형태로만 값을 대입 할 수 있다</li>
+<li>String 은 원시자료형은 아니나 특수하게 리터럴 방식으로 사용이 가능하다</li>
+<li>각 원시자료형은 각각에 대입하는 Wrapper class 가 존재한다</li>
+<li>int - Integer</li>
+<li>long - Long</li>
+<li>double - Double</li>
+<li>float - Float</li>
+<li>boolean - Boolean</li>
+<li>char - Cha</li>
+<li>원시자료형 대신 Wrapper class 를 사용하면 값 대신 객체를 사용하게 되어 코드를 객체중심적으로 짤 때 유리하다</li>
+<li>멀티쓰레딩 환경에서 동기화를 진행하는 경우 Wrapper class 사용이 필요하다</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>함수형 프로그래밍</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/class,%20method.html">class, method</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/vs%20code%20java%20%ec%84%a4%ec%b9%98.html">vs code java 설치</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%eb%8b%a4%ed%98%95%ec%84%b1,%20%ec%b6%94%ec%83%81%20%ed%81%b4%eb%9e%98%ec%8a%a4.html">다형성, 추상 클래스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%83%81%ec%86%8d.html">상속</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%83%81%ec%86%8d%20%ec%83%9d%ec%84%b1%ec%9e%90.html">상속 생성자</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%86%8c%ec%8a%a4%ec%bd%94%eb%93%9c%ec%9d%98%20%ea%b5%ac%ec%a1%b0.html">소스코드의 구조</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%93%b0%eb%a0%88%eb%93%9c%20Thread.html">쓰레드 Thread</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%98%88%ec%99%b8%ec%b2%98%eb%a6%ac.html">예외처리</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4.html">인터페이스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%eb%b0%b0%ec%97%b4%20%eb%a6%ac%ec%8a%a4%ed%8a%b8%20%eb%a7%b5%20%ec%a7%91%ed%95%a9.html">자료형 배열 리스트 맵 집합</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%ec%83%81%ec%88%98%ec%a7%91%ed%95%a9%20%ed%98%95%eb%b3%80%ed%98%95%20final.html">자료형 상수집합 형변형 final</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%ec%88%ab%ec%9e%90,%20%eb%b6%88,%20%eb%ac%b8%ec%9e%90,%20%eb%ac%b8%ec%9e%90%ec%97%b4,%20StringBuffer.html">자료형 숫자, 불, 문자, 문자열, StringBuffer</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%91%ea%b7%bc%ec%a0%9c%ec%96%b4%ec%9e%90.html">접근제어자</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%95%ec%a0%81%20static%20%eb%b3%80%ec%88%98%ec%99%80%20%eb%a9%94%ec%86%8c%eb%93%9c.html">정적 static 변수와 메소드</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%9c%ec%96%b4%eb%ac%b8.html">제어문</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%bd%98%ec%86%94%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">콘솔 입출력</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%8c%8c%ec%9d%bc%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">파일 입출력</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%8c%a8%ed%82%a4%ec%a7%80%ec%99%80%20%ed%81%b4%eb%9e%98%ec%8a%a4.html">패키지와 클래스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%95%a8%ec%88%98%ed%98%95%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d.html">함수형 프로그래밍</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>함수형 프로그래밍</h1>
+<p>자바를 이용해 함수형 프로그래밍을 할 수 있게 도와주는 방식들</p>
+<p><strong>람다  lambda</strong></p>
+<ul>
+<li>익명함수</li>
+</ul>
+<pre><code>interface Cal {
+    int sum(int a, int b);
+}
+.
+.
+Cal mc = (int a, int b) -&gt; a + b;
+System.out.println(mc.sum(3, 4)); // 7
+</code></pre>
+<ul>
+<li>람다함수 : (int a, int b) -&gt; a + b</li>
+<li>sum 메소드의 인풋과 동일한 인풋을 받았을때 -&gt; 뒤의 값인 a + b 를 리턴한다</li>
+<li><strong>주의점</strong>
+<ul>
+<li>동일한 인풋을 받는 두개 이상의 함수가 있으면 오류가 발생한다</li>
+<li>FunctionalInterface 어노테이션을 쓰면 해당 오류를 미연에 방지한다</li>
+</ul>
+</li>
+</ul>
+<pre><code>@FunctionalInterface
+interface Calculator {
+    int sum(int a, int b);
+    int mul(int a, int b);  // @FunctionalInterface 는 두 번째 메서드를 허용하지 않는다.
+}
+</code></pre>
+<ul>
+<li><strong>축약</strong>
+<ul>
+<li>(int a, int b) -&gt; a + b 에서 int 자료형이 이미 인터페이스에 정의되어있으므로</li>
+<li>(a, b) -&gt; a + b</li>
+<li>로 축약할 수 있다</li>
+</ul>
+</li>
+</ul>
+<p><strong>람다함수 인터페이스</strong></p>
+<ul>
+<li>인터페이스를 만들지 않고 메소드 내부에서 <strong>BiFunction</strong> 을 사용해 더욱 축약할 수 있다
+<ul>
+<li>해당 클래스는 두 값을 받고 하나의 결과를 리턴하는 클래스이다</li>
+<li>세개의 Integer 는 각각 a, b, a+b(result) 에 해당된다</li>
+</ul>
+</li>
+</ul>
+<pre><code>import java.util.function.BiFunction;
+
+public class Sample {
+    public static void main(String[] args) {
+        BiFunction&lt;Integer, Integer, Integer&gt; mc = (a, b) -&gt; a + b;
+        int result = mc.apply(3, 4);  // sum이 아닌 apply 메서드를 사용해야 한다.
+        System.out.println(result);  // 7 출력
+    }
+}
+</code></pre>
+<ul>
+<li>모든 인자가 같은 자료형일 경우 <strong>BinaryOperator</strong> 를 사용할 수 있다</li>
+</ul>
+<pre><code>import java.util.function.BinaryOperator;
+
+public class Sample {
+    public static void main(String[] args) {
+        BinaryOperator&lt;Integer&gt; mc = (a, b) -&gt; a + b;
+        int result = mc.apply(3, 4);
+        System.out.println(result);  // 7 출력
+    }
+}
+</code></pre>
+<p><strong>스트림 stream</strong></p>
+<ul>
+<li>스트림, 말 그대로 흐름</li>
+<li>컬랙션의 요소들을 for 문의 활용없이 하나씩 꺼내서 처리를 하는 과정</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

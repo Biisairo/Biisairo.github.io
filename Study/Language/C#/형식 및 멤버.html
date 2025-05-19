@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>형식 및 멤버</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ea%b0%9c%ea%b4%84.html">개괄</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ec%a3%bc%ec%9a%94%20%ec%96%b8%ec%96%b4%20%ec%98%81%ec%97%ad.html">주요 언어 영역</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8%20%ea%b5%ac%ec%84%b1%20%ec%9a%94%ec%86%8c.html">프로그램 구성 요소</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ed%98%95%ec%8b%9d%20%eb%b0%8f%20%eb%a9%a4%eb%b2%84.html">형식 및 멤버</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>형식 및 멤버</h1>
+<h1>클래스, 객체</h1>
+<p>상태(필드)와 작업(메서드)을 하나의 단위로 결합하는 데이터 구조</p>
+<p>클래스의 인스턴스(객체)에 대한 정의를 제공</p>
+<pre><code class="language-csharp">[특성, 한정자] class [이름] : [상속하는 클래스, 인터페이스]
+{
+    /*
+    ...
+    */
+}
+
+public class Point
+{
+    public int X { get; }
+    public int Y { get; }
+    
+    public Point(int x, int y) =&gt; (X, Y) = (x, y);
+}
+
+public class Point3D : Point
+{
+    public int Z { get; set; }
+    
+    public Point3D(int x, int y, int z) : base(x, y)
+    {
+        Z = z;
+    }
+}
+
+...
+var p1 = new Point(0, 0);
+var p2 = new Point(10, 20);
+...
+</code></pre>
+<ul>
+<li>클래스 선언</li>
+</ul>
+<pre><code class="language-csharp">public class Pair&lt;TFirst, TSecond&gt;
+{
+    public TFirst First { get; }
+    public TSecond Second { get; }
+    
+    public Pair(TFirst first, TSecond second) =&gt; 
+        (First, Second) = (first, second);
+}
+</code></pre>
+<ul>
+<li>제네릭 클래스에서의 클래스 선언</li>
+</ul>
+<h1>구조체</h1>
+<pre><code class="language-csharp">[특성, 한정자] struct [이름] : [인터페이스]
+{
+    /*
+    ...
+    */
+}
+</code></pre>
+<ul>
+<li>구조체의 선언</li>
+</ul>
+<p>구조체는 상속할 수 없으며 인터페이스만 상속 받을 수 있다</p>
+<h1>인터페이스</h1>
+<pre><code class="language-csharp">interface IControl
+{
+    void Paint();
+}
+
+interface ITextBox : IControl
+{
+    void SetText(string text);
+}
+
+interface IListBox : IControl
+{
+    void SetItems(string[] items);
+}
+
+interface IComboBox : ITextBox, IListBox { }
+</code></pre>
+<ul>
+<li>인터페이스의 선언</li>
+</ul>
+<p>인터페이스는 다중상속이 가능함</p>
+<p>클래스, 구조체는 여러 인터페이스를 상속받을 수 있음</p>
+<p>클래스, 구조체가 인터페이스를 구현하는 경우 해당 클래스, 구조체를 인터페이스 형식으로 암시적 변환이 가능함</p>
+<h1>열거형</h1>
+<pre><code class="language-csharp">public enum SomeRootVegetable
+{
+    HorseRadish,
+    Radish,
+    Turnip
+}
+[Flags]
+public enum Seasons
+{
+    None = 0,
+    Summer = 1,
+    Autumn = 2,
+    Winter = 4,
+    Spring = 8,
+    All = Summer | Autumn | Winter | Spring
+}
+</code></pre>
+<ul>
+<li>열거형의 선언</li>
+</ul>
+<p>Flags 를 사용해 enum 을 정의할 수 있다</p>
+<h1>Nullable</h1>
+<p>모든 형식은 nullable 로 선언될 수 있음</p>
+<p>nullable 로 선언된 형식은 null 값을 포함할 수 있다</p>
+<h1>튜플</h1>
+<pre><code class="language-csharp">(double Sum, int Count) t2 = (4.5, 3);
+Console.WriteLine($&quot;Sum of {t2.Count} elements is {t2.Sum}.&quot;);
+//Output:
+//Sum of 3 elements is 4.5.
+</code></pre>
+<ul>
+<li>튜플의 선언과 사용</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

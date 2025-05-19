@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>positioning</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/CSS%20study/bootstrap%205_1_3.html">bootstrap 5_1_3</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/CSS%20study/favicon.html">favicon</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/CSS%20study/float.html">float</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/CSS%20study/media%20query.html">media query</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/CSS%20study/positioning.html">positioning</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/CSS%20study/selector.html">selector</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/html,%20css,%20js/CSS%20study/z-index.html">z-index</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>positioning</h1>
+<p><strong>Rule</strong></p>
+<ol>
+<li>Content is everything
+<ul>
+<li>box 의 크기가 어떻게 설정되든 내부의 content 의 크기가 1순위이다</li>
+</ul>
+</li>
+<li>Order comes from Code
+<ul>
+<li>배치 순서는 html 코드의 순서로 결정된다</li>
+</ul>
+</li>
+<li>Children sit on the Parents
+<ul>
+<li>하위 개체는 상위 개체 위에 놓인다</li>
+<li>tag 안의 tag 는 상위 태그 위에 쌓인다</li>
+</ul>
+</li>
+</ol>
+<p><strong>Position</strong></p>
+<ul>
+<li>Static
+<ul>
+<li>정적위치</li>
+<li>html 의 기본 규칙을 따른다</li>
+</ul>
+</li>
+<li>Relative
+<ul>
+<li>상대 위치</li>
+<li>정적 위치를 기준으로 배치</li>
+<li>cordinate 좌표
+<ul>
+<li>top, bottom, left, right :</li>
+<li>해당 방향을 기준으로 얼마만큼 이동하냐 - 반대로 이동하게 됨, margin 과 비슷하게 작동</li>
+</ul>
+</li>
+<li>화면의 다른 것에는 영향을 주지 않는다</li>
+<li>원래 위치는 유지된다 - 유령을 남긴다…</li>
+</ul>
+</li>
+<li>Absolute
+<ul>
+<li>절대 위치</li>
+<li>상위 개체에 대해 상대적으로 배치</li>
+<li>cordinate 좌표
+<ul>
+<li>top, bottom, left, right :</li>
+<li>상위 요소와 하위 요소 사이의 해당 방향의 margin</li>
+<li>상위 요소의 해당 방향으로부터의 margin</li>
+</ul>
+</li>
+<li>원래 위치가 사라진다</li>
+<li>해당 요소를 html 문서의 배치 흐름에서 제외시킨다</li>
+<li>상위 개체의 이더로든 이동할 수 있다</li>
+</ul>
+</li>
+<li>Fixed
+<ul>
+<li>고정 위치</li>
+<li>보여지는 화면을 기준으로 배치</li>
+<li>보여지는 화면을 상위 개체로 한다고 생각하면 쉬움</li>
+</ul>
+</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

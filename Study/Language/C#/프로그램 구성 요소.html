@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>프로그램 구성 요소</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ea%b0%9c%ea%b4%84.html">개괄</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ec%a3%bc%ec%9a%94%20%ec%96%b8%ec%96%b4%20%ec%98%81%ec%97%ad.html">주요 언어 영역</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8%20%ea%b5%ac%ec%84%b1%20%ec%9a%94%ec%86%8c.html">프로그램 구성 요소</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ed%98%95%ec%8b%9d%20%eb%b0%8f%20%eb%a9%a4%eb%b2%84.html">형식 및 멤버</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>프로그램 구성 요소</h1>
+<h1>멤버</h1>
+<p>클래스가 포함할 수 있는 멤버</p>
+<ul>
+<li>상수</li>
+<li>필드</li>
+<li>메서드</li>
+<li>속성</li>
+<li>인덱서</li>
+<li>이벤트</li>
+<li>연산자</li>
+<li>생성자</li>
+<li>종료자</li>
+<li>형식</li>
+</ul>
+<h1>접근성</h1>
+<ul>
+<li>public
+<ul>
+<li>접근 제한이 없음</li>
+</ul>
+</li>
+<li>private
+<ul>
+<li>해당 클래스만 접근할 수 있음</li>
+</ul>
+</li>
+<li>protected
+<ul>
+<li>해당클래스, 해당 클래스를 상속받는 클래스만 접근할 수 있음</li>
+</ul>
+</li>
+<li>internal
+<ul>
+<li>현재 어셈블리(.exe, .dll)만 접근할 수 있음</li>
+</ul>
+</li>
+<li>protected internal
+<ul>
+<li>protected + internal</li>
+<li>해당클래스, 해당 클래스를 상속받는 클래스, 또는 동일한 어셈블리 내의 클래스로 제한</li>
+</ul>
+</li>
+<li>private protectd
+<ul>
+<li>동일한 어셈블리 내에서 해당 클래스, 해당 클래스에서 상속받는 클래스로 제한</li>
+</ul>
+</li>
+</ul>
+<h1>필드</h1>
+<p>클래스, 또는 클래스의 인스턴스와 연결된 변수</p>
+<p>static 한정자를 사용한 필드는 정적필드를 정의</p>
+<p>클래스의 인스턴스 갯수와 상관없이 static 필드는 하나만 생성됨</p>
+<h1>메소드</h1>
+<p>정적 메소드</p>
+<ul>
+<li>클래스를 통해 접근</li>
+</ul>
+<p>인스턴스 메소드</p>
+<ul>
+<li>클래스의 인스턴스를 통해 접근</li>
+</ul>
+<pre><code class="language-csharp">[접근제한자] override(override 시에 사용] [반환형] [이름]([매개변수])
+{
+    ...
+}
+</code></pre>
+<h1>매개 변수</h1>
+<pre><code class="language-csharp">public void func (int x); // 값 매개변수
+public void func (ref int x); // 참조 매개변수
+</code></pre>
+<ul>
+<li>참조 매개변수</li>
+</ul>
+<pre><code class="language-csharp">static void Divide(int x, int y, out int quotient, out int remainder)
+{
+    quotient = x / y;
+    remainder = x % y;
+}
+
+public static void OutUsage()
+{
+    Divide(10, 3, out int quo, out int rem);
+    Console.WriteLine($&quot;{quo} {rem}&quot;);	// &quot;3 1&quot;
+}
+</code></pre>
+<ul>
+<li>출력 매개변수</li>
+<li>인수의 값을 명시적으로 할당할 필요가 없음</li>
+</ul>
+<h1>정적 및 인스턴스 메서드</h1>
+<p>정적 메서드</p>
+<ul>
+<li>static 한정자를 사용하여 선언된 메서드</li>
+<li>클래스에서 직접 접근</li>
+</ul>
+<p>인스턴스 메서드</p>
+<ul>
+<li>특정 인스턴스에 작동하며 정적 멤버, 인스턴스 멤버에 둘다 접근 가능</li>
+</ul>
+<h1>생성자</h1>
+<p>인스턴스, 정적 생성자 지원</p>
+<p>인스턴스가 생성될 때 인스턴스를 초기화 해주는 멤버</p>
+<p>반환형식이 없고 클래스 이름과 동일한 이름의 메서드</p>
+<h1>속성</h1>
+<p>필드의 확장</p>
+<p>해당 값을 읽거나 쓸때 실행할 실행문을 지정하는 접근자가 존재</p>
+<p>get, set 접근자</p>
+<p>속성은 필드와 비슷하게 선언되나 선언이 세미콜론으로 끝나는 것이 아닌 중괄호를 넣고 사이에 get, set 접근자를 넣어 끝냄</p>
+<pre><code class="language-csharp">public class MyList&lt;T&gt;
+{
+    const int DefaultCapacity = 4;
+
+    T[] _items; // 필드
+    int _count; // 필드
+
+    public MyList(int capacity = DefaultCapacity)
+    {
+        _items = new T[capacity];
+    }
+
+    public int Count =&gt; _count;
+
+    public int Capacity // 속성
+    {
+        get =&gt;  _items.Length;
+        set
+        {
+            if (value &lt; _count) value = _count;
+            if (value != _items.Length)
+            {
+                T[] newItems = new T[value];
+                Array.Copy(_items, 0, newItems, 0, _count);
+                _items = newItems;
+            }
+        }
+    }
+.
+.
+.
+</code></pre>
+<h1>인덱서</h1>
+<p>객체를 배열처럼 사용할 수 있도록 하는 멤버</p>
+<p>this 와 대괄호 사이에 작성된 매개변수를 사용해 속성과 같게 선언</p>
+<pre><code class="language-csharp">public T this[int index]
+    {
+        get =&gt; _items[index];
+        set
+        {
+            if (!object.Equals(_items[index], value)) {
+                _items[index] = value;
+                OnChanged();
+            }
+        }
+    }
+</code></pre>
+<h1>이벤트</h1>
+<p>클래스, 객체가 알람을 제공할 수 있도록 하는 멤버</p>
+<p>event 키워드를 넣어주며 대리자 형식으로 선언</p>
+<p>인스턴스 생성 후 아래 형식으로 선언된 함수를 인스턴스의 이벤트에 += 연산자를 사용해 구독시킴</p>
+<p>해당 이벤트를 구독 해제할때는 -= 연산자를 사용해 특정 이벤트를 구독해제</p>
+<pre><code class="language-csharp">public delegate void EventHandler(object sender, EventArgs e);
+</code></pre>
+<p>메서드에서는 EventHandler 가 null 인지 확인 후 사용</p>
+<pre><code class="language-csharp">class GUI
+{
+    public event EventHandler OkButtonClickHandler;
+    public void OkButtonClick()
+    {
+        if ( OkButtonClickHandler != null ) {
+            OkButtonClickHandler(this, EventArgs.Empty);
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        GUI gui = new GUI();
+        gui.OkButtonClickHandler += Gui_OkButtonClickHandler; //핸들러에 등록
+        //...
+        gui.OkButtonClick(); //버튼클릭
+        gui.OkButtonClick(); //버튼클릭
+        gui.OkButtonClick(); //버튼클릭
+    }
+    private static void Gui_OkButtonClickHandler(object sender, EventArgs e)
+    {
+        Console.WriteLine(&quot;ok button click &quot;);        
+    }
+}
+</code></pre>
+<h1>연산자</h1>
+<pre><code class="language-csharp">public static bool operator ==(MyList&lt;T&gt; a, MyList&lt;T&gt; b) =&gt;
+        Equals(a, b);
+
+    public static bool operator !=(MyList&lt;T&gt; a, MyList&lt;T&gt; b) =&gt;
+        !Equals(a, b);
+</code></pre>
+<p>인스턴스에 특정 연산자를 정의하는 것</p>
+<p>모든 연산자는 public static 으로 선언되어야 함</p>
+<h1>종료자</h1>
+<p>인스턴스를 종료하는데 필요한 작업을 구현하는 멤버</p>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

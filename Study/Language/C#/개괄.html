@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>개괄</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ea%b0%9c%ea%b4%84.html">개괄</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ec%a3%bc%ec%9a%94%20%ec%96%b8%ec%96%b4%20%ec%98%81%ec%97%ad.html">주요 언어 영역</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8%20%ea%b5%ac%ec%84%b1%20%ec%9a%94%ec%86%8c.html">프로그램 구성 요소</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C#/%ed%98%95%ec%8b%9d%20%eb%b0%8f%20%eb%a9%a4%eb%b2%84.html">형식 및 멤버</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>개괄</h1>
+<p>객체지향 언어</p>
+<p>.NET (닷넷, dot net) 환경에서의 애플리케이션 빌드</p>
+<p>java : jvm 과 c# : .net</p>
+<p>GC 에서 사용하지 않는 객체의 메모리를 자동으로 회수</p>
+<p>Nullable 변수를 사용해 null 할당이 가능한 변수를 따로 관리</p>
+<p>예외처리기술</p>
+<p>LINQ (언어 통합 쿼리)</p>
+<p>람다식을 사용한 함수형 프로그래밍</p>
+<p>비동기작업</p>
+<p>통합 형식 시스템</p>
+<ul>
+<li>int, double 을 포함한 모든 자료형은 object 객체에서 상속되어짐</li>
+<li>참조형식</li>
+<li>값 형식</li>
+</ul>
+<p>제네릭 메소드, 제네릭 형식</p>
+<h1>.NET 아키텍처</h1>
+<p>CLR(공용 언어 런타임) 이라는 가상 환경에서 실행되는 언어</p>
+<p>CLR 은 CLI(공용 언어 인프라) 를 MS 에서 구현한 것</p>
+<p>C# 으로 만들어진 코드는 CLI 사양을 준수하는 IL(중간 언어) 로 컴파일 되며 해당 IL 은 CRL 이 관리하는 “관리 코드” 임</p>
+<p>컴파일 된 IL 은 CLR 에서 JIT(just in time) 으로 컴파일 되어 기계어로 변환</p>
+<p>CLR 에서 실행되는 코드를 “관리 코드” 라고 하며 c/c++ 과 같이 개발자가 직접 관리하게 되는 코드는 “비관리 코드” 라고 함</p>
+<p>C# 에서 생성된 IL 코드는 CTS(공용 형식 사양) 을 따름</p>
+<p>C# 에서 생성된 IL 코드는 F#, Visual Basic 등 CTS 규격을 따르는 언어들과 호환됨</p>
+<h1>Hello World</h1>
+<pre><code class="language-csharp">using System;
+
+class Hello
+{
+    static void Main()
+    {
+        Console.WriteLine(&quot;Hello, World&quot;);
+    }
+}
+</code></pre>
+<p>using 을 사용해 namespace 참조</p>
+<p>모든 함수, 메소드와 변수는 전역으로 존재할 수 없으며 클래스 안에 선언되어야 함</p>
+<p>선언된 hello 클래스 안에 단일 멤버인 main 메서드가 있으며 이때 main 메서드는 외부에서 접근이 가능하도록 static 키워드가 있음</p>
+<p>관례상 main 정적 메서드가 프로그램의 진입점으로 사용</p>
+<h1>형식, 변수</h1>
+<p>값 형식</p>
+<ul>
+<li>단순 형식
+<ul>
+<li>부호있는/없는 정수</li>
+<li>유니코드 문자</li>
+<li>부동소수점</li>
+<li>부울</li>
+</ul>
+</li>
+<li>열거형 형식</li>
+<li>구조체
+<ul>
+<li>클래스와 유사하나 값형식이며 힙 할당하지 않음</li>
+<li>object 를 암시적으로 상속받음</li>
+</ul>
+</li>
+<li>nullable
+<ul>
+<li>형식 T 에 대하여 T? 로 선언 (ex : int?)</li>
+<li>기존 형식에 추가로 null 값을 가질 수 있음</li>
+</ul>
+</li>
+<li>튜블</li>
+</ul>
+<p>참조 형식</p>
+<ul>
+<li>클래스
+<ul>
+<li>object</li>
+<li>유니코드 문자열 (string)</li>
+<li>class… 로 선언된 클래스</li>
+<li>데이터 멤버(필드), 함수 멤버(메소드)를 포함하는 데이터 구조</li>
+</ul>
+</li>
+<li>인터페이스
+<ul>
+<li>인터페이스를 구현하는 class, struct 는 인터페이스의 멤버 구현을 제공해야 함</li>
+</ul>
+</li>
+<li>배열
+<ul>
+<li>int[] : int 의 1차원 배열</li>
+<li>int[,] : int 의 2차원 배열</li>
+<li>int[][] : int 의 1차원 배열의 1차원 배열</li>
+</ul>
+</li>
+<li>대리자 (delegate)
+<ul>
+<li>매서드의 참조를 나타내는 형식</li>
+<li>함수 포인터와 유사하나 객체이며 엔티티로 취급되는 안전한 방식</li>
+</ul>
+</li>
+</ul>
+<p>사용자 정의 형식</p>
+<ul>
+<li>클래스</li>
+<li>구조체</li>
+<li>인터페이스</li>
+<li>열거형</li>
+<li>대리자</li>
+<li>튜플</li>
+<li>record
+<ul>
+<li>immutable 데이터</li>
+<li>record (= record class)
+<ul>
+<li>참조형</li>
+<li>== 비교 시
+<ul>
+<li>class 는 참조하는 객체가 같은지 비교</li>
+<li>record 는 내부의 데이터가 같은지 비교</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>record struct</li>
+</ul>
+</li>
+</ul>
+<p>object</p>
+<ul>
+<li>C# 의 모든 형식은 object 로 부터 상속받아 파생되어짐</li>
+<li>값형식을 object 로 boxing 하고 다시 해당 형식으로 unboxing 하는 방식으로 객체로 취급할 수 있음</li>
+</ul>
+<p>변수에 저장되어지는 값</p>
+<ul>
+<li>일반적인 값 형식
+<ul>
+<li>정확한 해당 형식의 값</li>
+</ul>
+</li>
+<li>nullable
+<ul>
+<li>null 값 또는 해당 형식의 값</li>
+</ul>
+</li>
+<li>object
+<ul>
+<li>null 참조, 객체에 대한 참조값, 값 형식의 boxed 값에 대한 참조</li>
+</ul>
+</li>
+<li>class
+<ul>
+<li>null 참조, 해당 클래스 또는 해당 클래스에서 파생된 클래스의 인스턴스에 대한 참조</li>
+</ul>
+</li>
+<li>interface
+<ul>
+<li>null 참조, 인터페이스를 구현하는 클래스의 인스턴스에 대한 참조 값, 해당 인스턴스를 구현하는 값형식의 boxed 에 대한 참조</li>
+</ul>
+</li>
+<li>배열
+<ul>
+<li>null 참조, 해당 배열의 형색의 인스턴스와 호환되는 인스턴스에 대한 참조</li>
+</ul>
+</li>
+<li>대리자
+<ul>
+<li>null 참조, 호환되는 대리자 형식의 인스턴스에 대한 참조</li>
+</ul>
+</li>
+</ul>
+<h1>프로그램 구조</h1>
+<p>C# 의 프로그램 구조</p>
+<ul>
+<li>프로그램</li>
+<li>네임스페이스</li>
+<li>형식</li>
+<li>멤버</li>
+<li>어셈블리</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

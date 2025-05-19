@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>스트림, 버퍼 stream, buffer</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ea%b5%ac%ec%a1%b0%ec%b2%b4%20struct.html">구조체 struct</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%84%a4%ec%9e%84%ec%8a%a4%ed%8e%98%ec%9d%b4%ec%8a%a4%20namespace.html">네임스페이스 namespace</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%8b%a4%ed%98%95%ec%84%b1%20polymorphism.html">다형성 polymorphism</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%ac%b8%ec%9e%90%ec%97%b4%20string.html">문자열 string</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%b0%98%eb%b3%b5%ec%9e%90%20iterator.html">반복자 iterator</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%83%9d%ec%84%b1%ec%9e%90,%20%ec%86%8c%eb%a9%b8%ec%9e%90%20constructor,%20destructor.html">생성자, 소멸자 constructor, destructor</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8a%a4%eb%a7%88%ed%8a%b8%20%ed%8f%ac%ec%9d%b8%ed%84%b0%20smart%20pointer.html">스마트 포인터 smart pointer</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8a%a4%ed%8a%b8%eb%a6%bc,%20%eb%b2%84%ed%8d%bc%20stream,%20buffer.html">스트림, 버퍼 stream, buffer</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8b%9c%ed%80%80%ec%8a%a4%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20sequence%20container.html">시퀀스 컨테이너 sequence container</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98%20algorithm.html">알고리즘 algorithm</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%97%b0%ea%b4%80%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20associate%20container.html">연관 컨테이너 associate container</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%97%b0%ec%82%b0%ec%9e%90%20%ec%98%a4%eb%b2%84%eb%a1%9c%eb%94%a9%20operator%20overloading.html">연산자 오버로딩 operator overloading</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%98%88%ec%99%b8%20%ec%b2%98%eb%a6%ac%20exception%20headling.html">예외 처리 exception headling</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%9c%a0%ed%9a%a8%eb%b2%94%ec%9c%84%20scope.html">유효범위 scope</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%b0%b8%ec%a1%b0%ec%9e%90%20reference.html">참조자 reference</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20container.html">컨테이너 container</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%96%b4%eb%8c%91%ed%84%b0%20container%20adapter.html">컨테이너 어댑터 container adapter</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%81%b4%eb%9e%98%ec%8a%a4%20class.html">클래스 class</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%81%b4%eb%9e%98%ec%8a%a4%20%ed%85%9c%ed%94%8c%eb%a6%bf%20class%20template.html">클래스 템플릿 class template</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%8c%8c%ec%9d%bc%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">파일 입출력</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%91%9c%ec%a4%80%20%ed%85%9c%ed%94%8c%eb%a6%bf%20%eb%9d%bc%ec%9d%b4%eb%b8%8c%eb%9f%ac%eb%a6%ac%20STL%20standard%20template%20l.html">표준 템플릿 라이브러리 STL standard template l</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20%ea%b0%9d%ec%b2%b4%20function%20object.html">함수 객체 function object</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20function.html">함수 function</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20%ed%85%9c%ed%94%8c%eb%a6%bf%20function%20template.html">함수 템플릿 function template</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%97%a4%eb%8d%94%20header.html">헤더 header</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/Lvalue,%20Rvalue.html">Lvalue, Rvalue</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/narrowing%20cast.html">narrowing cast</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/new,%20delete.html">new, delete</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/OOP%20%ec%83%81%ec%86%8d%ec%84%b1%20inheritance.html">OOP 상속성 inheritance</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/OOP%20%ec%ba%a1%ec%8a%90%ed%99%94%20encapsulation.html">OOP 캡슐화 encapsulation</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/type%20casting.html">type casting</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/typedef,%20auto.html">typedef, auto</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>스트림, 버퍼 stream, buffer</h1>
+<p><strong>입출력</strong></p>
+<ul>
+<li>C 언어와 마찬가지로 iostream 과 fstream 에 입출력에 관한 기능들을 모아둠</li>
+<li>이때 중요한 것은 stream</li>
+</ul>
+<p><strong>스트림</strong></p>
+<ul>
+<li>입출력을 직접 이용하는 것이 아닌 스트림이라는 흐름을 통하여 입출력을 제어함</li>
+<li>단어 그대로 입, 출력의 데이터의 흐름</li>
+<li>입출력 장치와 프로그램을 이어주는 가상의 매개자</li>
+</ul>
+<p><strong>버퍼</strong></p>
+<ul>
+<li>스트림 내부의 존재하는 임시 저장공간</li>
+<li>버퍼가 없으면 입력이 그대로 전달이 되지만</li>
+<li>버퍼의 존재로 입, 출력이 버퍼에 저장이 되었다가 한번에 전달이 됨</li>
+<li>전달의 횟수가 줄어 전송시간이 줄어들며</li>
+<li>입력을 실수하여도 그대로 전달 하는게 아니기때문에 수정이 가능함</li>
+<li>대부분의 C++ 프로그램은 입력시에는 enter 를 입력하면 입력버퍼를 비우고 출력시에는 개행(\n)을 출력하면 출력버퍼를 비우게됨</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

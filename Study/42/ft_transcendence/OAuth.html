@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/42/ft_transcendence/OAuth.html">OAuth</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>OAuth</h1>
+<h1>전재조건</h1>
+<ul>
+<li>Resource Server : 자원을 가지고 있는 서버</li>
+<li>Resource Owner : 자원의 소유자, user</li>
+<li>Client : 리소스 서버에 접속해 데이터를 활용하는 주체,</li>
+<li>Authorization Server : 인증을 담당하는 서버</li>
+</ul>
+<p>주로 resource server 와 authorization server 를 하나로 보고 표현한다</p>
+<h1>순서</h1>
+<h2>등록</h2>
+<p>client 가 서비스를 등록함 - response type : 반드시 <code>code</code> 를 사용해 값을 설정, 인증에 성공할 경우 authorization code 를 받게 됨 - client id : app 을 생성했을 때 발급 받는 client id - redirect_uri : app 을 생성할 때 등록한 redirect uri - scope : client 가 부여받은 리소스 접근 권한 이 생성</p>
+<p>생성 된 값들을 authorization server 가 제공하는 authorization url 에 쿼리 스트링으로 묶어 보냄</p>
+<p>만약 어떤 OAuth 서비스의 authorization url 이라고 할 때
+<a href="https://authorization-server.com/auth?response_type=code">https://authorization-server.com/auth?response_type=code</a> &amp;client_id=456465489798562 &amp;redirect_uri=https://example-app.com/callback &amp;scope=create+delete</p>
+<p>같은 url 을 빌드해 보냄</p>
+<h2>로그인</h2>
+<p>사용자가 authorization url 로 이동하면 제공된 로그인 페이지에서 id, pw 를 입력에 인증</p>
+<h2>authorization code 발급, redirect uri 로 리디렉트</h2>
+<p>recource server 가 authorization code 라는 임시 비밀번호를 생성
+Redirect uri 에 해당 code 를 포함하여 사용자를 redirect</p>
+<p>authorization code</p>
+<ul>
+<li>client 가 access token 을 획득하기 전까지 사용하는 임시 코드</li>
+<li>1-10 분의 짧은 수명</li>
+</ul>
+<h2>access token 발급</h2>
+<p>client 가 authorization server 에 code 를 전달하면 access token 을 전달받음
+authorization code 를 이용 해 인증이 끝나면 code 는 더이상 사용되지 않아 삭제됨</p>
+<p>client 에게 access token 을 전달해 저장
+이후 resource server 는 access token 을 확인하고 접속, 사용을 허가해 줌</p>
+<p>access token 을 유출되면 안되기 때문에 https 를 통해 전달</p>
+<p>authorization code 와 access token 의 교환은 token endpoint 에서 이루어 짐
+이는 <code>application/x.www.form.urlencoded</code> 의 형식에 맞게 전달됨</p>
+<pre><code>
+</code></pre>
+<pre><code>
+</code></pre>
+<p>POST /oauth/token HTTP/1.1 Host: authorization-server.com</p>
+<p>grant_type=authorization_code &amp;code=xxxxxxxxxxx &amp;redirect_uri=https://example-app.com/redirect &amp;client_id=xxxxxxxxxx &amp;client_secret=xxxxxxxxxx ``` 필수로 전달 되어야 하는 매개변수 - grant_type : 항상 authorization code 로 설정 - code : 발급받은 authorization code - redirect_uri : redirect uri - client_id : client id - client_secret : RFC 표준상 필수는 아니나 발급이 된 경우 포함해서 요청해야 함</p>
+<h2>API 호출</h2>
+<p>access token 을 가지고 있으며 인증이 되어있고 수명이 다하지 않은 경우 사용을 허가함</p>
+<h2>refresh token</h2>
+<p>access token 에는 수명이 있으며 수명이 다 되면 api 에 접속했을 때 데이터를 넘겨주지 않음 이때 refresh token 을 사용함 보통 access token 이 발급될 때 같이 발급 됨</p>
+<p>access token 의 수명이 끝이 나면 가지고 있던 refresh token 을 resource server 에 전달 다시 access token 을 받아서 사용</p>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+

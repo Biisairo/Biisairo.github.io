@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>자료형 배열 리스트 맵 집합</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+        <header>
+        <nav>
+            <ul>
+                
+
+                <li><a href="https://biisairo.github.io/">Home</a></li>
+                
+                    <li><a href="https://biisairo.github.io/About/">About</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+            <style>
+ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    line-height: 1.6;
+    background: #222831;
+    color: #EEEEEE;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;  
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+nav li:first-child {
+    margin-right: auto;  
+}
+
+nav li:not(:first-child) {
+    margin-left: 0;
+}
+
+nav li:first-child a {
+    color: #EEEEEE;
+    font-size: 1.5em;
+    text-decoration: none;  
+}
+
+nav li:first-child a:hover {
+    color: #aadadf;  
+}
+
+nav a {
+    color: #00ADB5;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+main a,
+article a,
+footer a {
+    color: #33d3c8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+main a:hover,
+article a:hover,
+footer a:hover {
+    color: #66C1C9;
+    text-decoration: none;
+}
+
+ 
+main {
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #00ADB5;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+article {
+    margin-top: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #AAAAAA;
+}
+
+    </style>
+
+    </header>
+
+    <main>
+        
+            
+        
+
+        
+            <h2>하위 페이지</h2>
+            <ul>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/class,%20method.html">class, method</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/vs%20code%20java%20%ec%84%a4%ec%b9%98.html">vs code java 설치</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%eb%8b%a4%ed%98%95%ec%84%b1,%20%ec%b6%94%ec%83%81%20%ed%81%b4%eb%9e%98%ec%8a%a4.html">다형성, 추상 클래스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%83%81%ec%86%8d.html">상속</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%83%81%ec%86%8d%20%ec%83%9d%ec%84%b1%ec%9e%90.html">상속 생성자</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%86%8c%ec%8a%a4%ec%bd%94%eb%93%9c%ec%9d%98%20%ea%b5%ac%ec%a1%b0.html">소스코드의 구조</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%93%b0%eb%a0%88%eb%93%9c%20Thread.html">쓰레드 Thread</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%98%88%ec%99%b8%ec%b2%98%eb%a6%ac.html">예외처리</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4.html">인터페이스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%eb%b0%b0%ec%97%b4%20%eb%a6%ac%ec%8a%a4%ed%8a%b8%20%eb%a7%b5%20%ec%a7%91%ed%95%a9.html">자료형 배열 리스트 맵 집합</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%ec%83%81%ec%88%98%ec%a7%91%ed%95%a9%20%ed%98%95%eb%b3%80%ed%98%95%20final.html">자료형 상수집합 형변형 final</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%9e%90%eb%a3%8c%ed%98%95%20%ec%88%ab%ec%9e%90,%20%eb%b6%88,%20%eb%ac%b8%ec%9e%90,%20%eb%ac%b8%ec%9e%90%ec%97%b4,%20StringBuffer.html">자료형 숫자, 불, 문자, 문자열, StringBuffer</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%91%ea%b7%bc%ec%a0%9c%ec%96%b4%ec%9e%90.html">접근제어자</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%95%ec%a0%81%20static%20%eb%b3%80%ec%88%98%ec%99%80%20%eb%a9%94%ec%86%8c%eb%93%9c.html">정적 static 변수와 메소드</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%a0%9c%ec%96%b4%eb%ac%b8.html">제어문</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ec%bd%98%ec%86%94%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">콘솔 입출력</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%8c%8c%ec%9d%bc%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">파일 입출력</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%8c%a8%ed%82%a4%ec%a7%80%ec%99%80%20%ed%81%b4%eb%9e%98%ec%8a%a4.html">패키지와 클래스</a></li>
+                
+                    <li><a href="https://biisairo.github.io/Study/Language/Java%20lang/%ed%95%a8%ec%88%98%ed%98%95%20%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d.html">함수형 프로그래밍</a></li>
+                
+            </ul>
+        
+        
+        
+        <article>
+            <h1>자료형 배열 리스트 맵 집합</h1>
+<p><strong>배열 Array</strong></p>
+<ul>
+<li>자료형의 집합</li>
+<li>자료형 타입 다음에 [] 를 써서 선언
+<ul>
+<li>String[] weeks = {“월”, “화”, “수”, “목”, “금”, “토”, “일”}</li>
+</ul>
+</li>
+<li>배열의 길이(인자의 수) 초기설정
+<ul>
+<li>초기값을 넣지 않고 배열을 만들때는 길이에 대한 숫자값이 필수</li>
+<li>배열을 만들고 변수를 넣는다
+<ul>
+<li>String[] weeks = new String[7]</li>
+<li>week[0] = “월”; . . .</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>배열값의 접근
+<ul>
+<li>인덱스로 접근한다
+<ul>
+<li>weeks[3] // “목”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>배열의 길이
+<ul>
+<li>for 문을 사용할 때 배열의 길이를 명시해 for 문의 반복횟수를 결정한다
+<ul>
+<li>for (int i = 0; i &lt; weeks.length; i++) {}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>배열의 길이보다 큰 값으로 인덱싱을 시도하면 오류가 난다</li>
+</ul>
+<p><strong>리스트 List</strong></p>
+<ul>
+<li>배열과 다르게 크기가 정해지지 않고, 동적으로 변한다</li>
+<li>리스트의 종류
+<ul>
+<li>ArrayList
+<ul>
+<li>import java.util.ArrayList; // 필수!</li>
+<li>ArratList alist = new ArrayList();
+<ul>
+<li>alist.add(something); - something 을 리스트에 추가한다</li>
+<li>alist.get(index); - 인덱스 위치의 값을 리턴한다</li>
+<li>alist.size(); - 리스트의 크기(길이, 인자의 갯수)를 리턴한다</li>
+<li>alist.contains(something); - 리스트에 값이 있는지를 확인한다 bool 형식으로 리턴한다</li>
+<li>remove
+<ul>
+<li>alist.remove(index); - 인덱스 위치의 값을 지운다</li>
+<li>alist.remove(something); - 해당 값을 삭제한다, 중복될 시 하나만 삭제한다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>.add() 로 객체를 넣을 때 추가되는 객체는 해당 자료형이 아닌 Object 자료형으로 들어간다
+<ul>
+<li>즉 get 으로 객체를 가져와 변수로 할당할 때 자료형 명시를 다시 해 주어야 한다
+<ul>
+<li>String one = (String) alist.get(0);</li>
+</ul>
+</li>
+<li>이를 해결한 것이 제네릭스(Generics) 이다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Generics
+<ul>
+<li>ArrayList 를 선언할 때
+<ul>
+<li>ArrayList&lt;자료형&gt; alist = new ArrayList&lt;자료형&gt;(); 또는</li>
+<li>ArrayList&lt;자료형&gt; alist = new ArrayList&lt;&gt;(); 으로 선언한다</li>
+</ul>
+</li>
+<li>이렇게 하면 해당 리스트 안에는 해당 자료형의 객체만 들어갈 수 있고 나중에 .get() 을 하면
+<ul>
+<li>String one = alist.get(0);</li>
+</ul>
+</li>
+<li>같은 방식으로 바로 사용할 수 있다</li>
+</ul>
+</li>
+<li>ArrayList 만들기</li>
+</ul>
+</li>
+</ul>
+<pre><code>ArrayList&lt;String&gt; alist = new ArrayList&lt;&gt;();
+    alist.add(); . . .
+</code></pre>
+<pre><code>import java.util.Arrays;
+
+String[] data = {&quot;hello&quot;, &quot;world&quot;};
+ArrayList&lt;String&gt; alist = new ArrayList&lt;&gt;(Array.aslist(data));
+</code></pre>
+<pre><code>import java.util.Arrays;
+
+ArrayList&lt;String&gt; alist = new ArrayList&lt;&gt;(&quot;hello&quot;, &quot;world&quot;);
+</code></pre>
+<ul>
+<li>String.join
+<ul>
+<li>String result = String.join(“,”, alist); // hello,world 문자열이 선언된다</li>
+</ul>
+</li>
+<li>정렬하기</li>
+</ul>
+<pre><code>import java.util.Comparator;
+
+alist.sort(Comparator.naturalOrder()); // 오름차순
+alist.sort(Comparator.reverseOrder()); // 내림차순
+</code></pre>
+<p><strong>맵 Map</strong></p>
+<ul>
+<li>dictionary 와 같은 자료형</li>
+<li>key, value 한쌍으로 구성된다
+<ul>
+<li>HashMap
+<ul>
+<li>import java.util.HashMap;</li>
+<li>HashMap&lt;String, String&gt; amap = new HashMap&lt;&gt;();</li>
+<li>put
+<ul>
+<li>amap.put(“key”, “value”);</li>
+</ul>
+</li>
+<li>get
+<ul>
+<li>amap.get(“key”); // “value” 가 리턴된다</li>
+<li>key 기 존재하지 않을 시 null 이 리턴된다</li>
+</ul>
+</li>
+<li>getOrDefult
+<ul>
+<li>amap.getOrDefult(“key”, “defultvalue”);</li>
+<li>key 가 존재하지 않을 시 defultvalue 가 리턴된다</li>
+</ul>
+</li>
+<li>containsKey
+<ul>
+<li>amap.containsKey(“key”); // key 가 존재할 경우 true 로 리턴한다</li>
+</ul>
+</li>
+<li>remove
+<ul>
+<li>amap.remove(“key”); // key 에 해당하는 값이 삭제된 다음 key 의 value 값이 리턴된다</li>
+</ul>
+</li>
+<li>size
+<ul>
+<li>amap.size(); // 맵의 크기(안에든 키/값 쌍의 갯수)가 리턴된다</li>
+</ul>
+</li>
+<li>keySet
+<ul>
+<li>amap.keySet(); // 맵 안의 key 들을 모아 Set 자료형으로 리턴된다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LinkedHashMap
+<ul>
+<li>기존의 HashMap 은 순서의 의미가 없으나 LinkedHashMap 넣은 순서대로 저장된다</li>
+</ul>
+</li>
+<li>TreeMap
+<ul>
+<li>key 의 오름차순으로 저장된다</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>집합 Set</strong></p>
+<ul>
+<li>중복을 허용하지 않으며, 순서가 없다
+<ul>
+<li>HashSet
+<ul>
+<li>
+<p>import java.util.HashSet;</p>
+</li>
+<li>
+<p>HashSet</p>
+<p>aset = new HashSet&lt;&gt;(Array.asList(“H”, “E”, “L”, “L”, “O”);</p>
+</li>
+<li>
+<p>교집합</p>
+<ul>
+<li>s1.retainAll(s2); // s1 에 s1 과 s2 의 교집합이 할당된다</li>
+</ul>
+</li>
+<li>
+<p>합집합</p>
+<ul>
+<li>s1.addAll(s2); // s1 에 s1 과 s2 의 합집합이 할당된다, 중복되는 값은 한번씩만 들어간다</li>
+</ul>
+</li>
+<li>
+<p>차집합</p>
+<ul>
+<li>s1.removeAll(s2); // s1 에 s1 에서 s2 를 뺀 집합이 할당된다</li>
+</ul>
+</li>
+<li>
+<p>add</p>
+<ul>
+<li>s1.add(something); // s1 에 값을 추가한다</li>
+</ul>
+</li>
+<li>
+<p>addAll</p>
+<ul>
+<li>s1.addAll(Array.aslist(“some”, “thing”)); // s1 에 여러개의 값을 추가할때 사용한다</li>
+</ul>
+</li>
+<li>
+<p>remove</p>
+<ul>
+<li>s1.remove(something); // s1 에서 특정 값을 제거한다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>LinkedHashSet
+<ul>
+<li>기존의 HashSet 은 순서의 의미가 없으나 LinkedHashSet 넣은 순서대로 저장된다</li>
+</ul>
+</li>
+<li>TreeSet
+<ul>
+<li>오름차순으로 저장된다</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </article>
+        
+    </main>
+
+        <footer>
+        <p>Generated by SuGo</p>
+    </footer>
+
+</body>
+</html>
+
+
