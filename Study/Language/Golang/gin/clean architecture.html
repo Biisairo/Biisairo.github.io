@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>go gc</title>
+    <title>clean architecture</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
 
@@ -179,15 +179,6 @@
     <main>
         
         
-        <h2 onclick="toggleSection('groups')" style="cursor: pointer;">▶ 하위 그룹</h2>
-        <div id="groups" style="display: none;">
-            <ul>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/gin/">gin</a></li>
-                
-            </ul>
-        </div>
-        
         
 
         
@@ -195,21 +186,9 @@
         <div id="pages" style="display: none;">
             <ul>
                 
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/go%20gc.html">go gc</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Golang/gin/Route.html">Route</a></li>
                 
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/memory.html">memory</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/go%20scheduling.html">go scheduling</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/go%20runtime.html">go runtime</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/channel.html">channel</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/context.html">context</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/gRPC.html">gRPC</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/Golang/http.html">http</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Golang/gin/clean%20architecture.html">clean architecture</a></li>
                 
             </ul>
         </div>
@@ -218,41 +197,40 @@
         
         
         <article>
-            <h1>go gc</h1>
-<h2>go gc 의 특징</h2>
-<ol>
-<li>동시성</li>
-<li>비압축 방식</li>
-<li>비세대 방식</li>
-</ol>
-<h2>go gc 동작 방식</h2>
-<ol>
-<li>stw (stop the world)</li>
-<li>write barrier, root 를 mark 대기열에 넣기</li>
-<li>start the world</li>
-<li>tri color marking 실행</li>
-<li>이 과정 중 다른 goroutine 에서 쓰거나 삭제된 메모리는 gc 를 진행중인 goroutine 에 전달되어 새로 할당/해제된 메모리를 gray color mark 한다</li>
-<li>marking 과정이 끝나면 stw</li>
-<li>sweep</li>
-</ol>
-<p>위 동작과정이 끝나고 남은 메모리를 live heap 이라고한다</p>
-<p>GOGC 는 go gc 에서 컨트롤 가능한 값으로 기본값은 100
-이후 새로 할당된 값의 크기를 new heap 이라고 할때
-live heap + new heap &gt; live heap * (1 + GOGC) / 100 이 될때 gc 가 동작한다</p>
-<h2>정리</h2>
-<p>단점</p>
+            <h1>clean architecture</h1>
 <ul>
-<li>비압축, 비 세대별 관리로 인해 내/외부 파편화의 요지가 많다</li>
-<li>이로인한 메모리 효율이 좋지 않다</li>
+<li>계층을 확실히 분리하여 외부에서만 내부를 확인할 수 있고 내부에서는 외부를 확인할 수 없도록 만든 디자인</li>
+<li>gin 의 기본 기능을 공부한 뒤 gon 에서 사용하기 좋은 구조, 많은 사람들이 사용하는 구조를 찾아보다가 알게되었다</li>
+<li>아래는 계층 구조이며 아래로 갈 수록 외부이다</li>
 </ul>
-<p>장점</p>
+<h3>entity</h3>
 <ul>
-<li>gc 에서 시간을 멈추는건 gc 시작과 끝의 잠깐이므로 gc 에 의한 성능저하가 적다</li>
-<li>비압축, 비 세대별 관리를 통해gc 에서 사용하는 시간을 줄이고 size class 를 통해 작은 메모리할당의 속도를 줄인다</li>
+<li>domain 레이어</li>
+<li>핵심 비즈니스 규칙</li>
+<li>실제 저장, 관리될 데이터 클래스</li>
 </ul>
-<p>결론</p>
+<h3>usecase</h3>
 <ul>
-<li>go gc 는 메모리 효율의 하락을 감수하고 빠른 메모리할당과 빠른 gc 를 구현</li>
+<li>application 레이어</li>
+<li>비즈니스 로직이 실행되는 부분</li>
+</ul>
+<h3>port</h3>
+<ul>
+<li>adapter 의 인터페이스</li>
+<li>adapter 가 바뀌더라도 usecase 에서 호출하여 사용할 수 있도록 golang 의인터페이스를 사용</li>
+</ul>
+<h3>adapter</h3>
+<ul>
+<li>실제 외부와 연결되는 부분</li>
+<li>DB, http 서버(gin, net/http 등), 기타 외부 기능</li>
+</ul>
+<h2>특징</h2>
+<ul>
+<li>의존성은 외부에서 내부로</li>
+<li>요청은 외부 -&gt; 내부 -&gt; 외부</li>
+<li>DB, 서버, ui 등은 adapter 이므로 변경되어도 내부 비즈니스 로직에는 영향이 가지 않는다</li>
+<li>계층간 분리를 확실하게 하여 서로 독립이 되어있기 때문에 대규모 프로젝트에서의 유지보수성이 좋다</li>
+<li>간단한 계층 구조에 비해 복잡하다</li>
 </ul>
 
         </article>
