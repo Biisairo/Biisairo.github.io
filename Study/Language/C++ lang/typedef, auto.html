@@ -3,220 +3,251 @@
 
 
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>typedef, auto</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
 <body>
-        <header>
-        <nav>
-            <ul>
-                
+    <header>
+    <nav>
+        <ul>
+            
 
-                <li><a href="https://biisairo.github.io/">Home</a></li>
-                
-                    <li><a href="https://biisairo.github.io/About/">About</a></li>
-                
-                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
-                
-                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
-                
-            </ul>
-        </nav>
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
 
-            <style>
- 
-html, body {
-    height: 100%;
-    margin: 0;
-}
+    <style>
+     
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
 
-body {
-    display: flex;
-    flex-direction: column;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    line-height: 1.6;
-    background: #222831;
-    color: #EEEEEE;
-}
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
 
-header, footer {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;  
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+         
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 
-nav li:first-child {
-    margin-right: auto;  
-}
+    nav li:first-child {
+        margin-right: auto;
+         
+    }
 
-nav li:not(:first-child) {
-    margin-left: 0;
-}
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
 
-nav li:first-child a {
-    color: #EEEEEE;
-    font-size: 1.5em;
-    text-decoration: none;  
-}
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+         
+    }
 
-nav li:first-child a:hover {
-    color: #aadadf;  
-}
+    nav li:first-child a:hover {
+        color: #aadadf;
+         
+    }
 
-nav a {
-    color: #00ADB5;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
-nav a:hover {
-    color: #66C1C9;
-    text-decoration: none;
-}
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
 
-main a,
-article a,
-footer a {
-    color: #33d3c8;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
-main a:hover,
-article a:hover,
-footer a:hover {
-    color: #66C1C9;
-    text-decoration: none;
-}
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
 
- 
-main {
-    flex: 1;
-    margin-bottom: 2rem;
-}
+     
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
 
-h1, h2, h3 {
-    line-height: 1.3;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #00ADB5;
-}
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
 
-ul {
-    padding-left: 1.5rem;
-}
+    h2[onclick] {
+        user-select: none;
+    }
 
-article {
-    margin-top: 2rem;
-    border: 1px solid #33d3c8;
-    padding: 1rem;
-    border-radius: 5px;
-}
 
-footer p {
-    font-size: 0.9rem;
-    color: #AAAAAA;
-}
+    ul {
+        padding-left: 1.5rem;
+    }
 
-    </style>
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
 
-    </header>
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
 
     <main>
         
-            
+        
         
 
         
-            <h2>하위 페이지</h2>
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
             <ul>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ea%b5%ac%ec%a1%b0%ec%b2%b4%20struct.html">구조체 struct</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ea%b5%ac%ec%a1%b0%ec%b2%b4%20struct.html">구조체 struct</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%84%a4%ec%9e%84%ec%8a%a4%ed%8e%98%ec%9d%b4%ec%8a%a4%20namespace.html">네임스페이스 namespace</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%84%a4%ec%9e%84%ec%8a%a4%ed%8e%98%ec%9d%b4%ec%8a%a4%20namespace.html">네임스페이스 namespace</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%8b%a4%ed%98%95%ec%84%b1%20polymorphism.html">다형성 polymorphism</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%8b%a4%ed%98%95%ec%84%b1%20polymorphism.html">다형성 polymorphism</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%ac%b8%ec%9e%90%ec%97%b4%20string.html">문자열 string</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%ac%b8%ec%9e%90%ec%97%b4%20string.html">문자열 string</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%b0%98%eb%b3%b5%ec%9e%90%20iterator.html">반복자 iterator</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%eb%b0%98%eb%b3%b5%ec%9e%90%20iterator.html">반복자 iterator</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%83%9d%ec%84%b1%ec%9e%90,%20%ec%86%8c%eb%a9%b8%ec%9e%90%20constructor,%20destructor.html">생성자, 소멸자 constructor, destructor</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%83%9d%ec%84%b1%ec%9e%90,%20%ec%86%8c%eb%a9%b8%ec%9e%90%20constructor,%20destructor.html">생성자, 소멸자 constructor, destructor</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8a%a4%eb%a7%88%ed%8a%b8%20%ed%8f%ac%ec%9d%b8%ed%84%b0%20smart%20pointer.html">스마트 포인터 smart pointer</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8a%a4%eb%a7%88%ed%8a%b8%20%ed%8f%ac%ec%9d%b8%ed%84%b0%20smart%20pointer.html">스마트 포인터 smart pointer</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8a%a4%ed%8a%b8%eb%a6%bc,%20%eb%b2%84%ed%8d%bc%20stream,%20buffer.html">스트림, 버퍼 stream, buffer</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8a%a4%ed%8a%b8%eb%a6%bc,%20%eb%b2%84%ed%8d%bc%20stream,%20buffer.html">스트림, 버퍼 stream, buffer</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8b%9c%ed%80%80%ec%8a%a4%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20sequence%20container.html">시퀀스 컨테이너 sequence container</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%8b%9c%ed%80%80%ec%8a%a4%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20sequence%20container.html">시퀀스 컨테이너 sequence container</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98%20algorithm.html">알고리즘 algorithm</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98%20algorithm.html">알고리즘 algorithm</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%97%b0%ea%b4%80%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20associate%20container.html">연관 컨테이너 associate container</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%97%b0%ea%b4%80%20%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20associate%20container.html">연관 컨테이너 associate container</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%97%b0%ec%82%b0%ec%9e%90%20%ec%98%a4%eb%b2%84%eb%a1%9c%eb%94%a9%20operator%20overloading.html">연산자 오버로딩 operator overloading</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%97%b0%ec%82%b0%ec%9e%90%20%ec%98%a4%eb%b2%84%eb%a1%9c%eb%94%a9%20operator%20overloading.html">연산자 오버로딩 operator overloading</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%98%88%ec%99%b8%20%ec%b2%98%eb%a6%ac%20exception%20headling.html">예외 처리 exception headling</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%98%88%ec%99%b8%20%ec%b2%98%eb%a6%ac%20exception%20headling.html">예외 처리 exception headling</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%9c%a0%ed%9a%a8%eb%b2%94%ec%9c%84%20scope.html">유효범위 scope</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%9c%a0%ed%9a%a8%eb%b2%94%ec%9c%84%20scope.html">유효범위 scope</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%b0%b8%ec%a1%b0%ec%9e%90%20reference.html">참조자 reference</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%b0%b8%ec%a1%b0%ec%9e%90%20reference.html">참조자 reference</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20container.html">컨테이너 container</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20container.html">컨테이너 container</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%96%b4%eb%8c%91%ed%84%b0%20container%20adapter.html">컨테이너 어댑터 container adapter</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ec%bb%a8%ed%85%8c%ec%9d%b4%eb%84%88%20%ec%96%b4%eb%8c%91%ed%84%b0%20container%20adapter.html">컨테이너 어댑터 container adapter</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%81%b4%eb%9e%98%ec%8a%a4%20class.html">클래스 class</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%81%b4%eb%9e%98%ec%8a%a4%20class.html">클래스 class</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%81%b4%eb%9e%98%ec%8a%a4%20%ed%85%9c%ed%94%8c%eb%a6%bf%20class%20template.html">클래스 템플릿 class template</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%81%b4%eb%9e%98%ec%8a%a4%20%ed%85%9c%ed%94%8c%eb%a6%bf%20class%20template.html">클래스 템플릿 class template</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%8c%8c%ec%9d%bc%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">파일 입출력</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%8c%8c%ec%9d%bc%20%ec%9e%85%ec%b6%9c%eb%a0%a5.html">파일 입출력</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%91%9c%ec%a4%80%20%ed%85%9c%ed%94%8c%eb%a6%bf%20%eb%9d%bc%ec%9d%b4%eb%b8%8c%eb%9f%ac%eb%a6%ac%20STL%20standard%20template%20l.html">표준 템플릿 라이브러리 STL standard template l</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%91%9c%ec%a4%80%20%ed%85%9c%ed%94%8c%eb%a6%bf%20%eb%9d%bc%ec%9d%b4%eb%b8%8c%eb%9f%ac%eb%a6%ac%20STL%20standard%20template%20l.html">표준 템플릿 라이브러리 STL standard template l</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20%ea%b0%9d%ec%b2%b4%20function%20object.html">함수 객체 function object</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20%ea%b0%9d%ec%b2%b4%20function%20object.html">함수 객체 function object</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20function.html">함수 function</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20function.html">함수 function</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20%ed%85%9c%ed%94%8c%eb%a6%bf%20function%20template.html">함수 템플릿 function template</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%95%a8%ec%88%98%20%ed%85%9c%ed%94%8c%eb%a6%bf%20function%20template.html">함수 템플릿 function template</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%97%a4%eb%8d%94%20header.html">헤더 header</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/%ed%97%a4%eb%8d%94%20header.html">헤더 header</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/Lvalue,%20Rvalue.html">Lvalue, Rvalue</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/Lvalue,%20Rvalue.html">Lvalue, Rvalue</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/narrowing%20cast.html">narrowing cast</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/narrowing%20cast.html">narrowing cast</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/new,%20delete.html">new, delete</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/new,%20delete.html">new, delete</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/OOP%20%ec%83%81%ec%86%8d%ec%84%b1%20inheritance.html">OOP 상속성 inheritance</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/OOP%20%ec%83%81%ec%86%8d%ec%84%b1%20inheritance.html">OOP 상속성 inheritance</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/OOP%20%ec%ba%a1%ec%8a%90%ed%99%94%20encapsulation.html">OOP 캡슐화 encapsulation</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/OOP%20%ec%ba%a1%ec%8a%90%ed%99%94%20encapsulation.html">OOP 캡슐화 encapsulation</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/type%20casting.html">type casting</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/type%20casting.html">type casting</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/typedef,%20auto.html">typedef, auto</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/C&#43;&#43;%20lang/typedef,%20auto.html">typedef, auto</a></li>
                 
             </ul>
+        </div>
+        
+
         
         
-        
-            
-            <article>
-                <h1>typedef, auto</h1>
+        <article>
+            <h1>typedef, auto</h1>
 <p><strong>typedef 와  auto</strong></p>
 <ul>
 <li>별명을 명시적으로 지정해 주는 typedef</li>
@@ -224,8 +255,8 @@ footer p {
 <li>두 기능 모두 함수포인터의 이용해서 사용할 수 있다</li>
 </ul>
 
-            </article>
-            
+        </article>
+        
         
     </main>
 
@@ -233,10 +264,9 @@ footer p {
 
 <footer>
     <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
-            href="mailto:rlark1224@naver.com">mail</a></p>
+            href="mailto:rlark1224@naver.com">Mail</a></p>
 </footer>
 
 </body>
+
 </html>
-
-

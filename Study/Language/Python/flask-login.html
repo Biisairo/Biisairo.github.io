@@ -3,199 +3,232 @@
 
 
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>flask-login</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
 <body>
-        <header>
-        <nav>
-            <ul>
-                
+    <header>
+    <nav>
+        <ul>
+            
 
-                <li><a href="https://biisairo.github.io/">Home</a></li>
-                
-                    <li><a href="https://biisairo.github.io/About/">About</a></li>
-                
-                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
-                
-                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
-                
-            </ul>
-        </nav>
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
 
-            <style>
- 
-html, body {
-    height: 100%;
-    margin: 0;
-}
+    <style>
+     
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
 
-body {
-    display: flex;
-    flex-direction: column;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    line-height: 1.6;
-    background: #222831;
-    color: #EEEEEE;
-}
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
 
-header, footer {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;  
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+         
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 
-nav li:first-child {
-    margin-right: auto;  
-}
+    nav li:first-child {
+        margin-right: auto;
+         
+    }
 
-nav li:not(:first-child) {
-    margin-left: 0;
-}
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
 
-nav li:first-child a {
-    color: #EEEEEE;
-    font-size: 1.5em;
-    text-decoration: none;  
-}
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+         
+    }
 
-nav li:first-child a:hover {
-    color: #aadadf;  
-}
+    nav li:first-child a:hover {
+        color: #aadadf;
+         
+    }
 
-nav a {
-    color: #00ADB5;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
-nav a:hover {
-    color: #66C1C9;
-    text-decoration: none;
-}
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
 
-main a,
-article a,
-footer a {
-    color: #33d3c8;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
-main a:hover,
-article a:hover,
-footer a:hover {
-    color: #66C1C9;
-    text-decoration: none;
-}
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
 
- 
-main {
-    flex: 1;
-    margin-bottom: 2rem;
-}
+     
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
 
-h1, h2, h3 {
-    line-height: 1.3;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #00ADB5;
-}
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
 
-ul {
-    padding-left: 1.5rem;
-}
+    h2[onclick] {
+        user-select: none;
+    }
 
-article {
-    margin-top: 2rem;
-    border: 1px solid #33d3c8;
-    padding: 1rem;
-    border-radius: 5px;
-}
 
-footer p {
-    font-size: 0.9rem;
-    color: #AAAAAA;
-}
+    ul {
+        padding-left: 1.5rem;
+    }
 
-    </style>
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
 
-    </header>
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
 
     <main>
         
-            
-                <h2>하위 그룹</h2>
-                <ul>
-                    
-                        <li><a href="https://biisairo.github.io/Study/Language/Python/Django/">Django</a></li>
-                    
-                </ul>
-            
+        
+        <h2 onclick="toggleSection('groups')" style="cursor: pointer;">▶ 하위 그룹</h2>
+        <div id="groups" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Language/Python/Django/">Django</a></li>
+                
+            </ul>
+        </div>
+        
         
 
         
-            <h2>하위 페이지</h2>
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
             <ul>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/%ed%8c%8c%ec%9d%b4%ec%8d%ac%20%ea%b0%80%ec%83%81%20%ea%b0%9c%eb%b0%9c%ed%99%98%ea%b2%bd.html">파이썬 가상 개발환경</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/%ed%8c%8c%ec%9d%b4%ec%8d%ac%20%ea%b0%80%ec%83%81%20%ea%b0%9c%eb%b0%9c%ed%99%98%ea%b2%bd.html">파이썬 가상 개발환경</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/%ed%99%98%ea%b2%bd%eb%b3%80%ec%88%98.html">환경변수</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/%ed%99%98%ea%b2%bd%eb%b3%80%ec%88%98.html">환경변수</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/bs4.html">bs4</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/bs4.html">bs4</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/datetime.html">datetime</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/datetime.html">datetime</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/Decorator%20function.html">Decorator function</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/Decorator%20function.html">Decorator function</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/flask.html">flask</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/flask.html">flask</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/flask-bootstrap.html">flask-bootstrap</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/flask-bootstrap.html">flask-bootstrap</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/flask-ckeditor.html">flask-ckeditor</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/flask-ckeditor.html">flask-ckeditor</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/flask-login.html">flask-login</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/flask-login.html">flask-login</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/flask-sqlalchemy.html">flask-sqlalchemy</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/flask-sqlalchemy.html">flask-sqlalchemy</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/flask-wtf.html">flask-wtf</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/flask-wtf.html">flask-wtf</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/jinja.html">jinja</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/jinja.html">jinja</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/upyter%20%ec%99%80%20pandas.html">upyter 와 pandas</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/upyter%20%ec%99%80%20pandas.html">upyter 와 pandas</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/pymongo.html">pymongo</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/pymongo.html">pymongo</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/requests.html">requests</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/requests.html">requests</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/Selenium.html">Selenium</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/Selenium.html">Selenium</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/smtplib.html">smtplib</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/smtplib.html">smtplib</a></li>
                 
-                    <li><a href="https://biisairo.github.io/Study/Language/Python/sqlite3.html">sqlite3</a></li>
+                <li><a href="https://biisairo.github.io/Study/Language/Python/sqlite3.html">sqlite3</a></li>
                 
             </ul>
+        </div>
+        
+
         
         
-        
-            
-            <article>
-                <h1>flask-login</h1>
+        <article>
+            <h1>flask-login</h1>
 <p>flask 에서 login 기능을 담당하는 라이브러리</p>
 <p><strong>구성 코드</strong></p>
 <h1>import</h1>
@@ -268,8 +301,8 @@ footer p {
 <li>변경 부분을 바꾸면 기타 다른 유저들의 권한으로 바꿀 수 있다</li>
 </ul>
 
-            </article>
-            
+        </article>
+        
         
     </main>
 
@@ -277,10 +310,9 @@ footer p {
 
 <footer>
     <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
-            href="mailto:rlark1224@naver.com">mail</a></p>
+            href="mailto:rlark1224@naver.com">Mail</a></p>
 </footer>
 
 </body>
+
 </html>
-
-

@@ -3,158 +3,189 @@
 
 
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>index</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
 <body>
-        <header>
-        <nav>
-            <ul>
-                
+    <header>
+    <nav>
+        <ul>
+            
 
-                <li><a href="https://biisairo.github.io/">Home</a></li>
-                
-                    <li><a href="https://biisairo.github.io/About/">About</a></li>
-                
-                    <li><a href="https://biisairo.github.io/Study/">Study</a></li>
-                
-                    <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
-                
-            </ul>
-        </nav>
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
 
-            <style>
- 
-html, body {
-    height: 100%;
-    margin: 0;
-}
+    <style>
+     
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
 
-body {
-    display: flex;
-    flex-direction: column;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    line-height: 1.6;
-    background: #222831;
-    color: #EEEEEE;
-}
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
 
-header, footer {
-    text-align: center;
-    margin-bottom: 2rem;
-}
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;  
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+         
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 
-nav li:first-child {
-    margin-right: auto;  
-}
+    nav li:first-child {
+        margin-right: auto;
+         
+    }
 
-nav li:not(:first-child) {
-    margin-left: 0;
-}
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
 
-nav li:first-child a {
-    color: #EEEEEE;
-    font-size: 1.5em;
-    text-decoration: none;  
-}
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+         
+    }
 
-nav li:first-child a:hover {
-    color: #aadadf;  
-}
+    nav li:first-child a:hover {
+        color: #aadadf;
+         
+    }
 
-nav a {
-    color: #00ADB5;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
-nav a:hover {
-    color: #66C1C9;
-    text-decoration: none;
-}
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
 
-main a,
-article a,
-footer a {
-    color: #33d3c8;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
 
-main a:hover,
-article a:hover,
-footer a:hover {
-    color: #66C1C9;
-    text-decoration: none;
-}
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
 
- 
-main {
-    flex: 1;
-    margin-bottom: 2rem;
-}
+     
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
 
-h1, h2, h3 {
-    line-height: 1.3;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #00ADB5;
-}
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
 
-ul {
-    padding-left: 1.5rem;
-}
+    h2[onclick] {
+        user-select: none;
+    }
 
-article {
-    margin-top: 2rem;
-    border: 1px solid #33d3c8;
-    padding: 1rem;
-    border-radius: 5px;
-}
 
-footer p {
-    font-size: 0.9rem;
-    color: #AAAAAA;
-}
+    ul {
+        padding-left: 1.5rem;
+    }
 
-    </style>
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
 
-    </header>
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
 
     <main>
         
-            
+        
         
 
         
-            <h2>하위 페이지</h2>
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
             <ul>
                 
-                    <li><a href="https://biisairo.github.io/Study/42/ft_transcendence/OAuth.html">OAuth</a></li>
+                <li><a href="https://biisairo.github.io/Study/42/ft_transcendence/OAuth.html">OAuth</a></li>
                 
             </ul>
+        </div>
+        
+
         
         
-        
-            
-            <article>
-                <h1>ft_transcendence</h1>
+        <article>
+            <h1>ft_transcendence</h1>
 <p><a href="ft_transcendence%204fe122e7bddf40d3b3159270283f1884/OAuth%2025011ea59de0458b9916f116625e2256.md">OAuth</a></p>
 <h1>목표</h1>
 <ul>
@@ -168,8 +199,8 @@ footer p {
 <p>채팅 - 사용자가 방을 공개, 비공개, 혹은 비밀번호를 설정할 수 있는 방을 만들 수 있어야 한다 - 다른 사용자에게 DM 을 보낼 수 있어야 한다 - 다른 사용자를 차단할 수 있으며 차단한 계정의 메세지는 볼 수 없어야 한다 - 새 채널을 만든 사용자는 채널을 떠날때 까지 채널의 소유주가 된다 - 채널 소유자는 채널에 들어오는데 필요한 비밀번호를 생성, 변경, 삭제 할 수 있어야 한다 - 채널 소유자는 채널 관리자이다. 관리자는 다른 유저를 관리자로 만들 수 있다. - 채널 관리자는 (제한된 시간동안) 다른 유저를 kick, ban, mute 할 수 있으며 채널 소유자는 그렇지 못하다 - 사용자는 채팅 인터페이스를 통해 다른 사용자를 PONG 게임에 초대할 수 있어야 한다 - 사용자는 채팅 인터페이스를 통해 다른 사용자의 프로필을 확인할 수 있어야 한다</p>
 <p>게임 - 사용자는 웹사이트에서 실시간으로 다른 사용자와 퐁 게임을 할 수 있어야 한다 - 메치메이킹 시스템이 있어야한다 - 사용자는 자동적으로 다른 사용자와 메치될 때 까지 대기열에 들어가게 된다 - 게임 그래픽이 어떻든 일단 1972년에 나온 퐁 게임에 충실해야 한다 - 게임에 사용자 추가 옵션을 설정할 수 있어야 하며 원하지 않을 경우 기본 게임을 할 수 있도록 해야 한다 - 게임은 반응성이 좋아야 한다 - 사용자가 다른 사용자들의 경기를 실시간 플레이를 방해하지 않고 관람할 수 있어야 한다</p>
 
-            </article>
-            
+        </article>
+        
         
     </main>
 
@@ -177,10 +208,9 @@ footer p {
 
 <footer>
     <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
-            href="mailto:rlark1224@naver.com">mail</a></p>
+            href="mailto:rlark1224@naver.com">Mail</a></p>
 </footer>
 
 </body>
+
 </html>
-
-
