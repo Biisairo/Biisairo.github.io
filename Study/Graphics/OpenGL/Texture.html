@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texture</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            
+
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    nav li:first-child {
+        margin-right: auto;
+    }
+
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    nav li:first-child a:hover {
+        color: #aadadf;
+    }
+
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
+
+    h2[onclick] {
+        user-select: none;
+        color: #2699b6;
+    }
+
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
+
+    <main>
+        
+        
+        <h2 onclick="toggleSection('groups')" style="cursor: pointer;">▶ 하위 그룹</h2>
+        <div id="groups" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Skeleton%20hierarchy/">Skeleton hierarchy</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%bf%bc%ed%84%b0%eb%8b%88%ec%96%b8%20%ed%9a%8c%ec%a0%84/">쿼터니언 회전</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/OpenGL/">OpenGL</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/VBO,%20VAO,%20EBO/">VBO, VAO, EBO</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/light%20casters/">light casters</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/blending/">blending</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/cubemap/">cubemap</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/advanced%20glsl/">advanced glsl</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/blinn%20phong/">blinn phong</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/gamma%20correction/">gamma correction</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/shadow%20mapping/">shadow mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/normal%20mapping/">normal mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/parallax%20mapping/">parallax mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/High%20Dynamic%20Range/">High Dynamic Range</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/bloom/">bloom</a></li>
+                
+            </ul>
+        </div>
+        
+        
+
+        
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/obj%20mtl%20file.html">obj mtl file</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c.html">참고자료</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/function.html">function</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%b4%88%ea%b8%b0%ed%99%94.html">초기화</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/basic%20function.html">basic function</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Shader.html">Shader</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Texture.html">Texture</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Transform.html">Transform</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Coordinate%20System.html">Coordinate System</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Camera.html">Camera</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Color.html">Color</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Materials.html">Materials</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Lighting%20map.html">Lighting map</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/depth%20test.html">depth test</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/stencil%20test.html">stencil test</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/face%20culling.html">face culling</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/framebuffers.html">framebuffers</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/advanced%20data.html">advanced data</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/geometry%20shader.html">geometry shader</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/instancingmd.html">instancingmd</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/anti%20aliasing.html">anti aliasing</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/point%20shadow.html">point shadow</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/mapping.html">mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Voxel%20Engine.html">Voxel Engine</a></li>
+                
+            </ul>
+        </div>
+        
+
+        
+        
+        <article>
+            <h1>Texture</h1>
+<h2>UV mapping</h2>
+<p>texture 의 좌표는 좌하단 (0, 0), 우상단 (1, 1) 로 정규화 되어진다</p>
+<p>실제 물체에 mapping 될 때는 vertex 를 texture 좌표에 대응시키게 된다</p>
+<h2>Texture rapping</h2>
+<p>기본적으로 (0, 0) - (1, 1) 의 좌표만 사용하지만 해당 범위 밖의 좌표를 사용할 때의 동작을 지정할 수 있다</p>
+<ul>
+<li>GL_REPEAT : 기본동작, 텍스쳐 이미지를 반복</li>
+<li>GL_MIRRORED_REPEAT : GL_REPEAT 와 비슷하나 이미지가 미러링 되면서 반복</li>
+<li>GL_CLAMPA_TO_EDTE : 0 보다 작은 숫자는 0으로, 1보다 큰 숫자는 1 로 고정되며 stratched 된 모양이 됨</li>
+<li>GL_CLAMP_TO_BORDER : 범위 밖의 좌표에서는 미리 지정한 색으로 고정됨</li>
+</ul>
+<pre><code class="language-glsl">glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+</code></pre>
+<h2>Texture filltering</h2>
+<p>텍스처 좌표의 색을 결정하는 방식</p>
+<ul>
+<li>GL_NEAREST : 해당 좌표가 가리키고 있는 색을 그대로 가져옴</li>
+<li>GL_LINEAR : 해당 좌표의 주변색을 가져와 보간</li>
+</ul>
+<pre><code class="language-glsl">glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+</code></pre>
+<h2>Mipmaps</h2>
+<p>멀리있는 물체는 작은 수의 fragment 를 가지기 때문에 고해상도의 택스쳐를 사용하면 색을 가져오기 힘들고 메모리 낭비도 심힘</p>
+<p>미리 기본 텍스쳐 보다 작은 크기의 텍스쳐를 만들어 두어 작은 물체에 텍스쳐를 사용할 때 사용</p>
+<p>기존 텍스쳐보다 두배 작은 텍스쳐들을 미리 만들어둠</p>
+<pre><code class="language-glsl">glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+</code></pre>
+<p>와 같은 방식으로 밉맵을 사용할때의 필터링 방식도 지정</p>
+<h2>Load</h2>
+<p>텍스쳐를 로드할때는 stb_image.h 를 사용</p>
+<p>이미지를 로드할때 가장 많이 사용하는 외부 라이브러리</p>
+<h2>Texture Unit</h2>
+<p>texture 를 uniform 으로 전달하지 않아도 texture unit 에 16개 까지 저장이 가능</p>
+<p>GL_TEXTURE0 ~ GL_TEXTURE15 까지가 있음</p>
+<p>texture 를 bind 하기 전에 사용할 texture unit 을 active 해 사용</p>
+<p>shader 에서 uniform sampler2D 를 사용해 데이터를 불러오며</p>
+<p>여러개를 불러오면 0 부터 하나씩 불러와지게 됨</p>
+<h2>Upside Down</h2>
+<p>기본적으로 texture 좌표는 좌하단은 (0, 0)으로 간주하고 mapping 되어짐</p>
+<p>실제 texture 를 불러오면 좌상단이 (0, 0) 으로 되어짐</p>
+<p>v(y) 를 1-v 를 하거나 stb 라이브러리의 stbi_set_flip_vertically_on_load(true); 를 사용해 해결</p>
+
+        </article>
+        
+        
+    </main>
+
+    
+
+<footer>
+    <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
+            href="mailto:rlark1224@naver.com">Mail</a></p>
+</footer>
+
+</body>
+
+</html>

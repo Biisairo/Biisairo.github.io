@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>framebuffers</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            
+
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    nav li:first-child {
+        margin-right: auto;
+    }
+
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    nav li:first-child a:hover {
+        color: #aadadf;
+    }
+
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
+
+    h2[onclick] {
+        user-select: none;
+        color: #2699b6;
+    }
+
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
+
+    <main>
+        
+        
+        <h2 onclick="toggleSection('groups')" style="cursor: pointer;">▶ 하위 그룹</h2>
+        <div id="groups" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Skeleton%20hierarchy/">Skeleton hierarchy</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%bf%bc%ed%84%b0%eb%8b%88%ec%96%b8%20%ed%9a%8c%ec%a0%84/">쿼터니언 회전</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/OpenGL/">OpenGL</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/VBO,%20VAO,%20EBO/">VBO, VAO, EBO</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/light%20casters/">light casters</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/blending/">blending</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/cubemap/">cubemap</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/advanced%20glsl/">advanced glsl</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/blinn%20phong/">blinn phong</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/gamma%20correction/">gamma correction</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/shadow%20mapping/">shadow mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/normal%20mapping/">normal mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/parallax%20mapping/">parallax mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/High%20Dynamic%20Range/">High Dynamic Range</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/bloom/">bloom</a></li>
+                
+            </ul>
+        </div>
+        
+        
+
+        
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/obj%20mtl%20file.html">obj mtl file</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c.html">참고자료</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/function.html">function</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%b4%88%ea%b8%b0%ed%99%94.html">초기화</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/basic%20function.html">basic function</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Shader.html">Shader</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Texture.html">Texture</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Transform.html">Transform</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Coordinate%20System.html">Coordinate System</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Camera.html">Camera</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Color.html">Color</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Materials.html">Materials</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Lighting%20map.html">Lighting map</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/depth%20test.html">depth test</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/stencil%20test.html">stencil test</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/face%20culling.html">face culling</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/framebuffers.html">framebuffers</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/advanced%20data.html">advanced data</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/geometry%20shader.html">geometry shader</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/instancingmd.html">instancingmd</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/anti%20aliasing.html">anti aliasing</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/point%20shadow.html">point shadow</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/mapping.html">mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Voxel%20Engine.html">Voxel Engine</a></li>
+                
+            </ul>
+        </div>
+        
+
+        
+        
+        <article>
+            <h1>framebuffers</h1>
+<p>지금까지의 buffer 들은 기본적으로 생성되는 기본 프레임 버퍼에 저장됨</p>
+<ul>
+<li>color buffer, depth buffer, stencil buffer 등</li>
+</ul>
+<p>커스텀 프레임버퍼를 만들어 랜더링 시 추가 작업을 할 수 있음</p>
+<p><strong>주의</strong></p>
+<p>mac 의 retina display 는 실제 window size 보다 2배의 pixel 을 가지는 framebuffer 를 생성</p>
+<p>framebuffer 를 생성할 때 그냥 window width, height 를 사용하면 실제 사용되는 framebuffer 과 다른 사이즈의 framebuffer 를 생성</p>
+<p>기존의 default framebuffer 의 사이즈를 가져와서 똑같은 사이즈로 만들어 주는것이 좋음</p>
+<ul>
+<li>glfwGetFramebufferSize 함수를 사용</li>
+</ul>
+<h2>create framebuffer</h2>
+<pre><code class="language-glsl">GLuint fbo;
+glGenFramebuffers(1, &amp;fbo);
+glBindFramebuffer(GL_FRAMEBUFFER, fbo);
+</code></pre>
+<p>바인드가 된 이후의 랜더링은 바인드된 프레임 버퍼를 사용게됨</p>
+<p>사용이 끝나면 바인드를 해제해 주어야 하며 사용하지 않는 프레임버퍼는 지워줌</p>
+<pre><code class="language-glsl">glBindFramebuffer(GL_FRAMEBUFFER, 0);
+glDeleteFramebuffers(1, &amp;fbo);
+</code></pre>
+<h2>texture attachment</h2>
+<p>프레임버퍼에 텍스쳐를 붙이면 렌더링의 결과물이 그대로 출력되는 것이 아닌 텍스쳐에 저장된다</p>
+<pre><code class="language-glsl">GLuint texture;
+glGenTexture(1, &amp;texture);
+glBindTexture(GL_TEXTURE_2D, texture);
+
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, WITHD, HEIGHT, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+</code></pre>
+<p>텍스쳐를 생성할때 화면 크기와 동일한 크기로 설정</p>
+<p>데이터의 매개변수에는 null 을 넣어줌</p>
+<ul>
+<li>텍스쳐에 메모리를 할당하고 채우지는 않음</li>
+</ul>
+<p>해당 텍스쳐를 프레임 버퍼에 붙여줌</p>
+<pre><code class="language-glsl">glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texture, 0);
+</code></pre>
+<p>앞에서부터</p>
+<ul>
+<li>target
+<ul>
+<li>목표로 하는 프레임버퍼의 유형</li>
+</ul>
+</li>
+<li>attachment
+<ul>
+<li>첨부할, 붙일 파일의 유형</li>
+<li>color attachment 를 첨부</li>
+</ul>
+</li>
+<li>textarget
+<ul>
+<li>첨부하려는 텍스쳐의 유형</li>
+</ul>
+</li>
+<li>texture
+<ul>
+<li>첨부할 실제 텍스쳐</li>
+</ul>
+</li>
+<li>level
+<ul>
+<li>밈맵레벨, 0으로 설정</li>
+</ul>
+</li>
+</ul>
+<p>이외에 depth buffer 를 위한 GL_DEPTH_ATTACHMENT 와 GL_DEPTH_COMPONENT</p>
+<p>stencil buffer 를 위한 GL_STENCIL_STTACHMENT 와 GL_STENCIL_INDEX 를 사용할 수 있음</p>
+<h3>renderbuffer object attachment</h3>
+<p>texture framebuffer 가 들어오기전 framebuffer 에 부착 가능한 유일한 부착물</p>
+<p>텍스쳐와 마찬가지로 실제 이미지 버퍼이며 쓰기전용 버퍼</p>
+<p>프레임 버퍼를 off-screen randering 을 하도록 최적화 되어 있음</p>
+<p>쓰기전용 버퍼이므로 쓰는 속도는 빠르나 읽기 위해서는 glReadPixels 를 통해야 읽을 수 있음</p>
+<p>loop 에 마지막에 쓰던 swapbuffer 함수를 renderbuffer 를 사용하여 구현 가능</p>
+<p>renderbuffer 에 랜더링을 한 후 출력되고있는 renderbuffer 와 바꾸면 됨</p>
+<pre><code class="language-glsl">GLuint rbo;
+glGenRenderbuffers(1, &amp;rbo);
+glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+</code></pre>
+<p>renderbuffer 는 쓰기전용이므로 읽을 필요가 없는 depth attachment, stencil attachment 로 사용됨</p>
+<pre><code class="language-glsl">glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, WIDTH, HEIGHT);
+</code></pre>
+<p>랜더버퍼를 24비트 depth buffer, 8비트 stencil buffer 로 사용하는 방법</p>
+<p>마지막으로 renderbuffer 를 framebuffer 에 부착</p>
+<pre><code class="language-glsl">glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+</code></pre>
+<h2>rendering to a texture</h2>
+<p>프레임 버퍼에 연결되어있는 텍스쳐로 화면을 랜더링 한 뒤 출력하면 랜더링 된 텍스쳐를 하나의 네모난 face 위에 그리게 됨</p>
+<p>시간은 차이가 나지 않으나 해당 텍스쳐를 가공할 수 있음</p>
+<pre><code class="language-glsl">// framebuffer 생성
+GLuint framebuffer;
+glGenFramebuffers(1, &amp;framebuffer);
+glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+
+// texture 생성 후 framebuffer 에 attach
+GLuint texColorBuffer;
+glGenTextures(1, &amp;texColorBuffer);
+glBindTexture(GL_TEXTURE_2D, texColorBuffer);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 800, 600, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+glBindTexture(GL_TEXTURE_2D, 0);
+
+glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, texColorBuffer, 0);
+
+// renderbuffer 생성
+GLuint rbo;
+glGenRenderbuffers(1, &amp;rbo);
+glBindRenderbuffer(GL_RENDERBUFFER, rbo); 
+glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, 800, 600);  
+glBindRenderbuffer(GL_RENDERBUFFER, 0);
+
+// renderbuffer 를 depth, stencil buffer 로 attach
+glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, rbo);
+if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+	std::cout &lt;&lt; &quot;ERROR::FRAMEBUFFER:: Framebuffer is not complete!&quot; &lt;&lt; std::endl;
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+</code></pre>
+<p>이후 랜더링은 직접 만든 framebuffer 에 저장됨</p>
+<p>순서</p>
+<ol>
+<li>커스텀 framebuffer 를 bind 한 뒤 기존처럼 랜더링</li>
+<li>기본 framebuffer 를 bind (0 을 바인딩)</li>
+<li>커스턴 프래임 버퍼의 color buffer 를 텍스쳐로 사용해 출력</li>
+</ol>
+<h2>post processing</h2>
+<p>각 프레임이 하나의 이미지로 랜더링 되었으므로 해당 이미지를 가공할 수 있음</p>
+<h3>inversion</h3>
+<pre><code class="language-glsl">vec4(vec3(1.0 - texture(screentexture, texcords)), 1.0);
+</code></pre>
+<p>색상 반전</p>
+<h3>grayscale</h3>
+<pre><code class="language-glsl">vec3 COLOR = texture(screentexture, texcords);
+float average = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+out vec3 color = vec4(average, average, average, 1.0);
+</code></pre>
+<p>흑백효과</p>
+<p>인간의 눈은 녹색에 민감하고 파랑에 더 민감한 경향이 있어 이를 반영하면 아래처럼 됨</p>
+<pre><code class="language-glsl">float average = 0.2126 * COLOR.r + 0.7152 * COLOR.g + 0.0722 * COLOR.b;
+</code></pre>
+<h3>kernel effects</h3>
+<p>해당 픽셀의 상하좌우 픽셀을 샘플링후 조합하는 방식</p>
+<pre><code class="language-cpp">[2,  2,  2]
+[2, -15, 2]
+[2,  2,  2]
+</code></pre>
+<p>위 예시는 주변 8픽셀의 값을 2씩곱해 더하고 현재 픽셀에는 -15를 곱해 더함</p>
+<p>가중치들을 합하면 보통 1로 합계</p>
+<ul>
+<li>1이 되지 않는 가중치는 더 어둡거나 더 밝은 결과가 나옴</li>
+</ul>
+<h3>blur</h3>
+<pre><code class="language-cpp">[1, 2, 1]
+[2, 4, 2] / 16
+[1, 2, 1]
+</code></pre>
+<h3>edge detection</h3>
+<pre><code class="language-cpp">[1,  1, 1]
+[1, -8, 1]
+[1,  1, 1]
+</code></pre>
+<h3>이 외 kernel 들은 인터넷 참고</h3>
+
+        </article>
+        
+        
+    </main>
+
+    
+
+<footer>
+    <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
+            href="mailto:rlark1224@naver.com">Mail</a></p>
+</footer>
+
+</body>
+
+</html>

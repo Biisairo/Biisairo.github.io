@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Study</title>
+    <title>UNIX permission</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
 
@@ -165,23 +165,6 @@
     <main>
         
         
-        <h2 onclick="toggleSection('groups')" style="cursor: pointer;">▶ 하위 그룹</h2>
-        <div id="groups" style="display: none;">
-            <ul>
-                
-                <li><a href="https://biisairo.github.io/Study/Language/">Language</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Computer%20Science/">Computer Science</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/Graphics/">Graphics</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/">책</a></li>
-                
-                <li><a href="https://biisairo.github.io/Study/42/">42</a></li>
-                
-            </ul>
-        </div>
-        
         
 
         
@@ -189,12 +172,45 @@
         <div id="pages" style="display: none;">
             <ul>
                 
-                <li><a href="https://biisairo.github.io/Study/%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98.html">알고리즘</a></li>
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/UNIX/UNIX%20command.html">UNIX command</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/UNIX/UNIX%20permission.html">UNIX permission</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/UNIX/UNIX%20etc.html">UNIX etc</a></li>
                 
             </ul>
         </div>
         
 
+        
+        
+        <article>
+            <h1>UNIX permission</h1>
+<p>x | xxx | xxx | xxx</p>
+<ul>
+<li>1구역 : 파일의 형태
+<ul>
+<li>: 기본 파일</li>
+<li>d : 디렉토리</li>
+<li>c : character special file</li>
+<li>l : symbilic link</li>
+</ul>
+</li>
+<li>2~4구역 : 권한
+<ul>
+<li>2구역 : owner</li>
+<li>3구역 : group</li>
+<li>4구역 : world(any)</li>
+<li>: 권한 없음</li>
+<li>r : read</li>
+<li>w : write</li>
+<li>x : execute</li>
+</ul>
+</li>
+</ul>
+
+        </article>
+        
         
     </main>
 

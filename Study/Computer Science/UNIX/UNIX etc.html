@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>UNIX etc</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            
+
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    nav li:first-child {
+        margin-right: auto;
+    }
+
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    nav li:first-child a:hover {
+        color: #aadadf;
+    }
+
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
+
+    h2[onclick] {
+        user-select: none;
+        color: #2699b6;
+    }
+
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
+
+    <main>
+        
+        
+        
+
+        
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/UNIX/UNIX%20command.html">UNIX command</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/UNIX/UNIX%20permission.html">UNIX permission</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/UNIX/UNIX%20etc.html">UNIX etc</a></li>
+                
+            </ul>
+        </div>
+        
+
+        
+        
+        <article>
+            <h1>UNIX etc</h1>
+<p>Navigation</p>
+<ul>
+<li>root : / 가장 최 상단 디렉토리</li>
+<li>home : ~ 각 유저의 시스템의 최상단 디렉토리, 맥에서는 /Users/<username> 으로 들어간</li>
+</ul>
+<p>standard stream</p>
+<ul>
+<li>standard input : 키보드를 이용해 입력되는 기본적인 인풋</li>
+<li>standard output : 터미널에 프린트 되는 기본 아웃풋</li>
+<li>standard error : 실행에 문제가 되었을때 프린트되는 아웃풋</li>
+</ul>
+<p>redirection</p>
+<ul>
+<li>redirecting output
+<ul>
+<li>
+<blockquote>
+<p>, &gt;&gt;</p>
+</blockquote>
+</li>
+<li>command &gt; filename, command &gt;&gt; filename</li>
+<li>command 의 결과로 나오는 프린트 되어질 값들을 filename 의 파일을 만들어 안에 넣는다</li>
+<li>
+<blockquote>
+<p>를 사용하면 이미 존재하는 파일을 지우고 새로 만든다</p>
+</blockquote>
+</li>
+<li>
+<blockquote>
+<blockquote>
+<p>를 사용하면 존재하는 파일에 내용을 추가한다</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>redirecting input
+<ul>
+<li>&lt;</li>
+<li>command &lt; filename</li>
+<li>파일의 내용을 command 의 입력으로 넣는다</li>
+</ul>
+</li>
+<li>redirecting error
+<ul>
+<li>2&gt;, 2&gt;&gt;</li>
+<li>output 과 사용법은 같다</li>
+</ul>
+</li>
+<li>1&gt;, 2&gt;
+<ul>
+<li>output 은 1&gt; 로도 사용할 수 있으나 그냥 &gt; 로 사용해도 되도록 되어있다</li>
+<li>input 은 0, output 은 1, erroro 은 2 로 표시한다</li>
+</ul>
+</li>
+<li>같이 사용하기
+<ul>
+<li>ex) sort &lt; file.txt &gt; sorted.txt
+<ul>
+<li>file.txt 의 내용을 sort 를 사용해서 정렬한 뒤 sorted.txt 파일을 만들어 저장한다</li>
+</ul>
+</li>
+<li>ex) command &gt; file.txt 2&gt; error.txt
+<ul>
+<li>command 를 실행시켜 나온 결과를 file.txt 에, 오류가 나오면 error.txt 에 저장한다</li>
+<li>이때 무조건 stdout 이 strerr 보다 먼저 나와야 한다</li>
+</ul>
+</li>
+<li>ex) command &gt; file.txt 2&gt; &amp;1
+<ul>
+<li>command 에서 나온 결과를 file.txt 에 저장하고, 에러는 strout 으로 보낸다, 즉 에러도 file.txt 에 저장된다</li>
+</ul>
+</li>
+<li>ex) command &amp;&gt; file.txt
+<ul>
+<li>command 에서 나온 결과와 에러를 모두 file.txt 에 저장한다</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>piping</p>
+<ul>
+<li>command | command</li>
+<li>앞의 커맨드에서 나온 결과를 뒤의 커맨드에 넣는다</li>
+<li>파이프 중간에 내용을 가로채고 싶으면…tee
+<ul>
+<li>command | tee file.txt | command2</li>
+<li>command 를 실행한 결과를 file.txt 에 저장한 뒤 command2 로 보낸다</li>
+</ul>
+</li>
+</ul>
+<p>wildcard</p>
+<ul>
+<li>
+<ul>
+<li>아무 문자열(string) 허용</li>
+</ul>
+</li>
+<li>?
+<ul>
+<li>아무 한 글자(char) 허용</li>
+</ul>
+</li>
+<li>[]
+<ul>
+<li>[] 안의 한글자 허용</li>
+<li>범위
+<ul>
+<li>[1-3] 일 시 1, 2, 3 을 허용한다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>^
+<ul>
+<li>[] 안에 넣어서 사용</li>
+<li>^뒤에 오는 글자를 제외시킨다</li>
+<li>[^a-z] 라고 하면 a 에서 z 의 소문자를 제외한다</li>
+</ul>
+</li>
+<li>character classes
+<ul>
+<li>[:alpha:] - 대소문자를 포함한 모든 알파벳</li>
+<li>[:digit:] - 0 에서 9 까지 숫자</li>
+<li>[:lower:] - 소문자</li>
+<li>[:upper:] - 대문자</li>
+<li>[:blank:] - 공백문자, 스페이스 탭 등등</li>
+<li>[:punct:] - 특수문자들</li>
+<li>[:alnum:] - 알파벳과 숫자</li>
+</ul>
+</li>
+<li>{}
+<ul>
+<li>{} 안의 문자를 대입</li>
+<li>범위
+<ul>
+<li>{1..3} 일 시 1, 2, 3 을 대입한다</li>
+</ul>
+</li>
+<li>조합
+<ul>
+<li>{1..3}{a..c} = 1a 2a 3a 1b 2b 3b 1c 2c 3c 가 된다</li>
+<li>{} 안에 {} 를 넣을 수 있다</li>
+</ul>
+</li>
+<li>[]와 차이점
+<ul>
+<li>[] 는 비교 시 허용하는 인자, {} 는 생성시 대입하는 인자</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>arithmetic expression 산술식
+<ul>
+<li>command 에 산술식을 넣어 사용하는 방법니다</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>/ **(거듭제곱) % 등을 사용할때</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>$((수식)) 으로 사용한다</li>
+<li>ex) exho $((3 + 3)) =&gt; 7 이 프린트 된다</li>
+</ul>
+</li>
+<li>command substitution
+<ul>
+<li>커맨드 안에 커맨드를 넣는 방법이다</li>
+<li>$(커맨드) 로 사용한다</li>
+<li>ex) echo “오늘은 $(date) 이다” =&gt; 오늘은 Thu 01 May 2021 03:10:31 PM PDT 이다 가 프린트된다</li>
+</ul>
+</li>
+<li>출력되지 않는 글자 출력하기
+<ul>
+<li>{}, [] $() 등 위에 소개한 기호들과 공백 문자같은 몇몇 특수문자는 커맨드 내에서 특정한 역할을 가지고 있다</li>
+<li>그러므로 해당 문자를 그대로 출력하기 위해서는 다른 방법을 써야한다</li>
+<li>&quot; &quot;
+<ul>
+<li>&quot; &quot; 사이에 내용을 작성하면 $, , ` 을 제외한 문자들은 그대로 출력이 된다</li>
+</ul>
+</li>
+<li>’ ’
+<ul>
+<li>’ ’ 사이에 내용을 작성하면 모든 문자가 그대로 출력이 된다</li>
+</ul>
+</li>
+<li>\
+<ul>
+<li>\ 다음에 작성되는 한 문자는 그대로 출력이 된다</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>regex 정규표현식</p>
+<ul>
+<li>. : 일치하는 한 글자</li>
+<li>^ : 줄의 시작이 일치</li>
+<li>$ : 줄의 끝이 일치</li>
+<li>[abc] : 안에 있는 글자들중에 일치</li>
+<li>[^abc] : 안에 있는 글자들중에 불일치</li>
+<li>[a-z] : 해당 범위 안에서 일치</li>
+<li>: 앞의 표현식을 0 이상번 반복</li>
+<li>\ : escape 문자</li>
+</ul>
+
+        </article>
+        
+        
+    </main>
+
+    
+
+<footer>
+    <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
+            href="mailto:rlark1224@naver.com">Mail</a></p>
+</footer>
+
+</body>
+
+</html>

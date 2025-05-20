@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>3 케이블의 앞은 LAN 기기였다</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            
+
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    nav li:first-child {
+        margin-right: auto;
+    }
+
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    nav li:first-child a:hover {
+        color: #aadadf;
+    }
+
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
+
+    h2[onclick] {
+        user-select: none;
+        color: #2699b6;
+    }
+
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
+
+    <main>
+        
+        
+        
+
+        
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/1%20%ec%9b%b9%20%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80%ea%b0%80%20%eb%a9%94%ec%8b%9c%ec%a7%80%eb%a5%bc%20%eb%a7%8c%eb%93%a0%eb%8b%a4.html">1 웹 브라우저가 메시지를 만든다</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/2%20TCP%20IP%20%ec%9d%98%20%eb%8d%b0%ec%9d%b4%ed%84%b0%eb%a5%bc%20%ec%a0%84%ea%b8%b0%20%ec%8b%a0%ed%98%b8%eb%a1%9c%20%eb%a7%8c%eb%93%a4%ec%96%b4%20%eb%b3%b4%eb%82%b8.html">2 TCP IP 의 데이터를 전기 신호로 만들어 보낸</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/3%20%ec%bc%80%ec%9d%b4%eb%b8%94%ec%9d%98%20%ec%95%9e%ec%9d%80%20LAN%20%ea%b8%b0%ea%b8%b0%ec%98%80%eb%8b%a4.html">3 케이블의 앞은 LAN 기기였다</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/4%20%ec%95%a1%ec%84%b8%ec%8a%a4%20%ed%9a%8c%ec%84%a0%ec%9d%84%20%ed%86%b5%ed%95%b4%20%ec%9d%b8%ed%84%b0%eb%84%b7%ec%9d%98%20%eb%82%b4%eb%b6%80%eb%a1%9c.html">4 액세스 회선을 통해 인터넷의 내부로</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/5%20%ec%84%9c%eb%b2%84%ec%b8%a1%ec%9d%98%20LAN%20%ec%97%90%eb%8a%94%20%eb%ac%b4%ec%97%87%ec%9d%b4%20%ec%9e%88%eb%8a%94%ea%b0%80.html">5 서버측의 LAN 에는 무엇이 있는가</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Computer%20Science/%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac/%ec%84%b1%ea%b3%b5%ea%b3%bc%20%ec%8b%a4%ed%8c%a8%eb%a5%bc%20%ea%b2%b0%ec%a0%95%ed%95%98%eb%8a%94%201%25%ec%9d%98%20%eb%84%a4%ed%8a%b8%ec%9b%8c%ed%81%ac%20%ec%9b%90%eb%a6%ac/6%20%ec%9b%b9%20%ec%84%9c%eb%b2%84%ec%97%90%20%eb%8f%84%ec%b0%a9%ed%95%98%ec%97%ac%20%ec%9d%91%eb%8b%b5%20%eb%8d%b0%ec%9d%b4%ed%84%b0%ea%b0%80%20%ec%9b%b9%20%eb%b8%8c%eb%9d%bc%ec%9a%b0%ec%a0%80.html">6 웹 서버에 도착하여 응답 데이터가 웹 브라우저</a></li>
+                
+            </ul>
+        </div>
+        
+
+        
+        
+        <article>
+            <h1>3. 케이블의 앞은 LAN 기기였다</h1>
+<h2>1. 케이블과 리피터, 허브 속을 신호가 흘러간다</h2>
+<h3>1. 하나하나의 패킷이 독립된 것으로 동작한다</h3>
+<ul>
+<li>중계 장치에 패킷이 도달하면 중계 장치는 패킷의 데이터를 확인하지 않고 헤더만을 확인하여 패킷을 전달함</li>
+<li>따라서 모든 패킷은 데이터의 내용과 상관없이 각각이 독립적인것으로 간주하여 중계됨</li>
+</ul>
+<h3>2. LAN 케이블은 신호를 약화시키지 않는 것이 핵심이다</h3>
+<ul>
+<li>패킷은 LAN 어댑터의 PHY(MAU) 회로에서 전기신호로 바뀌어 트위스트 페어 케이블과 RJ-45 커넥터를 통해 전달됨</li>
+<li>신호가 허브에 도착하게 되면 출발할때 보다 신호가 약해지고 잡음(노이즈)가 생김</li>
+</ul>
+<h3>3. ‘꼼’ 은 잡음을 방지하기 위한 방법이다</h3>
+<ul>
+<li>신호선을 마주꼬게 되면 전자파로 부터 생기는 잡음이 각각의 쌍마다 역상으로 발생하며 상쇄됨</li>
+<li>각각의 쌍이 꼬아져있는 간격을 다르게 함으로써 크로스토크를 막음</li>
+<li>이외에도 신호선 간에 거리를 두거나 쉴드를 사용해 잡음을 막음</li>
+<li>시중에는 여러 종류의 케이블을 판매하고 있으며 카테고리 라는 범주로 성능을 나눔</li>
+</ul>
+<h3>4. 리피터 허브는 연결되어 있는 전체 케이블에 신호를 송신한다</h3>
+<ul>
+<li>신호가 리피터 허브에 도달하면 연결되어있는 전체 케이블로 신호를 송신함
+<ul>
+<li>패킷을 모두에게 보내고 수신처에서 MAC 주소에 따라 패킷을 선별해 사용한다는 것이 이더넷의 기본원리</li>
+</ul>
+</li>
+<li>송신 단자와 다르게 케이블이 교차되어있는 수신 단자로 신호를 받음</li>
+<li>MDI/MDI-X 전환 스위치
+<ul>
+<li>MDI (Media Dependent Interface)
+<ul>
+<li>정상적인 방법으로 연결되어있는 커넥터</li>
+</ul>
+</li>
+<li>MDI-X (MDI-Crossover)
+<ul>
+<li>송수신 케이블이 교차되어있는 커넥터</li>
+</ul>
+</li>
+<li>송신단자와 수신단자를 연결하면 한쪽은 MDI-X 로 되어있어야 하며 양쪽다 MDI 인 경우 크로스케이블을 사용해 연결함</li>
+</ul>
+</li>
+<li>허브의 PHY(MAU) 회로의 수신부에 도달하면 리피터 회로를 통해 송출 커넥털 신호를 뿌리게 됨
+<ul>
+<li>리피터 회로의 기본은 들어온 신호를 뿌리는 것</li>
+<li>이외에 신호를 강하게, 깨끗하게 다듬는 역할도 있음</li>
+</ul>
+</li>
+<li>커넥터를 통해 나간 신호가 수신처에 도달하면 수신처는 패킷의 맨앞에 있는 MAC 헤더를 확인해 본인에게 오는 패킷이 맞는지 확인함</li>
+<li>리피터 허브는 들어온 신호를 그대로 뿌리기만 하기 때문에 계속된 전달로 패킷에 잡음이 생기는 경우 수신한 기기에서 FCS 를 검사하여 에러를 뿌리게 됨</li>
+</ul>
+<h2>2. 스위칭 허브의 패킷 중계 동작</h2>
+<h3>1. 스위칭 허브는 주소 테이블로 중계한다</h3>
+<ul>
+<li>신호가 MDI-X 로 되어있는 커넥터에 도달하면 PHY 회로가 공통의 신호형식으로 신호를 변환한 후 MAC 회로로 들어감</li>
+<li>MAC 회로에서 디지털 데이터로 변환한 후 FCS 를 확인하여 오류를 검사한 뒤 문제가 없으면 버퍼에 저장</li>
+<li>포트
+<ul>
+<li>포트번호와 이름만 같음</li>
+<li>커넥터와 안쪽에 있는 회로 부분을 일컫는 말로 LAN 어뎁터와 유사함</li>
+<li>LAN 어댑터와의 차이점
+<ul>
+<li>LAN 어댑터에는 MAC 주소가 할당되어있어 수신한 패킷의 수신처의 MAC 주소가 본인의 MAC 주소와 다른 경우 패킷을 패기하게 됨</li>
+<li>스위칭 허브에서는 MAC 주소를 검사하지 않고 모든 패킷을 수신하여 버퍼에 저장하기 때문에 MAC 주소가 할당되어있지 않음</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>패킷을 버퍼에 저장한 다음 수신처의 MAC 주소와 일치하는 주소가 MAC 주소표에 저장되어 있는지 확인</li>
+<li>MAC 주소표
+<ul>
+<li>기기의 MAC 주소와 해당 기기가 어느 포트에 연결되어 있는지에 대한 정보가 등록되어 있음</li>
+<li>MAC 주소와 포트가 쌍으로 저장됨</li>
+</ul>
+</li>
+<li>MAC 주소표를 확인한 후 스위치 회로를 통해 알맞은 포트로 보내게 되며 해당 포트가 송신 포트가 됨</li>
+<li>포트로 패킷이 운반되면 MAC 회로와 PHY 회로를 통해 케이블로 신호를 보냄
+<ul>
+<li>LAN 어댑터와 같은 동작</li>
+<li>송수신회로에 신호가 있는지 확인한 후 신호가 없으면 신호를 송신함</li>
+<li>송신 중 수신 신호가 들어오면 송신을 멈추고 재밍 신호를 전송</li>
+</ul>
+</li>
+</ul>
+<h3>2. MAC 주소 테이블을 등록 및 갱신한다</h3>
+<ul>
+<li>패킷을 수신했을 때 갱신
+<ul>
+<li>패킷을 수신하면 송신처의 MAC 주소를 확인해 수신한 입력포트와 쌍으로 등록</li>
+</ul>
+</li>
+<li>일정 기간이 지나면 삭제
+<ul>
+<li>기기의 연결을 해지하면 스위칭 허브에서는 알 수 없음</li>
+<li>이후에도 연결이 된 것으로 알고 계속 패킷 전송을 시도하게 됨</li>
+<li>일정 시간이 지나면 등록된 기록을 삭제함</li>
+</ul>
+</li>
+</ul>
+<h3>3. 예외적인 동작</h3>
+<ul>
+<li>스위칭 허브에서 송신 포트가 수신한 포트와 같은 경우 해당 패킷을 폐기</li>
+<li>MAC 주소가 브로드캐스트 주소인 경우 수신 포트를 제외한 모든 포트에 패킷을 송신
+<ul>
+<li>MAC 주소
+<ul>
+<li>FF:FF:FF:FF:FF:FF</li>
+</ul>
+</li>
+<li>IP 주소
+<ul>
+<li>255.255.255.255</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>4. 전이중 모드에서 송신과 수신을 동시에 실행한다</h3>
+<ul>
+<li>전이중 모드
+<ul>
+<li>송수신을 동시에 실행할 수 있는 모드</li>
+</ul>
+</li>
+<li>스위칭 허브에서 사용하는 케이블은 송수신 케이블이 나누어져 있어 신호의 충돌이 일어나지 않음</li>
+<li>포트 또한 송수신 부분이 나누어져 있어 신호의 충돌이 일어나지 않음</li>
+<li>이더넷의 기본규칙인 ‘송신과 수신을 동시에 할 수 없다’ 라는 규칙을 무효화 하는 규정을 추가해 송수신을 동시에 할 수 있게 함</li>
+</ul>
+<h3>5. 최적의 전송 속도로 보내는 자동 조정</h3>
+<ul>
+<li>전이중 모드가 생김에 따라 전이중 모드와 반이중 모드를 전환할 필요가 생김</li>
+<li>자동 조정 (auto negotiation)
+<ul>
+<li>접속한 상대가 전이중 모드를 지원하는지를 확인하고 자동으로 전환하는 기능</li>
+</ul>
+</li>
+<li>링크 펄스
+<ul>
+<li>이더넷에 아무 신호도 흐르지 않고 있을 때 흐르는 신호</li>
+<li>상대가 올바르게 작동하는지, 케이블에 단선이 있지는 않은지 확인</li>
+<li>최초에는 일정 간격으로 신호를 보낸다는 규정만 있었음</li>
+<li>이후에 특정 패턴으로 펄스를 보내면서 상대에게 자신의 상황을 알릴 수 있도록 변경</li>
+</ul>
+</li>
+<li>링크 펄스를 이용해 지원 가능한 모드와 전송속도를 서로에게 전달하고 알맞은 연결방법을 선택</li>
+</ul>
+<h3>6. 스위칭 허브는 복수의 중계 동작을 동시에 실행한다</h3>
+<ul>
+<li>그때그때 맞는 경로로 패킷을 전달 해 주며 이때 다른 포트는 빈 상태가 됨</li>
+<li>빈 상태인 포트에 패킷이 들어오면 다른 비어있는 포트로 패킷을 보낼 수 있음</li>
+<li>이렇게 동시에 여러 포트를 중계할 수 있음</li>
+<li>동시에 중계 가능한 패킷의 수는 리피터 허브보다 스위칭 허브가 많음</li>
+</ul>
+<h2>3. 라우터의 패킷 중계 동작</h2>
+<h3>1. 라우터의 기본</h3>
+<ul>
+<li>스위칭 허브와 비슷한 개념으로 동작
+<ul>
+<li>들어온 패킷을 중계하여 다음 라우터로 보냄</li>
+</ul>
+</li>
+<li>스위칭 허브에서 사용하는 이더넷이 아닌 IP 의 개념을 사용</li>
+<li>중계 부분
+<ul>
+<li>패킷의 중계 대상을 판단</li>
+</ul>
+</li>
+<li>포트 부분
+<ul>
+<li>패킷의 송수신을 담당</li>
+</ul>
+</li>
+<li>중계 부분과 포트 부분의 구별은 컴퓨터에서의 프로토콜 스택의 IP 담당 부분과 LAN 어댑터의 역할과 같음</li>
+<li>포트 부분에서 패킷을 수신
+<ul>
+<li>포트의 통신기술 규격에 맞게
+<ul>
+<li>무선 LAN 이라면 무선 LAN 에 맞게, 이더넷이라면 이더넷에 맞게</li>
+</ul>
+</li>
+<li>중계 부분에서 포트에 패킷수신을 의뢰하는 것 처럼 작동</li>
+</ul>
+</li>
+<li>중계 부분에서 패킷의 IP 를 확인하여 중계 대상을 판단한 뒤 중계 대상에 연결 되어있는 포트로 패킷을 전달</li>
+<li>포트에서 패킷을 전송
+<ul>
+<li>이것도 마찬가지로 포트 부분에 패킷 송신을 의뢰하는 식으로 작동</li>
+</ul>
+</li>
+<li>포트 부분이 패킷의 송수신처가 됨
+<ul>
+<li>포트가 이더넷인 경우 포트에 MAC 주소가 할당되어 이더넷의 송수신처로서 작동</li>
+<li>포트에는 IP 또한 할당이 되어있어 LAN 어댑터 처럼 작동</li>
+<li>스위치 허브와 다른 부분
+<ul>
+<li>스위치 허브는 들어온 패킷을 단순히 전송만 하지만 라우터는 스스로가 송수신처가 됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>2. 경로표에 등록된 정보</h3>
+<ul>
+<li>스위치 허브는 MAC 헤더에 기록된 수신처 MAC 주소를 통해 중계</li>
+<li>라우터는 IP 헤더에 기록된 IP 주소를 수신처로 판단하고 중계</li>
+<li>라우팅 테이블 (경로표)
+<ul>
+<li>수신처
+<ul>
+<li>수신처의 정보가 등록</li>
+</ul>
+</li>
+<li>서브넷 주소</li>
+<li>넷마스크</li>
+<li>주소 집약 개념
+<ul>
+<li>몇개의 서브넷을 모아서 하나의 서브넷으로 간주하는 방식</li>
+<li>10.10.2.0/24, 10.10.3.0/24, 10.10.4.0/24 를 하나의 서브넷으로 생각해 10.10.0.0/16 으로 간주</li>
+</ul>
+</li>
+<li>개별 컴퓨터를 나타내는 법
+<ul>
+<li>서브넷을 32, 즉 255.255.255.255 로 전부 1로 설정</li>
+<li>IP 전체를 확인하게 되므로 특정 기기 하나를 가르키게됨</li>
+</ul>
+</li>
+<li>게이트웨이
+<ul>
+<li>패킷의 중계 대상</li>
+<li>수신처에 대한 정보로 다음으로 보내야 할 중계 대상의 IP 주소</li>
+</ul>
+</li>
+<li>인터페이스
+<ul>
+<li>패킷의 중계 대상</li>
+<li>수신처에 대한 정보로 다음으로 보내야 할 대상을 찾았을 때 사용할 포트</li>
+</ul>
+</li>
+<li>매트릭
+<ul>
+<li>IP 주소에 기록된 목적지까지의 거리</li>
+<li>작을수록 가까움</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>패킷이 들어올때 갱신을 하는 MAC 주소 테이블과 달리 패킷 중계시 경로표를 수정하지 않음
+<ul>
+<li>사람이 수동으로 등록하거나</li>
+<li>라우팅 프로토콜을 사용해 라우터끼리 경로 정보를 교환해 라우터가 직접 등록</li>
+</ul>
+</li>
+</ul>
+<h3>3. 라우터의 패킷 수신 동작</h3>
+<ul>
+<li>신호가 커넥터에 도달하면 PHY 회로와 MAC 회로에서 신호를 디지털 데이터로 변환</li>
+<li>FCS 를 확인해 오류를 확인후 정상이면 MAC 헤더의 수신처 주소를 확인해 본인에게 오는 패킷인지를 확인하고 버퍼에 저장</li>
+</ul>
+<h3>4. 경로표를 검색하여 출력 포트를 발견한다</h3>
+<ul>
+<li>라우터에 패킷이 수신되면 MAC 헤더를 폐기
+<ul>
+<li>MAC 헤더의 역할은 해당 라우터에 패킷을 전송하는 것으로 끝남</li>
+</ul>
+</li>
+<li>MAC 헤더 뒤에있는 IP 헤더를 보고 패킷 중계동작을 실행
+<ul>
+<li>경로표에서 중계 대상을 조사
+<ul>
+<li>IP 주소와 서브넷 마스크를 AND 연산하여 나온 부분, 즉 IP 주소에서 서브넷 마스크만큼 앞에있는 부분을 조사</li>
+<li>구해진 서브넷이 경로표에 있는지를 확인</li>
+</ul>
+</li>
+<li>후보가 여러개가 나온다면 네트워크 주소가 제일 긴 쪽을 선택
+<ul>
+<li>서브넷이 길면 호스트 주소가 짧아짐</li>
+<li>더 구체적인 주소를 선택하는 것</li>
+</ul>
+</li>
+<li>서브넷의 길이가 같다면 매트릭이 작은 것을 선택
+<ul>
+<li>단선, 고장을 고려해 우회로를 만들어 둔 것으로 짧은 경로를 선택하게 됨</li>
+</ul>
+</li>
+<li>후보가 하나도 나오지 않는경우가 있음
+<ul>
+<li>패킷을 패기하고 ICMP 메시지를 송신처에 송신</li>
+<li>ICMP 메시지
+<ul>
+<li>Internet Control Message Protocol
+<ul>
+<li>패킷 운반시 발생하는 오류나 제어용 메시지를 보낼때 이용</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>스위치 허브와의 차이
+<ul>
+<li>스위치 허브는 대상이 없을 시 연결된 모든 포트로 패킷을 보냄</li>
+<li>스위치 허브는 많아야 수천대의 기기가 연결되어있으나 라우터의 경우 전세계에 연결되어있는 만큼 연결된 기기가 많음</li>
+<li>많은 기기에 전부 패킷을 보내는 것은 네트워크 혼잡에 영향을 미치므로 중계대상이 분명하지 않은 패킷을 폐기함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>5. 해당하는 경로가 없는 경우에 선택하는 기본 경로</h3>
+<ul>
+<li>중계대상이 명확하지 않은 경우 패킷을 폐기하게 되면 모든 경로를 기록해야하게 됨</li>
+<li>넷마스크 0.0.0.0
+<ul>
+<li>명확히 기록하지 않은 대상을 제외한 다른 모든 중계대상을 말함</li>
+<li>넷마스크가 0 이면 비교대상이 없는 것 이므로 비교를 할 필요가 없음</li>
+<li>모든 대상의 주소가 일치하기 때문</li>
+</ul>
+</li>
+<li>넷마스트를 0.0.0.0 으로 해둔 경로의 게이트웨이를 인터넷으로 나가는 라우터의 IP 로 해 두면 다른 행에 해당하는 것이 없는 경우 인터넷으로 패킷을 보내게 됨</li>
+<li>기본 경로
+<ul>
+<li>이렇게 설정해둔 행을 기본경로 라고 함</li>
+</ul>
+</li>
+<li>기본 게이트웨이
+<ul>
+<li>기본경로에 설정 된 게이트웨이</li>
+</ul>
+</li>
+</ul>
+<h3>6. 패킷은 유효 기한이 있다</h3>
+<ul>
+<li>TTL (Time To Live, 생존기간)
+<ul>
+<li>IP 헤더에 있는 필드</li>
+</ul>
+</li>
+<li>TTL 을 갱신</li>
+<li>라우터를 경유할 때 마다 1 씩 줄며 0 이 되면 패킷을 폐기함</li>
+<li>패킷이 같은 경로를 반복순회하는 것을 방지</li>
+<li>송신처에서 처음 패킷을 보낼때 64, 혹은 128 로 설정</li>
+</ul>
+<h3>7. 큰 패킷을 조각 나누기 기능으로 분할한다</h3>
+<ul>
+<li>이더넷이 아닌 다른 통신을 사용하면 패킷의 최대 길이가 변할 수 있음</li>
+<li>중계하려는 패킷의 크기가 출력측의 패킷 최대길이를 초과하면 송신할 수 없음</li>
+<li>IP 프로토콜에 규정된 조각 나누기(fragmentation) 을 사용해 패킷을 분할해 송신함
+<ul>
+<li>출력측의 MTU(한개의 패킷으로 운반할 수 있는 데이터의 최대 길이)를 조사한 후 패킷을 그대로 보낼 수 있는지 확인</li>
+<li>출력측의 MTU 가 작은경우 IP 헤더의 플래그 필드를 조사해 패킷을 분할할 수 있는지 확인</li>
+<li>플래그 필드가 분할 불가로 되어있으면 패킷을 폐기 후 ICMP 메시지를 송신처에 송신</li>
+<li>분할이 가능하면 MTU 에 맞게 데이터를 분할
+<ul>
+<li>TCP 헤더 를 포함한 이후의 데이터를 분할</li>
+<li>TCP 헤더도 IP 헤더에서 보면 하나의 데이터일 뿐임</li>
+</ul>
+</li>
+<li>데이터를 분할한 후 IP 헤더를 붙여 송신
+<ul>
+<li>원래의 IP 헤더를 그대로 사용하되 분할 정보를 추가로 기입</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3>8. 라우터의 송신 동작은 컴퓨터와 같다</h3>
+<ul>
+<li>송신 포트로 넘어간 패킷이 송신됨</li>
+<li>출력 포트의 종류에 따라 알맞은 신호로 변환되어 송신</li>
+<li>과정은 컴퓨터와 동일</li>
+</ul>
+<h3>9. 라우터와 스위칭 허브의 관계</h3>
+<ul>
+<li>IP, 라우터
+<ul>
+<li>통신 상대까지 패킷을 전달</li>
+</ul>
+</li>
+<li>이더넷, 스위칭 허브
+<ul>
+<li>다음 라우터까지 패킷을 전달</li>
+</ul>
+</li>
+</ul>
+<h2>4. 라우터의 부가 기능</h2>
+<h3>1. 주소 변환으로 IP 주소를 효율적으로 이용한다</h3>
+<ul>
+<li>주소 부족으로 인해 폐쇄된 서브넷 안에서의 주소는 다른 서브넷 안에서의 주소와 중복될 수 있게 됨</li>
+<li>Private address
+<ul>
+<li>특정한 규칙에 기초해 만들어지는 서브넷 내에서의 주소</li>
+</ul>
+</li>
+<li>Global address
+<ul>
+<li>이전에 사용하던 고유 주소</li>
+</ul>
+</li>
+<li>private address 의 규칙
+<ul>
+<li>10.0.0.0~10.255.255.255</li>
+<li>172.16.0.0~172.31.255.255</li>
+<li>192.168.0.0~192.168.255.255</li>
+<li>위 세 주소 범위 내에서만 생성할 수 있음</li>
+<li>private 주소를 만드는 시점에서 어느 global 주소도 할당되어있지 않은 주소의 범위</li>
+<li>실제로는 global 주소의 일부를 private 주소로 사용한다고 약속한 것 뿐</li>
+<li>서브넷 내에서 자유롭게 신청하지 않고 사용할 수 있음</li>
+<li>서브넷 내에서만 중복되지 않게 설정</li>
+</ul>
+</li>
+<li>서브넷 밖에서 서브넷으로 들어오는 라우터에서 주소변환의 구조를 사용해 주소를 변환하여 사용</li>
+</ul>
+<h3>2. 주소 변환의 기본 동작</h3>
+<ul>
+<li>패킷을 중계할 때 IP 헤더에 기재된 IP 주소와 포트번호를 바꿔쓰는 것</li>
+<li>서브넷 안의 기기에서 송신 시
+<ul>
+<li>라우터에서 IP 를 글로벌 주소로 변환
+<ul>
+<li>주소 변환 장치(라우터)에 할당 된 글로벌 주소</li>
+</ul>
+</li>
+<li>포트번호는 사용하지 않는 포트번호를 적당히…선택</li>
+<li>바꾸기 전의 private 주소와 포트번호, 바뀐 후 글로벌 주소와 포트번호를 쌍으로 대응표에 저장</li>
+</ul>
+</li>
+<li>서브넷 안의 기기에서 수신 시
+<ul>
+<li>라우터에서 들어온 IP 주소와 포트번호에 맞는 대응표를 찾아 다시 private 주소로 변환</li>
+</ul>
+</li>
+</ul>
+<h3>3. 포트번호를 바꿔 쓰는 이유</h3>
+<ul>
+<li>서브넷 내에서의 사용자가 많아지면 포트면호를 바꾸지 않을 시 사용자 만큼의 글로벌 주소가 필요</li>
+<li>포트 번호는 16비트의 갯수를 가지며 사용하지 않는 포트번호도 수만개가 넘음</li>
+<li>하나의 글로벌 주소에 사용하지 않는 포트번호를 사용하여 각각의 기기와 대응시켜 사용</li>
+</ul>
+<h3>4. 인터넷에서 회사로 액세스한다</h3>
+<ul>
+<li>서브넷에서 인터넷으로 액세스할때는 사용하지 않는 포트번호를 적당히 대응시키고 해당 대응되는 쌍으로 응답을 받으면 됨</li>
+<li>반대의 경우에는 포트번호와 private 주소의 대응관계를 알 수 없음</li>
+<li>이를 사용해 서브넷으로의 부정 침입을 막을 수 있음</li>
+<li>사전에 수동으로 대응표를 작성 해 두면 서브넷으로의 접근이 가능해짐</li>
+</ul>
+<h3>5. 라우터의 패킷 필터링 기능</h3>
+<ul>
+<li>패킷을 중계할 때 MAC 헤더, IP 헤더, TCP 헤더에 기입된 내용을 조사하여 설정한 조건에 부합하지 않은 패킷을 필터링</li>
+</ul>
+
+        </article>
+        
+        
+    </main>
+
+    
+
+<footer>
+    <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
+            href="mailto:rlark1224@naver.com">Mail</a></p>
+</footer>
+
+</body>
+
+</html>

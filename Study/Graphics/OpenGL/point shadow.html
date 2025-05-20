@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>point shadow</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            
+
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    nav li:first-child {
+        margin-right: auto;
+    }
+
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    nav li:first-child a:hover {
+        color: #aadadf;
+    }
+
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
+
+    h2[onclick] {
+        user-select: none;
+        color: #2699b6;
+    }
+
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
+
+    <main>
+        
+        
+        <h2 onclick="toggleSection('groups')" style="cursor: pointer;">▶ 하위 그룹</h2>
+        <div id="groups" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Skeleton%20hierarchy/">Skeleton hierarchy</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%bf%bc%ed%84%b0%eb%8b%88%ec%96%b8%20%ed%9a%8c%ec%a0%84/">쿼터니언 회전</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/OpenGL/">OpenGL</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/VBO,%20VAO,%20EBO/">VBO, VAO, EBO</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/light%20casters/">light casters</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/blending/">blending</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/cubemap/">cubemap</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/advanced%20glsl/">advanced glsl</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/blinn%20phong/">blinn phong</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/gamma%20correction/">gamma correction</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/shadow%20mapping/">shadow mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/normal%20mapping/">normal mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/parallax%20mapping/">parallax mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/High%20Dynamic%20Range/">High Dynamic Range</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/bloom/">bloom</a></li>
+                
+            </ul>
+        </div>
+        
+        
+
+        
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/obj%20mtl%20file.html">obj mtl file</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%b0%b8%ea%b3%a0%ec%9e%90%eb%a3%8c.html">참고자료</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/function.html">function</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/%ec%b4%88%ea%b8%b0%ed%99%94.html">초기화</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/basic%20function.html">basic function</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Shader.html">Shader</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Texture.html">Texture</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Transform.html">Transform</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Coordinate%20System.html">Coordinate System</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Camera.html">Camera</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Color.html">Color</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Materials.html">Materials</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Lighting%20map.html">Lighting map</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/depth%20test.html">depth test</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/stencil%20test.html">stencil test</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/face%20culling.html">face culling</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/framebuffers.html">framebuffers</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/advanced%20data.html">advanced data</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/geometry%20shader.html">geometry shader</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/instancingmd.html">instancingmd</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/anti%20aliasing.html">anti aliasing</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/point%20shadow.html">point shadow</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/mapping.html">mapping</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/Graphics/OpenGL/Voxel%20Engine.html">Voxel Engine</a></li>
+                
+            </ul>
+        </div>
+        
+
+        
+        
+        <article>
+            <h1>point shadow</h1>
+<p>방향성이 있는 spot light 나 directional light 와 다르게 point light 는 모든 방향으로 퍼져나가는 빛</p>
+<p>일반적인 2D texture 를 사용하는 것이 아닌 cube map 을 사용해 모든 방향으로 render</p>
+<pre><code class="language-cpp">glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
+for (unsigned int i = 0; i &lt; 6; ++i)
+	glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthCubemap, 0);
+glDrawBuffer(GL_NONE);
+glReadBuffer(GL_NONE);
+</code></pre>
+<p>이외의 전체적인 과정은 기존과 동일</p>
+<pre><code class="language-cpp">// 1. first render to depth cubemap
+glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);
+    glClear(GL_DEPTH_BUFFER_BIT);
+    ConfigureShaderAndMatrices();
+    RenderScene();
+glBindFramebuffer(GL_FRAMEBUFFER, 0);
+// 2. then render scene as normal with shadow mapping (using depth cubemap)
+glViewport(0, 0, SCR_WIDTH, SCR_HEIGHT);
+glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+ConfigureShaderAndMatrices();
+glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
+RenderScene();
+</code></pre>
+<p>projection 행렬은 perspective 행렬을 사용하며 fov 를 90도로 주어 한 면을 채우도록 함</p>
+<pre><code class="language-cpp">float aspect = (float)SHADOW_WIDTH/(float)SHADOW_HEIGHT;
+float near = 1.0f;
+float far = 25.0f;
+glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), aspect, near, far);
+</code></pre>
+<p>큐브 맵의 각 면에 대해 view 행렬을 따로 만듬</p>
+<p>cube map texture 에서 정의되어있는 순서대로</p>
+<ul>
+<li>right : GL_TEXTURE_CUBE_MAP_POSITIVE_X</li>
+<li>left : GL_TEXTURE_CUBE_MAP_NEGATIVE_X</li>
+<li>top : GL_TEXTURE_CUBE_MAP_POSITIVE_Y</li>
+<li>bottom : GL_TEXTURE_CUBE_MAP_NEGATIVE_Y</li>
+<li>near : GL_TEXTURE_CUBE_MAP_POSITIVE_Z</li>
+<li>far : GL_TEXTURE_CUBE_MAP_NEGATIVE_Z</li>
+</ul>
+<p>순서로 설정</p>
+<pre><code class="language-cpp">std::vector&lt;glm::mat4&gt; shadowTransforms;
+shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 1.0, 0.0, 0.0), glm::vec3(0.0,-1.0, 0.0));
+shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(-1.0, 0.0, 0.0), glm::vec3(0.0,-1.0, 0.0));
+shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0, 1.0, 0.0), glm::vec3(0.0, 0.0, 1.0));
+shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0,-1.0, 0.0), glm::vec3(0.0, 0.0,-1.0));
+shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0, 0.0, 1.0), glm::vec3(0.0,-1.0, 0.0));
+shadowTransforms.push_back(shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3( 0.0, 0.0,-1.0), glm::vec3(0.0,-1.0, 0.0));
+</code></pre>
+<h2>depth shader</h2>
+<p>depth cube map 을 위해서는 vertex, geometry, fragment shader 세개의 shader 가 필요</p>
+<ul>
+<li>
+<p>vertex shader</p>
+<ul>
+<li>정점을 light 의 공간으로 변환 후 geometry shader 로 전달</li>
+<li>VERTEX 에 model 을 곱하기만 하면 됨</li>
+</ul>
+<pre><code class="language-cpp">#version 400 core
+layout (location = 0) in vec3 aPos;
+
+uniform mat4 model;
+
+void main()
+{
+    gl_Position = model * vec4(aPos, 1.0);
+}
+</code></pre>
+</li>
+<li>
+<p>geometry shader</p>
+<ul>
+<li>
+<p>gl_Layer</p>
+<ul>
+<li>다중 레이어 버퍼 (여기서는 cube map) 에서 사용할 layer 를 선택함</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Face Value</strong></th>
+<th><strong>Resulting Target</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>GL_TEXTURE_CUBEMAP_POSITIVE_X</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>GL_TEXTURE_CUBEMAP_NEGATIVE_X</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>GL_TEXTURE_CUBEMAP_POSITIVE_Y</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>GL_TEXTURE_CUBEMAP_NEGATIVE_Y</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>GL_TEXTURE_CUBEMAP_POSITIVE_Z</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>GL_TEXTURE_CUBEMAP_NEGATIVE_Z</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>gl_Layer 를 사용해 cube 의 각각의 면의 좌표를 fragment shader 로 전달</li>
+</ul>
+<pre><code class="language-cpp">#version 400 core
+layout (triangles) in;
+layout (triangle_strip, max_vertices=18) out;
+
+uniform mat4 shadowMatrices[6];
+
+out vec4 FragPos; // FragPos from GS (output per emitvertex)
+
+void main()
+{
+    for(int face = 0; face &lt; 6; ++face)
+    {
+        gl_Layer = face; // built-in variable that specifies to which face we render.
+        for(int i = 0; i &lt; 3; ++i) // for each triangle's vertices
+        {
+            FragPos = gl_in[i].gl_Position;
+            gl_Position = shadowMatrices[face] * FragPos;
+            EmitVertex();
+        }    
+        EndPrimitive();
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>fragment shader</p>
+<ul>
+<li>FragPos 로 각 면의 좌표를 받은 뒤 해당 좌표를 0-1로 정규화 해 depth 를 기록함</li>
+</ul>
+<pre><code class="language-cpp">#version 400 core
+in vec4 FragPos;
+
+uniform vec3 lightPos;
+uniform float far_plane;
+
+void main()
+{
+    // get distance between fragment and light source
+    float lightDistance = length(FragPos.xyz - lightPos);
+
+    // map to [0;1] range by dividing by far_plane
+    lightDistance = lightDistance / far_plane;
+
+    // write this as modified depth
+    gl_FragDepth = lightDistance;
+}
+</code></pre>
+</li>
+</ul>
+<h2>shadow map</h2>
+<ul>
+<li>vertex shader</li>
+</ul>
+<pre><code class="language-cpp">#version 400 core
+
+layout(location = 0) in vec3 VERTEX;
+layout(location = 1) in vec3 aNORMAL;
+
+uniform mat4 MODEL;
+
+layout (std140) uniform Matrices
+{
+    mat4 PROJECTION;
+    mat4 VIEW;
+};
+
+out vec3 NORMAL;
+out vec3 POSITION;
+
+void main(){
+
+	mat4 MVP = PROJECTION * VIEW * MODEL;
+	gl_Position = MVP * vec4(VERTEX, 1);
+
+	NORMAL = transpose(inverse(mat3(MODEL))) * aNORMAL;
+
+	POSITION = vec3(MODEL * vec4(VERTEX, 1));
+}
+</code></pre>
+<ul>
+<li>fragment shader</li>
+</ul>
+<pre><code class="language-cpp">#version 400 core
+
+in vec3 NORMAL;
+in vec3 POSITION;
+
+out vec4 color;
+
+uniform vec3 COLOR;
+uniform vec3 lightPos;
+uniform float far_plane;
+uniform vec3 VIEWPOS;
+
+uniform samplerCube shadowMap;
+
+vec3 sampleOffsetDirections[20] = vec3[]
+(
+    vec3( 1,  1,  1), vec3( 1, -1,  1), vec3(-1, -1,  1), vec3(-1,  1,  1), 
+    vec3( 1,  1, -1), vec3( 1, -1, -1), vec3(-1, -1, -1), vec3(-1,  1, -1),
+    vec3( 1,  1,  0), vec3( 1, -1,  0), vec3(-1, -1,  0), vec3(-1,  1,  0),
+    vec3( 1,  0,  1), vec3(-1,  0,  1), vec3( 1,  0, -1), vec3(-1,  0, -1),
+    vec3( 0,  1,  1), vec3( 0, -1,  1), vec3( 0, -1, -1), vec3( 0,  1, -1)
+);  
+
+float calcShadow(vec3 fragPos) {
+    vec3 fragToLight = fragPos - lightPos;
+	  float closestDepth = texture(shadowMap, fragToLight).r;
+    closestDepth *= far_plane;
+    float currentDepth = length(fragToLight);
+
+    float bias = 0.05; 
+    float shadow = currentDepth -  bias &gt; closestDepth ? 1.0 : 0.0;
+
+    return shadow;
+}
+
+void main(){
+    vec3 normal = normalize(NORMAL);
+    vec3 lightDir = normalize(lightPos - POSITION);
+    float light = max(dot(lightDir, normal), 0.0);
+
+	float ambient = 0.1;
+
+	float shadow = calcShadow(POSITION);
+
+	color = vec4(COLOR * (light * (1.0 - shadow) + ambient), 1);
+}
+</code></pre>
+<h3>PCF</h3>
+<pre><code class="language-cpp">float calcShadow(vec3 fragPos) {
+	vec3 fragToLight = fragPos - lightPos;
+	float currentDepth = length(fragToLight);
+	float shadow  = 0.0;
+	float bias    = 0.05; 
+	float samples = 4.0;
+	float offset  = 0.1;
+	for(float x = -offset; x &lt; offset; x += offset / (samples * 0.5))
+	{
+	    for(float y = -offset; y &lt; offset; y += offset / (samples * 0.5))
+	    {
+	        for(float z = -offset; z &lt; offset; z += offset / (samples * 0.5))
+	        {
+	            float closestDepth = texture(shadowMap, fragToLight + vec3(x, y, z)).r; 
+	            closestDepth *= far_plane;   // Undo mapping [0;1]
+	            if(currentDepth - bias &gt; closestDepth)
+	                shadow += 1.0;
+	        }
+	    }
+	}
+	shadow /= (samples * samples * samples);
+	
+	return shadow;
+}
+</code></pre>
+<ul>
+<li>주변을 샘플링하여 평균화 해 그림자 테두리의 지그재그모양을 해결
+<ul>
+<li>위처럼 하게되면 너무 많은 샘플링을 할수있게되기 때문에 offset 과 samples 를 조절해 최적화를 진행</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-cpp">vec3 sampleOffsetDirections[20] = vec3[]
+(
+    vec3( 1,  1,  1), vec3( 1, -1,  1), vec3(-1, -1,  1), vec3(-1,  1,  1), 
+    vec3( 1,  1, -1), vec3( 1, -1, -1), vec3(-1, -1, -1), vec3(-1,  1, -1),
+    vec3( 1,  1,  0), vec3( 1, -1,  0), vec3(-1, -1,  0), vec3(-1,  1,  0),
+    vec3( 1,  0,  1), vec3(-1,  0,  1), vec3( 1,  0, -1), vec3(-1,  0, -1),
+    vec3( 0,  1,  1), vec3( 0, -1,  1), vec3( 0, -1, -1), vec3( 0,  1, -1)
+);
+
+float calcShadow(vec3 fragPos) {
+  vec3 fragToLight = fragPos - lightPos;
+  float currentDepth = length(fragToLight);
+  float shadow = 0.0;
+  float bias   = 0.15;
+  int samples  = 20;
+  float viewDistance = length(VIEWPOS - fragPos);
+  float diskRadius = (1.0 + (viewDistance / far_plane)) / 25.0;
+  // float diskRadius = 0.01;
+  for(int i = 0; i &lt; samples; ++i)
+  {
+      float closestDepth = texture(shadowMap, fragToLight + sampleOffsetDirections[i] * diskRadius).r;
+      closestDepth *= far_plane;
+      if(currentDepth - bias &gt; closestDepth)
+          shadow += 1.0;
+  }
+  shadow /= float(samples);
+
+  return shadow;
+}
+</code></pre>
+<ul>
+<li>혹은 미리 샘플링 할 오프셋들을 지정해 정해진 범위를 샘플링하여 평균을 냄</li>
+</ul>
+<pre><code class="language-cpp">float diskRadius = (1.0 + (viewDistance / far_plane)) / 25.0;
+</code></pre>
+<ul>
+<li>추가로 diskRadius (샘플링하는 범위) 를 거리에 따라 조절해 멀수록 흐린 그림자를 만듬</li>
+</ul>
+
+        </article>
+        
+        
+    </main>
+
+    
+
+<footer>
+    <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
+            href="mailto:rlark1224@naver.com">Mail</a></p>
+</footer>
+
+</body>
+
+</html>

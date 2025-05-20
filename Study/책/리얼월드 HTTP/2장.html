@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2장</title>
+    <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
+</head>
+
+<script>
+    function toggleSection(id) {
+        const section = document.getElementById(id);
+        const header = section.previousElementSibling;
+
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            header.innerHTML = header.innerHTML.replace('▶', '▼');
+        } else {
+            section.style.display = 'none';
+            header.innerHTML = header.innerHTML.replace('▼', '▶');
+        }
+    }
+</script>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            
+
+            <li><a href="https://biisairo.github.io/">Home</a></li>
+            
+            <li><a href="https://biisairo.github.io/About/">About</a></li>
+            
+            <li><a href="https://biisairo.github.io/Study/">Study</a></li>
+            
+            <li><a href="https://biisairo.github.io/Contact/">Contact</a></li>
+            
+        </ul>
+    </nav>
+
+    <style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        background: #222831;
+        color: #EEEEEE;
+    }
+
+    header,
+    footer {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    nav li:first-child {
+        margin-right: auto;
+    }
+
+    nav li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    nav li:first-child a {
+        color: #EEEEEE;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    nav li:first-child a:hover {
+        color: #aadadf;
+    }
+
+    nav a {
+        color: #00ADB5;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main a,
+    article a,
+    footer a {
+        color: #33d3c8;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+    }
+
+    main a:hover,
+    article a:hover,
+    footer a:hover {
+        color: #66C1C9;
+        text-decoration: none;
+    }
+
+    main {
+        flex: 1;
+        margin-bottom: 2rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        line-height: 1.3;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #00ADB5;
+    }
+
+    h2[onclick] {
+        user-select: none;
+        color: #2699b6;
+    }
+
+
+    ul {
+        padding-left: 1.5rem;
+    }
+
+    article {
+        margin-top: 2rem;
+        border: 1px solid #33d3c8;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        color: #AAAAAA;
+    }
+</style>
+
+</header>
+
+    <main>
+        
+        
+        
+
+        
+        <h2 onclick="toggleSection('pages')" style="cursor: pointer;">▶ 하위 페이지</h2>
+        <div id="pages" style="display: none;">
+            <ul>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/1%ec%9e%a5.html">1장</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/2%ec%9e%a5.html">2장</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/3%ec%9e%a5.html">3장</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/4%ec%9e%a5.html">4장</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/5%ec%9e%a5.html">5장</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/6%ec%9e%a5.html">6장</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/7%ec%9e%a5.html">7장</a></li>
+                
+                <li><a href="https://biisairo.github.io/Study/%ec%b1%85/%eb%a6%ac%ec%96%bc%ec%9b%94%eb%93%9c%20HTTP/8%ec%9e%a5.html">8장</a></li>
+                
+            </ul>
+        </div>
+        
+
+        
+        
+        <article>
+            <h1>2장</h1>
+<h1>HTTP/1.0 의 시맨틱스</h1>
+<h2>1. 단순한 폼 전송 (x-www-form-urlencoded)</h2>
+<p>폼으로 데이터를 전송하게 되면 헤더에 <code>Content-Type:application/x-www-form-urlencoded</code> 를 설정하게 됨</p>
+<p>이때 body 는 키, 값이 = 로 연결되며 각각의 쌍이 &amp; 로 연결되게 됨</p>
+<p>실제 데이터가 전송될 때는 키, 값 안에 기호들이 있는 것을 염두에 두어 변환 포맷에 맞춰 변환을 실시 = 는 %3D, &amp; 는 %26으로 변환되어 담기는 식</p>
+<h2>2. 폼을 이용한 파일 전송</h2>
+<p>HTML 의 폼은 멀티파트 폼형식 이라는 인코딩 타입이 있음</p>
+<p>일반적인 HTTP 응답은 한번에 한 파일씩 만 반환하게 되므로 content-length 로 지정된 바이트 수 만큼 읽어들이게 됨</p>
+<p>멀티파트를 이용하면 한번의 요청으로 복수의 파일을 반환받게 되며 받는쪽에서 파일을 나눠 읽을 필요가 있음 <code>Content-Type:multipart/form-data; boundary=(경계문자열)</code> 멀티패턴으로 보내게 되면 경계문자열을 기준으로 받은 하나의 파일을 각각의 파일로 나누게 되며 마지막 블럭 뒤에 나오는 경계문자열의 뒤에는 <code>--</code> 을 추가하여 끝을 나타냄</p>
+<p>이 응답은 일반적인 응답과 같게 헤더 + 빈줄 + 콘텐츠 로 전송이 되며 헤더에는 Content-Disposition 이라는 항목이 추가되게 됨 이 항목을 Content-type 과 같은 역할을 하게됨</p>
+<p>멀티파트 폼을 전송하면 각 항목마다 추가적인 메타데이터를 포함하게 되며 - 이름 - 파일명 - 파일종류 의 세가지 데이터를 넣어줌</p>
+<h2>3. 폼을 이용한 리디렉트</h2>
+<p>URL 을 이용해 리디렉트를 할 수 있으나 제한이 있음 - URL 에는 대체로 2000 자를 넘기면 안된다는 기준이 있어 GET 쿼리로 보낼 수 있는 데이터의 양에는 한계가 있음 - 데이터가 URL 에 포함이 되게 됨으로 보안에 문제가 있음</p>
+<p>이런 문제를 해결하고자 HTML 의 폼을 이용한 리디렉트를 하게 됨 서버로부터 보내고자 하는 데이터가 <code>&lt;input type=&quot;hidden&quot;&gt;</code> 태그로 감싸진 HTML 이 돌아오게 됨 브라우저가 해당 파일을 열면 로드 직후 숨겨진 경로로 즉시 리디렉트되게 됨</p>
+<p>해당 방법은 인터넷 익스플로러에서도 데이터 양의 제한이 없이 사용가능하지만 해당 파일을 불러오는 순간 빈 화면이 표시되며 자바스크립트가 비활성화 되 있는 경우 자동으로 전환되지 않는다는 단점이 있음</p>
+<h2>4. 콘텐츠 니고시에이션</h2>
+<p>서버와 클라이언트가 따로 개발될 경우 양쪽이 기대하는 형식이나 설정이 다를 수가 있음 이때 최적의 설정을 공유하는 시스템을 콘텐츠 니고시에이션 이라고 함 이 설정을 헤더에 들어감 - Accept - content-type 헤더 - MIME 타입 - Accept-Language - content-language 헤더 / html 테그 - 표시언어 - Accept-Charset - content-type 헤더 - 문자의 문자셋 - Accept-Encoding - content-encoding 헤더 - 바디압축</p>
+<h3>예시</h3>
+<p><code>Accept-Language: en-US,en;q=0.8,ko;q=0.6</code></p>
+<p>q 는 품질 계수라고 하며 우선순위를 나타냄 생략 시 1.0</p>
+<p>위에서는 en-US, en, ko 가 1, 0.8, 0.6 의 품질 계수를 가지고 있으며 en-US, en, ko 의 순서로 우선순위가 결정 됨</p>
+<p>언어 정보를 담는 항목으로 content-language 가 있긴 하나 위의 방식을 더 많이 사용함</p>
+<h2>5. 쿠키</h2>
+<p>웹사이트의 정보를 브라우저 쪽에 저장하는 작은 파일 일반적으로 클라이언트가 서버, 즉 데이터베이스를 관리하는 시스템에 SQL 을 발행 하여 데이터를 저장하지만 쿠키의 경우는 서버가 클라이언트쪽에 데이터의 저장을 지시</p>
+<p>이 과정도 HTTP 헤더에 저장되어 응답됨</p>
+<p><code>Set-Cookie: LAST_ACCESS_DATE=jul/31/2016</code> 헤더에 위의 값을 넣으면 클라이언트가 읽고 정보를 저장하게 됨 다음번 접속 때 클라이언트는 저장해 둔 쿠키값을 요청의 헤더에 넣어서 요청 <code>Cookie: LAST_ACCESS_DATE=jul/31/2016</code></p>
+<p>브라우저에서 <code>console.log(document.cookie)</code> 로 저장 된 쿠키를 확인할 수 있음</p>
+<h3>잘못된 사용법</h3>
+<ol>
+<li>쿠키는 완벽한 저장소가 아님
+<ul>
+<li>어떤상황에서도 확실하게 저장이 되어있는 것이 아님</li>
+<li>비밀모드, 세션의 초기화, 서버의 요청 거부</li>
+<li>방문기록 삭제, 개발자 도구</li>
+<li>등의 문제로 쿠키가 제대로 저장이 되어있지 않을 수 있음</li>
+</ul>
+</li>
+<li>용량문제
+<ul>
+<li>쿠키는 최대 4kb 의 사양으로 저장되어있어 큰 자료를 보낼 수 없음</li>
+<li>헤더로서 항상 통신중 들어가게 되므로 큰 용량은 통신에 영향을 주게 됨</li>
+</ul>
+</li>
+<li>보안문제
+<ul>
+<li>secure 속성을 넣어주면 HTTPS 에서는 쿠키가 암호화 되어 전송되지만</li>
+<li>HTTP 통신에서는 쿠키가 그대로 노출되게 됨</li>
+<li>또한 쉽게 위, 변조를 할 수 있게됨</li>
+</ul>
+</li>
+</ol>
+<h3>제약</h3>
+<p>클라이언트는 쿠키를 로컬 스토리지에 저장 해 두고 같은 URL 로 접속할 때 저장되어있던 쿠키를 읽어와 요청 헤더에 넣게 됨 쿠키는 보안상 문제가 생길 수 있으므로 set-cookie 로 응답을 보낼 때 제한하는 속성을 같이 넣어 줌</p>
+<p><code>Set-Cookie: SID=31d4d96e407aad42; Path=/; Secure; HttpOnly</code> <code>Set-Cookie: lang=en-US; Path=/; Domain=example.com</code> 속성은 세미콜론으로 구분하여 넣어주며 대소문자를 구분하지 않음 - Expires, Max-Age - 쿠키의 수명을 설정 - max-age 는 초단위로 설정하며 지정된 시간이 지나면 무효가 된다 - expires 는 시간 문자열로 들어간다 - Domain - 클라이언트에서 쿠키를 전송할 대상서버 - 생략시 쿠키를 발행한 서버가 된다 - Path - 클라이언트에서 쿠키를 전송할 대상서버의 경오 - 생략시 쿠키를 발행한 경로가 된다 - Secure - HTTPS 를 사용할 때만 클라이언트에서 서버로 쿠키를 전송한다 - HTTP 를 사용한 경우는 전송하지 않는다 - HttpOnly - 쿠키는 기본적으로 자바스크립트로 다룰 수 있다 - 해당 속성이 붙어있는 경우 자바스크립트 엔진으로부터 숨긴다 - SameSite - RFC 에는 존재하지 않는 속성 - 크롬브라우저 버전 51 에서 도입된 속성 - 같은 오리진(출처)의 도메인에 전송하게 된다</p>
+<h2>6. 인증과 세션</h2>
+<h3>BASIC 인증과 Digest 인증</h3>
+<p>BASIC 인증 - 유저명과 패스워드를 BASE64 로 인코딩 - BASE64 는 가역변환 이므로 서버에서 다시 복원하여 유저명과 패스워드를 추출함 - SSL/TLS 통신을 사용하지 않으면 쉽게 감청당해 로그인 정보가 유출될 수 있음 Digest 인증 - 해시함수를 이용</p>
+<h3>쿠키를 이용한 세션 관리</h3>
+<p>최근 사용되는 방식은 폼을 이용한 로그인과 쿠키를 이용한 세션관리의 조합</p>
+<ol>
+<li>클라이언트가 폼을 이용해 ID 와 비밀번호를 전송
+<ul>
+<li>ID 와 비밀번호를 직접 전송하므로 SSL/TLS 가 필수</li>
+</ul>
+</li>
+<li>유저 ID 와 비밀번호를 인증하고 문제가 없으면 세션 토큰을 발행</li>
+<li>서버는 세션 토큰을 db 에 저장</li>
+<li>서버가 토큰을 클라이언트에 쿠키로 응답</li>
+<li>두번째 전송 이후에는 쿠키를 재전송 하여 로그인 되어있는 클라이언트 임을 확인</li>
+</ol>
+<h3>쿠키를 이용한 세션 데이터 저장</h3>
+<p>웹앱 프레임워크에는 휘발성이 높은 데이터를 다루는 세션 스토리지 기능이 있음 원래는 서버측에서 전용 테이블을 생성해 관리함</p>
+<p>통신의 속도가 빨라지고 웹사이트 자체의 데이터 양도 늘어나며 쿠키를 이용한 데이터 관리가 사용됨</p>
+<p>루비온레일즈나 장고는 쿠키를 이용해 세션 스토리지를 관리함 데이터가 변조되지 않도록 클라이언트에 전자 서명 된 데이터를 보냄 클라이언트가 서버로 쿠키를 재전송 하면 서버는 해당 서명을 확인 해 위변조를 방지함 서명, 서명을 확인하는 주체는 서버이므로 클라이언트는 서명의 열쇠를 가지지 않음</p>
+<p>서버에서 데이터 저장 시스템을 준비할 필요가 없음 따로 세션 스토리지를 위한 db 를 준비할 필요가 없음</p>
+<p>클라이언트의 입장에서는 서버에 엑세스해서 조작 한 결과가 쿠키로 저장이 됨 쿠키를 가진 동안은 임시 데이터가 유지되게 됨 하지만 같은 사용자더라도 스마트폰, 컴퓨터로 각각 접속 한 경우 같은 쿠키를 공유할 수 없기때문에 데이터를 공유할 수 없음</p>
+<h2>7. 프록시</h2>
+<p>HTTP 통신을 중계하는 역할 중계 뿐이 아니라 몇몇 기능을 같이 해 줌 - 캐시가 있는 프록시를 사용 해 서버의 부담을 줄인다던가 - 외부 공격으로 부터 내부 네트워크를 보호한다던가</p>
+<p>GET 등의 메서드 다음에 오는 경로명의 형식을 바꿔줌</p>
+<p>프록시 서버의 악용을 고려해 인증을 이용해 보호함 - Proxy-Authenication 헤더에 인증값을 넣어 인증</p>
+<p>중계되는 프록시는 중간의 호스트 IP 주소를 특정 헤더에 기록해 둠 - X-Forwarded-For 헤더를 이용 - RFC 표준화로 Forwarded 헤더가 도입</p>
+<h3>프록시와 게이트웨이</h3>
+<p>프록시 - 통신 내용을 이해, 해석함 - 필요에 따라 콘텐츠를 수정하거나 서버에 대신 응답 게이트웨이 - 통신 내용을 그대로 전송 - 내용의 수정도 불허 - 클라이언트에서는 게이트웨이가 중간에 존재하는것을 알면 안됨</p>
+<h2>8. 캐시</h2>
+<p>웹사이트의 크기가 커지면서 용량이 늘어나게 됨 파일을 저장 해 두고 저장된 파일을 이용하는 <strong>캐시</strong> 의 개념이 도입 현재는 캐시 관련 규약이 많이 복잡해 졌으나 처음에는 단순했다</p>
+<p>GET, HEAD 메서드 이외에는 기본적으로는 캐시 되지 않는다</p>
+<h3>갱신 일자에 따른 캐시</h3>
+<p>HTTP/1.0 당시에는 정적 콘텐츠 위주라 콘텐츠가 갱신되었는지만 비교했음</p>
+<p>웹서버에서 마지막수정(갱신)일을 담은 헤더를 응답함 <code>Last-Modified: Wed, 08 Jum 2016 15:23:45 GMT</code></p>
+<p>웹브라우저가 캐시된 URL 을 다시 읽을때 서버에서 반환된 일자를 그대로 아래 헤더에 넣어 요청 <code>If-Modified-Since: Wed, 08 Jum 2016 15:23:45 GMT</code></p>
+<p>서버는 요청에 있는 If-Modified-Since 헤더의 일자를 서버의 콘텐츠와 비교 변경점이 있으면 <code>200 OK</code> 스테이터스 코드를 반환하고 응답의 바디에 콘텐츠를 넣어 보냄</p>
+<p>변경이 되지 않았으면 <code>304 Not Modified</code> 스테이터스 코드를 반환하고 바디에 응답을 넣지 않고 보냄</p>
+<h3>Expires</h3>
+<p>갱신 일자를 이용하면 캐시의 유효성을 확인 하기 위한 통신이 추가로 발생함 해당 통신을 없애버리는 방법이 Expires 헤더</p>
+<p><code>Expires: Fri, 05 Aug 2016 00:52:00 GMT</code></p>
+<p>헤더에 날짜와 시간이 들어감 클라이언트는 해당 기간 이내라면 캐시가 ‘신선’ 하다고 판단, 강제로 캐시를 이용하게 됨 즉, 요청을 아얘 전송하지 않음</p>
+<p>해당 일자가 지났다고 강제로 리로드 하는 것이 아닌 접속 순간의 시간이 기준 즉 이미 불러놓고 시간이 지난다던가 뒤로가기 버튼 등으로 방문 이력에 접근하는 경우 expires 기한이 지난 오래된 콘텐츠를 그대로 이용할 수 있음</p>
+<p>해당 헤더를 사용하면 서버에 변경사항이 있는지 묻는 과정이 생략됨 갱신이 자주 있는 컨텐츠가 아닌 CSS 처럼 갱신이 적은 정적 콘텐츠에 이용하는것이 바람직하다</p>
+<h3>Pragma: no-cache</h3>
+<p>클라이언트에서 프록시에 캐시에 관해 요청을 지시할 수 있는 방법이 있음 <code>Pragma</code> 헤더를 사용</p>
+<p>Pragma 헤더에 <code>no-cache</code> 옵션을 넣어주면 <strong>요청한 콘텐츠가 프록시의 캐시에 저장이 되어 있더라고 서버에서 가져와</strong> 라고 지시를 하게 됨 HTTP/1.1 에서 Cache-Control 에 통합되었으나 하위호환성을 위해 유지됨</p>
+<h3>ETag</h3>
+<p>서비스의 사용자가 늘어나면서 각각의 클라이언트를 위한 데이터가 동적으로 바뀌게 됨</p>
+<p>ETag 는 갱신 일시가 아니라 파일의 해시값을 이용해 비교함 일자를 이용해 확인할 때 처럼 <code>ETag</code> 헤더를 이용 두번째 이후 다운로드를 할 시 클라이언트는 <code>If-None-Match</code> 헤더에 다운로드 되어있던 캐시의 ETag 값을 넣어 요청 함 서버는 보내려는 파일의 ETag 값과 클라이언트로부터 받은 값을 비교해 같으면 304 Not Modified 를 응답</p>
+<p>[[Programming/http/cache.png|500]]</p>
+<h3>Cache-Control</h3>
+<h3>서버가 - 응답</h3>
+<p>ETag 와 함께 추가된 헤더 유연한 캐시 관리를 위해 생성 Expires 보다 우선하여 작동</p>
+<p>아래와 같은 키들을 사용해 캐시를 제어 - public - 같은 컴퓨터를 사용하는 복수의 사용자 간의 캐시 재사용 허가 - private - 같은 컴퓨터를 사용하는 복수의 사용자 간의 캐시 재사용 불허 - 사용자 마다 다른 컨텐츠를 이용하는 경우 사용 - max-age - 캐시의 신선도를 초 단위로 설정 - 시간이 지난 이후에는 서버에 요청한 이후 304 Not Modified 가 반환 되었을때만 캐시를 이용 - s-maxage=n - max-age 와 같으나 공유캐시에 대한 설정값 - no-cache - 캐시가 유효한지 매번 문의 - max-age=0 과 같다 - Pragma: no-cache 처럼 캐시를 하지 않는 겂이 아닌 시간을 보고 서버에 접속하지 않고 콘텐츠를 재사용하는것을 그만두는 것 뿐 - 캐시를 하지 않는 것이 아닌 갱신일자와 ETag 를 사용하여 서버에 요청을 날리고 304 가 돌아오면 캐시를 사용함 - no-store - 캐시하지 않는다</p>
+<p>개인정보 보호의 목적이 아닌 캐시를 활용해 리로드를 줄이는 것이 목적</p>
+<p>콤마를 이용해 복수 지정이 가능하지만 내용 면에서 중복이 되지 않는 조합을 사용 - private, public 중 하나를 사용 (기본은 private) - max-age, s-maxage, no-cache, no-store 중 하나를 사용</p>
+<p>[[Programming/http/cache2.png|500]]</p>
+<h3>프록시에게</h3>
+<p>클라이언트가 프록시에게 Cache-Control 을 이용해 요청할 수 있는 설정값 - no-cache - Pragma: no-cache 와 같다 - no-store - 응답에서의 no-store 와 같다 - 프록시 서버에 있는 캐시를 삭제 - max-age - 프록시 서버에 저장된 캐시의 수명을 결정함 - max-stale - 지정한 시간만큼의 유지 기간이 끝났더라고 클라이언트는 지정한 시간동안 저장된 캐시를 재사용하도록 프록시에 요청한다 - 연장시간은 생략할 수 있으며, 그런경우 무제한이 된다 - min-fresh - 캐시의 수명이 지정된 시간만큼 남아있을 때 캐시를 보내도 좋다고 프록시에 요청한다 - 즉 적어도 지정한 시간동안은 캐시가 신선해야 한다 - no-transform - 프록시가 컨텐츠를 변형하지 않도록 요청 - only-if-cached - 캐시된 경우에만 응답을 반환하고 캐시된 콘텐츠가 없을땐 <code>504 Gateway Timeout</code> 오류를 반환하도록 프록시에 요청 - 이 헤더가 설정 된 경우 제일 처음을 제외하곤 서버에 접속하지 않는다</p>
+<p>서버가 프록시에게 Cache-Control 을 이용해 지시할 수 있는 설정값 - no-transform - 프록시가 콘텐츠를 변경하는 것을 막는다 - must-revalidate - no-cache 와 비슷하지만 프록시 서버에 보내는 지시 - 프록시가 서버에 문의했을 때 서버의 응답이 없으면 프록시가 클라이언트에게 504 gatewat timeout 을 반환 - proxy-revalidate - must-revalidate 와 같으나 공유 캐시에만 요청</p>
+<h3>Vary</h3>
+<p>같은 URL 이더라도 클라이언트에 따라 반환값이 다름을 나타내는 헤더 사용하는 기기, 언어데 따라 표시가 바뀌는 헤더를 Vary 헤더에 나열해 잘못된 캐싱을 막는다 <code>Vary: User-Agent, Accetp-Language</code></p>
+<h2>9. 리퍼러 (Referer)</h2>
+<p>사용자가 어느 경로로 웹사이트에 도달했는지 서버가 파악할 수 있도록 클라이언트가 서버에 보내는 헤더 클라이언트가 특정 링크를 클릭해서 다른 사이트로 이동할 때 링크가 있는 페이지의 URL 을 목적지 사이트의 서버에 전송 <code>Referer: http://www.example.com/link.html</code></p>
+<p>북마크에서 선택하거나 주소창에서 키보드로 입력하는 등 이전 페이지가 존재하지 않으면 referer 헤더를 전송하지 않거나 <code>Referer:about:black</code> 를 전송</p>
+<p>검색엔진은 검색 결과를 <code>?q=키워드</code> 의 형태로 URL 로 표시하는데 클라이언트가 이 URL 을 referer 로 전송하면 서버는 어떤 키워드로 웹사이트에 도달하였는지를 알 수 있음</p>
+<p>개인정보가 GET 파라미터로 전송되면 리퍼러를 통해 해당 정보가 외부사이트로 전송될 수 있으므로 개인정보를 GET 메서드에 담아서는 안됨</p>
+<p>보호된 통신내용이 보호되지 않은 통신경로로 유출되는 것을 막기 위해 리퍼러에 관련된 정책이 제안됨 [[Programming/http/referer.png|500]]</p>
+<p>리퍼러 정책 설정은 아래 방법 중 하나를 사용해 사용 가능 (여기서는 오타가 수정됨) - Referrer-Policy 헤더 - <code>&lt;meta name=&quot;referrer&quot; contant=&quot;설정값&quot;&gt;</code> - <code>&lt;a&gt;</code> 태그 등 요소의 referrerpolicy 속성 및 rel=“noreferrer” 속성</p>
+<p>리퍼러 정책으로서 설정할 수 있는 값 - no-referrer - 전혀 보내지 않는다 - no-referrer-when-downgrade - 기본동작과 마찬가지로 HTTPS-&gt;HTTP 일떄는 보내지 않는다 - same-origin - 동일 도메인 내의 링크에 대해서만 리퍼러를 전송한다 - origin - 상세 페이지가 아니라 톱페이지에서 링크된 것으로 해 도메인 이름만 전송한다 - strict-origin - origin 과 같지만 HTTPS-&gt;HTTP 일때는 전송하지 않는다 - origin-when-crossorigin - 같은 도메인 내에서는 완전 리퍼러를(진짜 경로), 다른 도메인에서는 도메인 이름만 전송한다 - strict-origin-when-crossorigin - origin-when-crossorigin 과 같지만 HTTPS-&gt;HTTP 일때는 전송하지 않는다 - unsafe-url - 항상 전송한다</p>
+<p>이 밖에 Content-Security-Policy 헤더에 지정할 수도 있다 <code>ContentSecuroty-Policy: referrer origin</code></p>
+<h2>10. 검색 엔진용 콘텐츠 접근 제어</h2>
+<p>봇, 크롤러와 같은 자동순회 프로그램의 접근제어</p>
+<h3>robots.txt</h3>
+<p>서버 콘텐츠 제공자가 크롤러에 접근 허가 여부를 전하기 위한 프로토콜 봇의 접근규칙을 기술한 파일명으로 사용 이름으로는 <code>Robots Exclusion Standard(로봇 배제 표준)</code></p>
+<p>크롤링 봇에서 사양을 읽고 접근을 중단하게 되므로 강제적인 것이 아닌 크롤러 개발자들 간의 신사협정</p>
+<p>다음과 같이 읽기를 금지할 크롤러의 이름, 장소를 지정</p>
+<pre><code>User-agent: *
+Disallow: /cgi-bin/
+Disallow: /tmp/
+</code></pre>
+<p>위는 모든 크롤러에 대해 /cgi-bin 폴더와 /tmp 폴더의 접근을 금지하는 파일</p>
+<p>robots.txt 처럼 html 의 메타테그를 사용 가능 <code>&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot; /&gt;</code> content 속성에서 구글봇의 행동을 제약할 수 있음 - noindex - 검색엔진이 인덱스하는 것을 거부한다 - nofollow - 크롤러가 페이지 내의 링크를 따라가는 것을 거부한다 - noarchive - 페이지 내의 콘텐츠를 캐시하는 것을 거부한다</p>
+<p>위의 내용은 HTTP 의 <code>X-Robots-Tag</code> 헤더에도 사용할 수 있음 <code>X-Robots-Tag: noindex, nofollow</code></p>
+<h3>사이트맵</h3>
+<p>사이트맵은 웹사이트에 포함된 페이즈의 목록과 메타데이터를 제공하는 XML 파일 robots.txt 가 블랙리스트처럼 사용되는것에 반해 사이트맵은 화이트리스트로서 작동</p>
+<p>사이트 맵 내부에  태그를 이용해 등록하고 싶은 페이즈를 등록</p>
+
+        </article>
+        
+        
+    </main>
+
+    
+
+<footer>
+    <p>Author: Dongyoon Kim - <a href="https://biisairo.github.io/">Home</a> - <a href="https://github.com/Biisairo">GitHub</a> - <a
+            href="mailto:rlark1224@naver.com">Mail</a></p>
+</footer>
+
+</body>
+
+</html>
