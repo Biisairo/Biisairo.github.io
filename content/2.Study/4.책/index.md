@@ -17,5 +17,3 @@
 기타
 
 - code - The Hidden Language of Computer Hardware and Software, 2/E
-
-[Code Complete](%E1%84%8E%E1%85%A2%E1%86%A8%20368967c46d0a4cdc9e21c7781afaf875/Code%20Complete%205788207d63bf4cde8bd72e54809e1b9b.md)

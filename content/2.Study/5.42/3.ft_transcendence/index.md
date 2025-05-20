@@ -1,7 +1,5 @@
 # ft_transcendence
 
-[OAuth](ft_transcendence%204fe122e7bddf40d3b3159270283f1884/OAuth%2025011ea59de0458b9916f116625e2256.md)
-
 # 목표
 
 - 퐁 게임 만들기
