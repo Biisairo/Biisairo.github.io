@@ -223,6 +223,132 @@
         
         <article>
             <h1>http</h1>
+<ol>
+<li>tcp</li>
+</ol>
+<ul>
+<li>http 는 tcp 위에서 돌아간다</li>
+<li><code>net</code> 패키지의 <code>net.Listen</code> 함수를 사용하여 네트워크 타입, 주소 및 포트를 입력하여 tcp 서버를 open</li>
+<li>for loop 를 돌면서 tcp 로부터 들어오는 데이터를 처리
+<ul>
+<li>처리 로직을 goroutine 으로 처리하여 비동기 처리가 가능하게 한다</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">listener, err := net.Listen(&quot;tcp&quot;, &quot;:8080&quot;)
+
+for {
+	conn, err := listener.Accept()
+
+	go handler(conn)
+}
+</code></pre>
+<ol start="2">
+<li>http - ServeHTTP</li>
+</ol>
+<ul>
+<li>net/http 의 기본이 되는 handler function
+<ul>
+<li><code>ServeHTTP(http.ResponseWriter, *http.Request)</code></li>
+</ul>
+</li>
+<li>해당 함수를 가지고 있는 인터페이스를 <code>handler</code> 라고 한다</li>
+<li>http.Handle, http.HandleFun 를 사용해 라우팅을 진행한다</li>
+</ul>
+<ol start="3">
+<li>routing - ServeMux</li>
+</ol>
+<ul>
+<li>http.ServeMux 를 생성해 라우팅을 진행한다</li>
+<li>이후 라우팅이된 mux 를 <code>http.ListenAndServeTLS</code> 로 서버 시작 시 Handler 에 넣어준다</li>
+</ul>
+<pre><code class="language-go">mux := http.ServeMux{}
+
+mux.Handle(&quot;/&quot;, handler)
+mux.HandleFunc(&quot;/func/&quot;, handleFunc)
+// 맨 뒤에 '/' 를 붙여줘야 해당 경로 뒤에 하위경로가 붙더라도 경로가 연결된다
+// '/' 가 없는 경우 정확히 이 경로여야지 진입이 된다
+
+http.ListenAndServeTLS(&quot;:10443&quot;, &quot;cert.pem&quot;, &quot;key.pem&quot;, mux)
+</code></pre>
+<ul>
+<li>mux 를 사용하지 않고 <code>http.Handler, httpHandlerFun</code> 를 사용해 라우팅을 할 시
+<ul>
+<li><code>http.ListenAndServeTLS</code> 에 nil 을 넣으면 기본 라우터를 사용한다</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-go">http.Handle(&quot;/&quot;, handler)
+http.HandleFunc(&quot;/func/&quot;, handleFunc)
+
+http.ListenAndServeTLS(&quot;:10443&quot;, &quot;cert.pem&quot;, &quot;key.pem&quot;, nil)
+</code></pre>
+<ol start="3">
+<li>param</li>
+</ol>
+<ul>
+<li>url, form 의 값을 가져오는 방법</li>
+</ul>
+<pre><code class="language-go">value := r.FormValue(key)
+</code></pre>
+<ol start="4">
+<li>header</li>
+</ol>
+<ul>
+<li>response 의 헤더에 값을 작성하는 방법</li>
+</ul>
+<pre><code class="language-go">// w = http.ResponseWriter
+w.Header().Set(key, value)
+</code></pre>
+<ol start="5">
+<li>cookie</li>
+</ol>
+<ul>
+<li>쿠키를 set, get 하는 방법</li>
+</ul>
+<pre><code class="language-go">// w = http.ResponseWriter
+cookie := http.Cookie{Name: name, Value: value, Path: &quot;/&quot;, MaxAge: 0}
+http.SetCookie(http.ResponseWriter, &amp;cookie)
+
+// r = *http.Request
+cookies := r.Cookies()
+for _, cookie := range cookies {}
+
+cookie := r.Cookie(&quot;session&quot;)
+</code></pre>
+<ol start="6">
+<li>response</li>
+</ol>
+<pre><code class="language-go">// w = http.ResponseWriter
+io.WriteString(w, value)
+</code></pre>
+<ol start="7">
+<li>redirect</li>
+</ol>
+<pre><code class="language-go">// w = http.ResponseWriter
+// r = *http.Request
+// path = &quot;/some_path
+http.Redirect(w, r, path, httpRedirectState)
+
+http.StatusTemporaryRedirect = 307
+http.StatusPermanentRedirect = 308
+</code></pre>
+<ol start="8">
+<li>file server</li>
+</ol>
+<pre><code class="language-go">// w = http.ResponseWriter
+// r = *http.Request
+http.ServeFile(w, r, filePath)
+</code></pre>
+<ul>
+<li>파일 경로상의 파일을 제공한다</li>
+</ul>
+<pre><code class="language-go">http.FileServer(http.Dir(&quot;./static&quot;))
+</code></pre>
+<ul>
+<li>반환값은 Handler 이며 http.Handler 에 넣어준다</li>
+<li>파일 경로상의 파일을 제공하는 핸들러를 생성한다</li>
+</ul>
 
         </article>
         
