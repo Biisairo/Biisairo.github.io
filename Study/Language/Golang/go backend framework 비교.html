@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>go compiler</title>
+    <title>go backend framework 비교</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
 
@@ -222,116 +222,80 @@
         
         
         <article>
-            <h1>go compile</h1>
-<p>golang 의 컴파일 순서</p>
-<h2>1. 구문 분석 (parsing)</h2>
+            <h1>go backend framework 비교</h1>
+<p>Github 에서 star 갯수 10000개 이상의 프레임워크의 특징 및 장단점을 비교 해 보았다</p>
+<ol>
+<li><a href="https://github.com/gin-gonic/gin">gin</a></li>
+</ol>
 <ul>
-<li>소스코드를 토큰으로 분리한다 (어휘 분석, lexical analysis)</li>
-<li>토큰을 구문 분석 트리 (AST, abstract syntax tree) 로 변환 (구문 분석, parsing)</li>
-<li>문법 오류 검사</li>
-<li>cmd/compile/internal/syntax</li>
+<li>가장 많은 star 수를 보유한 프레임워크로 사용자가 가장 많다</li>
+<li>net/http 를 기반으로 작성되어있어 다수의 net/http 를 지원하는 패키지들과의 호환성이 좋다</li>
+<li>다른 프레임워크보다 golang 의 스타일에 잘 맞는다고 한다</li>
+<li>간결한 middleware 시스템과 빠른 라우팅 성능을 가지고 있다</li>
 </ul>
-<h2>2. 타입 검사</h2>
+<ol start="2">
+<li><a href="https://github.com/labstack/echo">echo</a></li>
+</ol>
 <ul>
-<li>변수, 표현식, 함수의 타입을 추론 및 검사</li>
-<li>인터페이스의 구현 여부 확인</li>
-<li>cmd/compile/internal/types2
-<ul>
-<li>types2 패키지는 go/type 과 달리 go/ast 대신 syntax 패키지의 AST 를 사용</li>
+<li>두번째로 많은 star 수를 보유하고있다</li>
+<li>gin 과 거의 유사한 구조의 api</li>
 </ul>
-</li>
-</ul>
-<h2>3. 중간 표현 (IR, intermediate representation) 생성 - noding</h2>
+<ol start="3">
+<li><a href="https://github.com/gofiber/fiber">fiber</a></li>
+</ol>
 <ul>
-<li>types2 의 표현을 SSA (static single assignment) 형태의 노드로 변환
-<ul>
-<li>SSA 는 각 변수가 한번씩만 할당되는 IR 의 유형</li>
-<li>최적화에 용이하다고 함</li>
+<li>fasthttp 기반으로 작성되어있으며 go backend framework 중 거의 가장 빠른 속도를 자랑한다</li>
+<li>node.js 에서 go 로 이동하는 사람들을 위해 제작 되었으며 이러한 이유로 express.js 와 유사하다</li>
+<li>net/http 가 아닌 fasthttp 를 사용하여 net/http 를 지원하는 패키지들과의 호환성이 부족하다</li>
+<li>fasthttp 의 한계로 일부 http 스펙의 사용이 불가능하다</li>
 </ul>
-</li>
-<li>함수의 조기 종료로 인한 dead-code 제거</li>
-<li>cmd/compile/internal/types</li>
-<li>cmd/compile/internal/ir</li>
-<li>cmd/compile/internal/noder</li>
-</ul>
-<h2>4. Middle End</h2>
+<ol start="4">
+<li><a href="https://github.com/beego/beego">beego</a></li>
+</ol>
 <ul>
-<li>사용하지 않는 함수를 제거</li>
-<li>함수 inlining</li>
-<li>escape analysis
-<ul>
-<li>함수 내부에서 생성된 객체는 스택에 저장됨</li>
-<li>객체의 참조(포인터)가 subroutine 밖으로 전파되는지 분석하는 기술</li>
-<li>스택에 저장되어 있던 객체가 스코프 밖으로 전파되면 데이터가 힙으로 옮겨감</li>
-<li>해당 데이터는 이후 GC 에 의해 처리</li>
+<li>MVC 패턴을 강제한다</li>
+<li>go 를 이용해 작성하긴 하나 규격화가 되어있어 자유도가 낮다</li>
 </ul>
-</li>
-</ul>
-<h2>5. Walk</h2>
+<ol start="5">
+<li><a href="https://github.com/go-chi/chi">chi</a></li>
+</ol>
 <ul>
-<li>cmd/compile/internal/walk 패키지를 이용</li>
-<li>복잡한 명령문을 단순한 명령문으로 분리하고 임시 변수를 도입하여 평가의 순서를 존중한다(?)</li>
-<li>상위 수준의 코드를 더욱 원시적인 수준으로 분해
-<ul>
-<li>switch 문을 jump table, 혹은 이진탐색으로 변환</li>
-<li>map, channel 에 대한 연산을 runtime 호출로 대체</li>
+<li>사실상 net/http 의 경량 래퍼</li>
+<li>net/http 에 기능을 붙여둔 것과 같은 형태</li>
 </ul>
-</li>
-</ul>
-<h2>6. Generic SSA</h2>
+<ol start="6">
+<li><a href="https://github.com/revel/revel">revel</a></li>
+</ol>
 <ul>
-<li>IR 을 SSA 형태로 변환</li>
-<li>내장 함수 적용</li>
-<li>기타 최적화 진행
-<ul>
-<li>copy 함수를 memory move 로 대체</li>
-<li>range 를 for loop 로 재작성</li>
+<li>MVC 패턴을 강제한다</li>
+<li>사실상 go 를 이용해 만들어진 웹 프레임워크</li>
+<li>go 를 이용해 코드를 작성할 일이 적다</li>
 </ul>
-</li>
-<li>재작성 규칙에 따라 코드 제작성
+<p>아래는 star 갯수는 적지만 다양한 곳에서 사용되는 프레임워크이다</p>
+<ol start="7">
+<li><a href="https://github.com/gobuffalo/buffalo">buffalo</a></li>
+</ol>
 <ul>
-<li>불필요한 코드 제거</li>
-<li>불필요한 nil 검사 제거</li>
-<li>사용되지 않는 분기 제거</li>
-<li>주로 표현식과 관련
+<li>RoR 과 비슷한 느낌의 프레임워크</li>
+<li>cli 를 이용해 웹을 구축할 수 있다</li>
+</ul>
+<ol start="8">
+<li><a href="https://github.com/gorilla">gorilla toolkit</a></li>
+</ol>
 <ul>
-<li>표현식을 상수값으로 대체</li>
-<li>곱셈, 부동소수점 연산 최적화</li>
+<li>프레임워크가 아닌 모듈형 툴킷</li>
+<li>mux(라우터), websocket, session, context 등의 툴킷을 지원한다</li>
+<li>net/http 에 완벽 호환되며 net/http 에 붙여 기능을 만드는데 사용한다</li>
+<li>공식적으로 2022년에 유지보수가 중단되었다</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>cmd/compile/internal/ssa</li>
-<li>cmd/compile/internal/ssagen</li>
-</ul>
-<h2>7. 머신 코드 생성</h2>
+<ol start="9">
+<li><a href="https://github.com/valyala/fasthttp">fasthttp</a></li>
+</ol>
 <ul>
-<li>SSA 를 머신(아키텍처)에 맞는 머신 코드로 변환</li>
-<li>각각의 머신에 맞는 최적화 작업 진행</li>
-<li>SSA 가 대상 아키텍처에 적합하도록 변환한 뒤 최종 최적화 진행</li>
-<li>최종 단계의 SSA 를 cmd/internal/obj 의 어셈블러로 전달</li>
-<li>어셈블러는 SSA 코드를 기계어로 변환하여 객체 파일 작성</li>
-<li>cmd/compile/internal/ssa</li>
-<li>cmd/internal/obj</li>
-</ul>
-<h2>8. export</h2>
-<ul>
-<li>여러 패키지와 오브젝트 파일들을 하나의 실행파일로 결합 (linking)</li>
-<li>export data 생성
-<ul>
-<li>패키지를 컴파일 하는 과정에 계산된 모든 정보
-<ul>
-<li>해당 패키지를 사용하는 다른 패키지에서 사용</li>
-<li>한번 컴파일 된 패키지를 다른 패키지에서 사용할 때는 새로 컴파일을 하는게 아닌 해당 데이터를 사용</li>
-</ul>
-</li>
-<li>export 한 선언의 타입 정보</li>
-<li>inlining 될 수 있는 후보 함수의 IR</li>
-<li>다른 패키지에서 인스턴스화 할 수 있는 제네릭 함수의 IR</li>
-<li>함수 매개변수의 escape 분석의 결과</li>
-</ul>
-</li>
-<li>cmd/link</li>
+<li>net/http 보다 빠른 속도를 목표로 만들어진 http 엔진</li>
+<li>기본적인 api 가 net/http 와 달라 호환이 어렵다</li>
+<li>낮은 메모리 사용, 높은 속도를 필요로 하는곳에서 적합하다</li>
+<li>일부 http 스펙을 지원하지 않는다</li>
 </ul>
 
         </article>
