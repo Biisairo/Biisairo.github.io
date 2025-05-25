@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>gin</title>
+    <title>gorm</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
 
@@ -198,6 +198,89 @@
         </div>
         
 
+        
+        
+        <article>
+            <h1>GORM</h1>
+<p>go + orm 을 합쳐서 만든 네이밍<br></p>
+<h2>entry</h2>
+<ul>
+<li>구조체 이용해 모델 선언</li>
+<li>구조체의 이름이 테이블이 이름이 되며 snake_case 로 자동 변환
+<ul>
+<li><code>GromUser -&gt; grom_user</code></li>
+</ul>
+</li>
+<li>구조체의 각각의 필드가 Colume 이 되며 snake case 로 자동 변환</li>
+<li>ID, CreatedAt, UpdatedAt, DeletedAt 과 같은 몇몇의 필드는 선언만 되어있으면 특수한 기능을 가지는 필드가 됨
+<ul>
+<li>ID 필드는 pk 선언으르 하지 않을 시 자동으로 pk 가 됨</li>
+<li>CreatedAt, UpdatedAt, DeletedAt 는 각각 생성시간, 변경시간, sofe delete 를 위한 삭제시간으로 사용됨</li>
+</ul>
+</li>
+<li>각 필드는 struct tag 를 사용해 필드 특성을 지정할 수 있음 <a href="https://gorm.io/ko_KR/docs/models.html#Fields-Tags">gorm tag</a></li>
+</ul>
+<h2>init</h2>
+<ul>
+<li>Open 함수를 이용해 db 생성
+<pre><code class="language-go">gorm.Open(sqlite.Open(config.DatabasePath), &amp;gorm.Config{})
+</code></pre>
+</li>
+<li>db 의 migrator 를 이용해 table 조작
+<pre><code class="language-go">db.AutoMigrate(&amp;model)
+</code></pre>
+</li>
+</ul>
+<h2>CRUD</h2>
+<h3><a href="https://gorm.io/ko_KR/docs/create.html">Create</a></h3>
+<ul>
+<li>Create() 함수 사용
+<pre><code class="language-go">db.Create(&amp;entry)
+</code></pre>
+</li>
+</ul>
+<h3><a href="https://gorm.io/ko_KR/docs/query.html">Read</a></h3>
+<ul>
+<li>First, Take, Last 함수를 사용하여 하나의 entry 를 가져옴</li>
+<li>Find 함수를 사용하여 여러개의 entry 를 가져옴</li>
+<li>쿼리는 find, take 와 같은 위의 함수에 넣어 사용
+<pre><code class="language-go">db.First(&amp;post, &quot;id = ?&quot;, postId)
+</code></pre>
+</li>
+<li>쿼리를 Where 함수에 넣어 사용
+<pre><code class="language-go">db.Where( &quot;updated_at &gt; ?&quot; , lastWeek).Find(&amp;users) 
+</code></pre>
+</li>
+<li>Select 함수를 사용해 특정 필드만 쿼리
+<pre><code class="language-go">db.Select( &quot;name&quot; , &quot;age&quot; ).Find(&amp;users) 
+</code></pre>
+</li>
+</ul>
+<h3><a href="https://gorm.io/ko_KR/docs/update.html">Update</a></h3>
+<ul>
+<li>Update, Save 함수를 사용
+<ul>
+<li>Save 는 Create 와 Update 의 조합 함수로 넣어준 entry 가 존재하면 update, 없으면 create 함</li>
+</ul>
+</li>
+</ul>
+<h3><a href="https://gorm.io/ko_KR/docs/delete.html">Delete</a></h3>
+<ul>
+<li>DeletedAt 필드가 존재하는 경우 자동으로 Soft Delete 를 진행
+<ul>
+<li>soft delete 를 하면 실제로 row 가 삭제되는것이 아닌 delete at 에 삭제 시간이 저장됨</li>
+<li>일반 쿼리로는 해당 객체를 찾을 수 없음</li>
+<li>행이 존재하기때문에 동일 pk, 혹은 unique 로 인해 충돌 가능성 있음</li>
+<li>Unscoped 를 통해 soft delete 된 행 처리 가능</li>
+</ul>
+<pre><code class="language-go">db.Unscoped().Where( &quot;나이 = 20&quot; ).Find(&amp;users) 
+db.Unscoped().Delete(&amp;order) 
+</code></pre>
+</li>
+</ul>
+
+        </article>
+        
         
     </main>
 

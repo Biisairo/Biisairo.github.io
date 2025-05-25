@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>gin</title>
+    <title>jwt</title>
     <link rel="icon" href="https://biisairo.github.io/static/favicon.ico" type="image/x-icon">
 </head>
 
@@ -198,6 +198,50 @@
         </div>
         
 
+        
+        
+        <article>
+            <h1>jwt</h1>
+<p><code>github.com/golang-jwt/jwt/v5</code> 패키지 사용</p>
+<h2>토큰 생성과정</h2>
+<ul>
+<li>token 을 생성할 객체(claims) 를 정의
+<ul>
+<li>RegisteredClaims 을 임베드 하여 jwt 의 기본 필드를 주입
+<pre><code class="language-go">Issuer
+Subject
+Audience
+ExpiresAt
+NotBefore
+IssuedAt
+ID
+</code></pre>
+</li>
+</ul>
+</li>
+<li>NewWithClaims 에 생성한 claims 를 넣어 토큰을 생성
+<ul>
+<li>첫번째 인자로는 암호화 방식 함수를 같이 넣어줌
+<pre><code class="language-go">t.SigningMethodHS256
+t.SigningMethodHS384
+t.SigningMethodHS512
+</code></pre>
+</li>
+</ul>
+</li>
+<li>토큰에 SignedString 를 이용해 jwt 문자열을 사용
+<pre><code class="language-go">token.SignedString()
+</code></pre>
+</li>
+</ul>
+<h2>토큰 parsing</h2>
+<pre><code class="language-go">token, err := jwt.ParseWithClaims(tokenStr, &amp;Claims{}, func(token *jwt.Token) (interface{}, error) {
+		return j.SecretKey, nil
+	})
+</code></pre>
+
+        </article>
+        
         
     </main>
 
