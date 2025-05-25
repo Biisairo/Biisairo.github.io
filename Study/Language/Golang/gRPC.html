@@ -382,6 +382,43 @@ client := pb.NewChattingClient(conn)
 <li>함수를 호출하면 반환되는 stream 을 이용</li>
 <li>Send 함수를 이용해 전송, Recv 함수를 이용해 반환값을 받아옴</li>
 </ul>
+<h2>gateway</h2>
+<ul>
+<li>buf.gen.yaml 의 plugin 에 gateway 추가</li>
+</ul>
+<pre><code class="language-yaml">  - local: protoc-gen-grpc-gateway
+    out: chatting
+    opt:
+      - paths=source_relative
+      - grpc_api_configuration=api_config_file.yaml
+</code></pre>
+<ul>
+<li>api config file</li>
+</ul>
+<pre><code class="language-yaml">type: google.api.Service
+config_version: 3
+
+http:
+  rules:
+    - selector: package_name.service_name.func_name
+      post: api path
+      body: &quot;*&quot;
+</code></pre>
+<h2>middleware</h2>
+<ul>
+<li><code>grpc.NewServer</code> 로 서버 생성 시 미들웨어 추가</li>
+<li>아래 함수들을 이용해 <code>StreamServerInterceptor</code>, <code>UnaryServerInterceptor</code> 함수들을 ServerOption 으로 삽입
+<pre><code class="language-go">UnaryInterceptor
+ChainUnaryInterceptor
+StreamInterceptor
+ChainStreamInterceptor
+</code></pre>
+</li>
+<li><code>StreamServerInterceptor</code>, <code>UnaryServerInterceptor</code> 함수 타입</li>
+</ul>
+<pre><code class="language-go">type UnaryServerInterceptor func(ctx context.Context, req any, info *UnaryServerInfo, handler UnaryHandler) (resp any, err error)
+type StreamServerInterceptor func(srv any, ss ServerStream, info *StreamServerInfo, handler StreamHandler) error
+</code></pre>
 
         </article>
         
